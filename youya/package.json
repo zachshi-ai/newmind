@@ -1,0 +1,39 @@
+{
+  "name": "youya-dsh",
+  "version": "0.1.0",
+  "description": "有涯 Youya — DeepSeek Harness 的见闻记忆层：见闻账（复见/复命两宗世未变而它忘了的确定性病形）/ 殆值（0-100 的会话记忆衰减分）/ 要籍块（接缝处逐字节确定的账内工作集地图）。零 LLM 调用的巡忆式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/youya.js",
+  "bin": {
+    "youya": "src/bin/youya.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-reliability",
+    "context-engineering",
+    "context-rot",
+    "memory-decay",
+    "reread-detection",
+    "session-hygiene",
+    "stream-audit"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

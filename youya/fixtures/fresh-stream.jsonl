@@ -1,0 +1,24 @@
+# 有涯流 · 鲜刃样例（验收夹具：期望殆值 0、带「新硎」、复见 0 案、复命 0 案、exit 0）
+# 教的是「不入罪」的四条正当行为：
+#   c3  写后重读（c2 edit 在中间）→ 鲜；c6  写后重跑（c5 edit 在中间）→ 复命全库重置；
+#   c8  检索类（grep）同路径再问 → 永不入复见账；c7/c9 首次见闻 → 只设基线。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","id":"t1-c1","name":"read","args":{"path":"src/a.js"},"at":101}
+{"type":"tool_result","id":"t1-c1","name":"read","args":{"path":"src/a.js"},"isError":false,"at":102}
+{"type":"tool_call","id":"t1-c2","name":"edit","args":{"path":"src/a.js"},"at":103}
+{"type":"tool_result","id":"t1-c2","name":"edit","args":{"path":"src/a.js"},"isError":false,"at":104}
+{"type":"tool_call","id":"t1-c3","name":"read","args":{"path":"src/a.js"},"at":105}
+{"type":"tool_result","id":"t1-c3","name":"read","args":{"path":"src/a.js"},"isError":false,"at":106}
+{"type":"tool_call","id":"t1-c4","name":"bash","args":{"command":"npm test"},"at":107}
+{"type":"tool_result","id":"t1-c4","name":"bash","args":{"command":"npm test"},"isError":false,"at":108}
+{"type":"tool_call","id":"t1-c5","name":"edit","args":{"path":"src/b.js"},"at":109}
+{"type":"tool_result","id":"t1-c5","name":"edit","args":{"path":"src/b.js"},"isError":false,"at":110}
+{"type":"tool_call","id":"t1-c6","name":"bash","args":{"command":"npm test"},"at":111}
+{"type":"tool_result","id":"t1-c6","name":"bash","args":{"command":"npm test"},"isError":false,"at":112}
+{"type":"tool_call","id":"t1-c7","name":"read","args":{"path":"src/b.js"},"at":113}
+{"type":"tool_result","id":"t1-c7","name":"read","args":{"path":"src/b.js"},"isError":false,"at":114}
+{"type":"tool_call","id":"t1-c8","name":"grep","args":{"path":"src/a.js","pattern":"export"},"at":115}
+{"type":"tool_result","id":"t1-c8","name":"grep","args":{"path":"src/a.js","pattern":"export"},"isError":false,"at":116}
+{"type":"tool_call","id":"t1-c9","name":"read","args":{"path":"src/c.js"},"at":117}
+{"type":"tool_result","id":"t1-c9","name":"read","args":{"path":"src/c.js"},"isError":false,"at":118}
+{"type":"turn_end","id":"t1","at":119}
