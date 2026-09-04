@@ -1,0 +1,30 @@
+# 有涯流 · 失忆样例（验收夹具：期望复见 3 记 2 案 + 复命 2 记 1 案、殆值 32、带「折」、exit 1）
+# c4 复见记（基线 c1，其间无写；前一调用 c3 非罪记）→ 复见案一（+12）；
+# c5 与 c4 紧邻同对象罪记 → 并案（免分）；
+# c6 复命记（基线 c2，其间无任何成功写入；前一调用非罪记）→ 复命案一（+8）；
+# c7 与 c6 紧邻同对象罪记 → 并案（免分）；
+# c9 写后重读 → 鲜，不入罪；
+# c10 复见记（前一调用 c9 非罪记）→ 复见案二（+12）。
+# 合计 24+8=32 ≥ 门 30 →「折」→ fail。
+{"type":"turn_start","id":"t1","at":300}
+{"type":"tool_call","id":"t1-c1","name":"read","args":{"path":"docs/plan.md"},"at":301}
+{"type":"tool_result","id":"t1-c1","name":"read","args":{"path":"docs/plan.md"},"isError":false,"at":302}
+{"type":"tool_call","id":"t1-c2","name":"bash","args":{"command":"ls src"},"at":303}
+{"type":"tool_result","id":"t1-c2","name":"bash","args":{"command":"ls src"},"isError":false,"at":304}
+{"type":"tool_call","id":"t1-c3","name":"cat","args":{"path":"config.json"},"at":305}
+{"type":"tool_result","id":"t1-c3","name":"cat","args":{"path":"config.json"},"isError":false,"at":306}
+{"type":"tool_call","id":"t1-c4","name":"read","args":{"path":"docs/plan.md"},"at":307}
+{"type":"tool_result","id":"t1-c4","name":"read","args":{"path":"docs/plan.md"},"isError":false,"at":308}
+{"type":"tool_call","id":"t1-c5","name":"read","args":{"path":"docs/plan.md"},"at":309}
+{"type":"tool_result","id":"t1-c5","name":"read","args":{"path":"docs/plan.md"},"isError":false,"at":310}
+{"type":"tool_call","id":"t1-c6","name":"bash","args":{"command":"ls src"},"at":311}
+{"type":"tool_result","id":"t1-c6","name":"bash","args":{"command":"ls src"},"isError":false,"at":312}
+{"type":"tool_call","id":"t1-c7","name":"bash","args":{"command":"ls src"},"at":313}
+{"type":"tool_result","id":"t1-c7","name":"bash","args":{"command":"ls src"},"isError":false,"at":314}
+{"type":"tool_call","id":"t1-c8","name":"edit","args":{"path":"src/x.js"},"at":315}
+{"type":"tool_result","id":"t1-c8","name":"edit","args":{"path":"src/x.js"},"isError":false,"at":316}
+{"type":"tool_call","id":"t1-c9","name":"read","args":{"path":"src/x.js"},"at":317}
+{"type":"tool_result","id":"t1-c9","name":"read","args":{"path":"src/x.js"},"isError":false,"at":318}
+{"type":"tool_call","id":"t1-c10","name":"read","args":{"path":"docs/plan.md"},"at":319}
+{"type":"tool_result","id":"t1-c10","name":"read","args":{"path":"docs/plan.md"},"isError":false,"at":320}
+{"type":"turn_end","id":"t1","at":321}

@@ -1,0 +1,22 @@
+# 有涯流 · 微眩样例（验收夹具：期望复见 1 记 1 案 + 复命 1 记 1 案、殆值 20、带「割」、exit 0）
+# c2 失败装载设瑕 → c3 免记且重置基线（夹有失败 = 应对中，势变之地归九变，有涯免记）；
+# c5 与 c4 同串紧邻但 c4 非罪记 → 另立复命一案（+8）；
+# c8 的前一调用 c7 是「鲜」非罪记 → 另立复见一案（+12）。12+8=20（割），20<门 30 → pass。
+{"type":"turn_start","id":"t1","at":200}
+{"type":"tool_call","id":"t1-c1","name":"read","args":{"path":"src/api.js"},"at":201}
+{"type":"tool_result","id":"t1-c1","name":"read","args":{"path":"src/api.js"},"isError":false,"at":202}
+{"type":"tool_call","id":"t1-c2","name":"read","args":{"path":"src/api.js"},"at":203}
+{"type":"tool_result","id":"t1-c2","name":"read","args":{"path":"src/api.js"},"isError":true,"at":204}
+{"type":"tool_call","id":"t1-c3","name":"read","args":{"path":"src/api.js"},"at":205}
+{"type":"tool_result","id":"t1-c3","name":"read","args":{"path":"src/api.js"},"isError":false,"at":206}
+{"type":"tool_call","id":"t1-c4","name":"bash","args":{"command":"git status"},"at":207}
+{"type":"tool_result","id":"t1-c4","name":"bash","args":{"command":"git status"},"isError":false,"at":208}
+{"type":"tool_call","id":"t1-c5","name":"bash","args":{"command":"git status"},"at":209}
+{"type":"tool_result","id":"t1-c5","name":"bash","args":{"command":"git status"},"isError":false,"at":210}
+{"type":"tool_call","id":"t1-c6","name":"edit","args":{"path":"src/api.js"},"at":211}
+{"type":"tool_result","id":"t1-c6","name":"edit","args":{"path":"src/api.js"},"isError":false,"at":212}
+{"type":"tool_call","id":"t1-c7","name":"read","args":{"path":"src/api.js"},"at":213}
+{"type":"tool_result","id":"t1-c7","name":"read","args":{"path":"src/api.js"},"isError":false,"at":214}
+{"type":"tool_call","id":"t1-c8","name":"read","args":{"path":"src/api.js"},"at":215}
+{"type":"tool_result","id":"t1-c8","name":"read","args":{"path":"src/api.js"},"isError":false,"at":216}
+{"type":"turn_end","id":"t1","at":217}
