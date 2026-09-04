@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "id": "t-clean",
+  "brief": "把 support 目录里的报告标题更新为 v2，并以 coverage 文件为终验",
+  "paths": ["support/"],
+  "scope": { "allowRoots": ["support/"], "allowAll": false },
+  "acceptance": [
+    { "ref": "a1", "name": "bash", "argsContains": "node --version" },
+    { "ref": "a2", "artifact": "support/out/coverage.txt" }
+  ],
+  "stop": { "maxSteps": 50, "maxMinutes": 15 },
+  "requires": { "files": ["support/report.txt"], "tools": ["node"] }
+}

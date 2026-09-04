@@ -1,0 +1,2 @@
+报告标题 v1
+本文件是切诊探针的存在性证据（requires.files 与 artifact 指向它）。
