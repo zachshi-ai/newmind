@@ -10,7 +10,7 @@
 |---|------|----------|---------|--------|------|------|
 | 1 | [知止 · zhizhi](zhizhi/) | 《道德经》 | Agent 行为失控：重复失败死循环、未读先写、无证据宣称完成 | 给 DeepSeek Harness 装上「知止」层：动作发生**前**用确定性规则拦截，完成声明**前**核对证据，行为浪费全部入账 | DeepSeek Harness 插件（Cordis）+ 零依赖审计 CLI | ✅ 65 tests，真实 dsh-tools 管道集成验证 |
 | 2 | [解蔽 · jiebi](jiebi/) | 《荀子·解蔽》 | Agent 判断失真：单候选锚定、确认偏误、结论无可证伪条件、宣称的证据可伪造 | 给 DeepSeek Harness 装上「解蔽」层：判断的产物过三门（虚壹静）→ 蔽值门禁 → 账实对账；插件结构性零拦截，只审判断不拦动作 | DeepSeek Harness 观察式插件（Cordis）+ 零依赖校准 CLI + Agent Skill | ✅ 72 tests，真实 dsh-tools 管道集成验证 |
-| 3 | [正念 · zhengnian](zhengnian/) | 《六祖坛经》 | Agent 长任务目标漂移：本愿被几百轮工具噪音稀释、范围悄悄越界（攀缘）、完成对着自选检查宣布（代偿） | 给 DeepSeek Harness 装上「正念」层：开工立**本愿契约**，**尘值**持续度量失念/攀缘/息尘，**拂拭块**在接缝处逐字节确定地供给上下文，**终验门**保证完成对着本愿自己的证据 | DeepSeek Harness 供给式插件（Cordis）+ 零依赖审计 CLI + Agent Skill | ✅ 74 tests，真实 dsh-tools 管道集成验证 |
+| 3 | [正念 · zhengnian](zhengnian/) | 《六祖坛经》 | Agent 长任务目标漂移：本愿被几百轮工具噪音稀释、范围悄悄越界（攀缘）、完成对着自选检查宣布（代偿） | 给 DeepSeek Harness 装上「正念」层：开工立**本愿契约**，**尘值**持续度量失念/攀缘/息尘，**拂拭块**在接缝处逐字节确定地供给上下文，**终验门**保证完成对着本愿自己的证据 | DeepSeek Harness 供给式插件（Cordis）+ 零依赖审计 CLI + Agent Skill | ✅ 75 tests，真实 dsh-tools 管道集成验证 |
 
 ## 方向登记
 

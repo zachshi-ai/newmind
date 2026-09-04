@@ -103,6 +103,17 @@ test('CLI：audit --max-stale 收紧拂拭条款（两段各 4 > 3 → 20 分浮
   assert.equal(gated.code, 1, '20 ≥ 15 → 验收门红灯')
 })
 
+test('CLI：audit --window 收窄/放宽失念窗口（报告反映覆盖值，分项随之变化）', () => {
+  const narrow = run(['audit', fx('drifting-wish.json'), fx('drifting-stream.jsonl'), '--window', '3'])
+  assert.equal(narrow.code, 1, '58 = 失念 24 + 攀缘 24 + 息尘 10 ≥ 30')
+  const report = JSON.parse(narrow.stdout)
+  assert.equal(report.window, 3, '报告.window 反映 CLI 覆盖')
+  assert.deepEqual(report.breakdown, { forget: 24, grasp: 24, cadence: 10 }, '窗口 3：只看尾部 3 连')
+
+  const wider = run(['audit', fx('drifting-wish.json'), fx('drifting-stream.jsonl'), '--window', '9'])
+  assert.equal(JSON.parse(wider.stdout).breakdown.forget, 32, '窗口 9：尾部连击仍是 4（c31–c34）')
+})
+
 test('CLI：audit 输入错误 → 2（文件缺失 / 契约非法）', () => {
   assert.equal(run(['audit', fx('clean-wish.json'), join(tmpdir(), 'zn-missing.jsonl')]).code, 2)
   assert.equal(run(['audit', join(tmpdir(), 'zn-missing-wish.json'), fx('clean-stream.jsonl')]).code, 2)
