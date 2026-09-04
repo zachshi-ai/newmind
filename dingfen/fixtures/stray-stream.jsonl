@@ -1,0 +1,17 @@
+# 定分流 · 权界夹具（验收 A2：配 stray-registry.json，期望 5 调用、写 4、侵入 1（30）+ 越分 1（6）= 36、带「争」、exit 1）
+# 分册：stray 领 src/auth/**（at:10）、tenant 领 src/api/**（at:10），均开放。
+# s1 守分（src/auth/login.js ∈ 自家分）；
+# s2 落入 tenant 开放之分 → 侵入（+30，判定序侵入 > 越分，不再记越分）；
+# s3 docs/plan.md 无他方之分命中、自家分不命中 → 越分（+6）；
+# s4 守分；s5 bash exec 族不入写账。
+# 对照：同流换无 tenant 之分册 → s2 降为越分 → 争值 12、带「定」、exit 0。
+{"type":"tool_call","id":"s1","name":"edit","args":{"path":"src/auth/login.js"},"at":100}
+{"type":"tool_result","id":"s1","name":"edit","args":{"path":"src/auth/login.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"s2","name":"edit","args":{"path":"src/api/notes.md"},"at":110}
+{"type":"tool_result","id":"s2","name":"edit","args":{"path":"src/api/notes.md"},"isError":false,"at":111}
+{"type":"tool_call","id":"s3","name":"edit","args":{"path":"docs/plan.md"},"at":120}
+{"type":"tool_result","id":"s3","name":"edit","args":{"path":"docs/plan.md"},"isError":false,"at":121}
+{"type":"tool_call","id":"s4","name":"edit","args":{"path":"src/auth/token.js"},"at":130}
+{"type":"tool_result","id":"s4","name":"edit","args":{"path":"src/auth/token.js"},"isError":false,"at":131}
+{"type":"tool_call","id":"s5","name":"bash","args":{"command":"npm test"},"at":140}
+{"type":"tool_result","id":"s5","name":"bash","args":{"command":"npm test"},"isError":false,"at":141}

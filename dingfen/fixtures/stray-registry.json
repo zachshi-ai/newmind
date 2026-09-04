@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "claims": [
+    { "id": "stray", "fences": ["src/auth/**"], "at": 10, "releasedAt": null },
+    { "id": "tenant", "fences": ["src/api/**"], "at": 10, "releasedAt": null }
+  ]
+}
