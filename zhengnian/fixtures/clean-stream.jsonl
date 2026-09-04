@@ -1,0 +1,25 @@
+# 正念流 · 干净会话样例（audit --acceptance 的验收夹具）
+# 8 次动作全部在本愿内，第 4 次调用后与第 8 次调用后各有一次拂拭（reanchor 事件）。
+# 期望尘值：0（净）；终验 a1（bash npm test）在流中真实发生 → fulfilled，exit 0。
+{"type":"turn_start","id":"t1","at":300}
+{"type":"tool_call","id":"t1-c1","name":"read","args":{"path":"src/payments/charge.js"},"at":301}
+{"type":"tool_result","id":"t1-c1","name":"read","args":{"path":"src/payments/charge.js"},"isError":false,"at":302}
+{"type":"tool_call","id":"t1-c2","name":"edit","args":{"path":"src/payments/charge.js"},"at":303}
+{"type":"tool_result","id":"t1-c2","name":"edit","args":{"path":"src/payments/charge.js"},"isError":false,"at":304}
+{"type":"tool_call","id":"t1-c3","name":"bash","args":{"command":"npm test"},"at":305}
+{"type":"tool_result","id":"t1-c3","name":"bash","args":{"command":"npm test"},"isError":true,"at":306}
+{"type":"tool_call","id":"t1-c4","name":"read","args":{"path":"tests/payments/duplicate.spec.js"},"at":307}
+{"type":"tool_result","id":"t1-c4","name":"read","args":{"path":"tests/payments/duplicate.spec.js"},"isError":false,"at":308}
+{"type":"reanchor","id":"r1","turn":"t1","at":309}
+{"type":"turn_end","id":"t1","at":310}
+{"type":"turn_start","id":"t2","at":320}
+{"type":"tool_call","id":"t2-c1","name":"read","args":{"path":"src/payments/ledger.js"},"at":321}
+{"type":"tool_result","id":"t2-c1","name":"read","args":{"path":"src/payments/ledger.js"},"isError":false,"at":322}
+{"type":"tool_call","id":"t2-c2","name":"edit","args":{"path":"src/payments/ledger.js"},"at":323}
+{"type":"tool_result","id":"t2-c2","name":"edit","args":{"path":"src/payments/ledger.js"},"isError":false,"at":324}
+{"type":"tool_call","id":"t2-c3","name":"bash","args":{"command":"npm test"},"at":325}
+{"type":"tool_result","id":"t2-c3","name":"bash","args":{"command":"npm test"},"isError":false,"at":326}
+{"type":"tool_call","id":"t2-c4","name":"read","args":{"path":"src/payments/refund.js"},"at":327}
+{"type":"tool_result","id":"t2-c4","name":"read","args":{"path":"src/payments/refund.js"},"isError":false,"at":328}
+{"type":"reanchor","id":"r2","turn":"t2","at":329}
+{"type":"turn_end","id":"t2","at":330}

@@ -1,0 +1,76 @@
+# 正念流 · 蒙尘会话样例（audit 的验收夹具）
+# 20 次本愿内的动作（payments 修复），第 21 次攀缘出界（docs/api.md），
+# 22–27 回到本愿（中间恢复不赦免尾部失念——量的是此刻），
+# 第 28 次再度攀缘（sed -i scripts/ci.sh），29–30 归位，31–34 尾部失念 4 连。
+# 全程无拂拭事件：34 次调用 > maxStale 30，息尘记一段。
+# 期望尘值：失念 32（4×8）+ 攀缘 24（2×12）+ 息尘 10 = 66 → 蒙，exit 1。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","id":"c01","name":"read","args":{"path":"src/payments/charge.js"},"at":101}
+{"type":"tool_result","id":"c01","name":"read","args":{"path":"src/payments/charge.js"},"isError":false,"at":102}
+{"type":"tool_call","id":"c02","name":"bash","args":{"command":"npm test"},"at":103}
+{"type":"tool_result","id":"c02","name":"bash","args":{"command":"npm test"},"isError":true,"at":104}
+{"type":"tool_call","id":"c03","name":"bash","args":{"command":"node scripts/repro.js --filter payment"},"at":105}
+{"type":"tool_result","id":"c03","name":"bash","args":{"command":"node scripts/repro.js --filter payment"},"isError":false,"at":106}
+{"type":"tool_call","id":"c04","name":"edit","args":{"path":"src/payments/charge.js"},"at":107}
+{"type":"tool_result","id":"c04","name":"edit","args":{"path":"src/payments/charge.js"},"isError":false,"at":108}
+{"type":"tool_call","id":"c05","name":"read","args":{"path":"tests/payments/duplicate.spec.js"},"at":109}
+{"type":"tool_result","id":"c05","name":"read","args":{"path":"tests/payments/duplicate.spec.js"},"isError":false,"at":110}
+{"type":"tool_call","id":"c06","name":"bash","args":{"command":"grep -rn \"duplicate\" src/payments/"},"at":111}
+{"type":"tool_result","id":"c06","name":"bash","args":{"command":"grep -rn \"duplicate\" src/payments/"},"isError":false,"at":112}
+{"type":"tool_call","id":"c07","name":"read","args":{"path":"src/payments/refund.js"},"at":113}
+{"type":"tool_result","id":"c07","name":"read","args":{"path":"src/payments/refund.js"},"isError":false,"at":114}
+{"type":"tool_call","id":"c08","name":"edit","args":{"path":"src/payments/ledger.js"},"at":115}
+{"type":"tool_result","id":"c08","name":"edit","args":{"path":"src/payments/ledger.js"},"isError":false,"at":116}
+{"type":"tool_call","id":"c09","name":"bash","args":{"command":"npm test -- --grep payments"},"at":117}
+{"type":"tool_result","id":"c09","name":"bash","args":{"command":"npm test -- --grep payments"},"isError":true,"at":118}
+{"type":"tool_call","id":"c10","name":"read","args":{"path":"src/payments/charge.js"},"at":119}
+{"type":"tool_result","id":"c10","name":"read","args":{"path":"src/payments/charge.js"},"isError":false,"at":120}
+{"type":"tool_call","id":"c11","name":"edit","args":{"path":"src/payments/charge.js"},"at":121}
+{"type":"tool_result","id":"c11","name":"edit","args":{"path":"src/payments/charge.js"},"isError":false,"at":122}
+{"type":"tool_call","id":"c12","name":"bash","args":{"command":"npm test"},"at":123}
+{"type":"tool_result","id":"c12","name":"bash","args":{"command":"npm test"},"isError":false,"at":124}
+{"type":"tool_call","id":"c13","name":"read","args":{"path":"tests/payments/duplicate.spec.js"},"at":125}
+{"type":"tool_result","id":"c13","name":"read","args":{"path":"tests/payments/duplicate.spec.js"},"isError":false,"at":126}
+{"type":"tool_call","id":"c14","name":"bash","args":{"command":"git diff src/payments/"},"at":127}
+{"type":"tool_result","id":"c14","name":"bash","args":{"command":"git diff src/payments/"},"isError":false,"at":128}
+{"type":"tool_call","id":"c15","name":"read","args":{"path":"src/payments/ledger.js"},"at":129}
+{"type":"tool_result","id":"c15","name":"read","args":{"path":"src/payments/ledger.js"},"isError":false,"at":130}
+{"type":"tool_call","id":"c16","name":"edit","args":{"path":"src/payments/refund.js"},"at":131}
+{"type":"tool_result","id":"c16","name":"edit","args":{"path":"src/payments/refund.js"},"isError":false,"at":132}
+{"type":"tool_call","id":"c17","name":"bash","args":{"command":"npm test"},"at":133}
+{"type":"tool_result","id":"c17","name":"bash","args":{"command":"npm test"},"isError":true,"at":134}
+{"type":"tool_call","id":"c18","name":"read","args":{"path":"src/payments/charge.js"},"at":135}
+{"type":"tool_result","id":"c18","name":"read","args":{"path":"src/payments/charge.js"},"isError":false,"at":136}
+{"type":"tool_call","id":"c19","name":"edit","args":{"path":"src/payments/charge.js"},"at":137}
+{"type":"tool_result","id":"c19","name":"edit","args":{"path":"src/payments/charge.js"},"isError":false,"at":138}
+{"type":"tool_call","id":"c20","name":"bash","args":{"command":"npm test"},"at":139}
+{"type":"tool_result","id":"c20","name":"bash","args":{"command":"npm test"},"isError":false,"at":140}
+{"type":"tool_call","id":"c21","name":"edit","args":{"path":"docs/api.md"},"at":141}
+{"type":"tool_result","id":"c21","name":"edit","args":{"path":"docs/api.md"},"isError":false,"at":142}
+{"type":"tool_call","id":"c22","name":"read","args":{"path":"src/payments/charge.js"},"at":143}
+{"type":"tool_result","id":"c22","name":"read","args":{"path":"src/payments/charge.js"},"isError":false,"at":144}
+{"type":"tool_call","id":"c23","name":"edit","args":{"path":"src/payments/charge.js"},"at":145}
+{"type":"tool_result","id":"c23","name":"edit","args":{"path":"src/payments/charge.js"},"isError":false,"at":146}
+{"type":"tool_call","id":"c24","name":"bash","args":{"command":"npm test"},"at":147}
+{"type":"tool_result","id":"c24","name":"bash","args":{"command":"npm test"},"isError":true,"at":148}
+{"type":"tool_call","id":"c25","name":"read","args":{"path":"tests/payments/duplicate.spec.js"},"at":149}
+{"type":"tool_result","id":"c25","name":"read","args":{"path":"tests/payments/duplicate.spec.js"},"isError":false,"at":150}
+{"type":"tool_call","id":"c26","name":"edit","args":{"path":"src/payments/ledger.js"},"at":151}
+{"type":"tool_result","id":"c26","name":"edit","args":{"path":"src/payments/ledger.js"},"isError":false,"at":152}
+{"type":"tool_call","id":"c27","name":"bash","args":{"command":"npm test"},"at":153}
+{"type":"tool_result","id":"c27","name":"bash","args":{"command":"npm test"},"isError":false,"at":154}
+{"type":"tool_call","id":"c28","name":"bash","args":{"command":"sed -i 's/timeout=30/timeout=60/' scripts/ci.sh"},"at":155}
+{"type":"tool_result","id":"c28","name":"bash","args":{"command":"sed -i 's/timeout=30/timeout=60/' scripts/ci.sh"},"isError":false,"at":156}
+{"type":"tool_call","id":"c29","name":"read","args":{"path":"src/payments/refund.js"},"at":157}
+{"type":"tool_result","id":"c29","name":"read","args":{"path":"src/payments/refund.js"},"isError":false,"at":158}
+{"type":"tool_call","id":"c30","name":"bash","args":{"command":"npm test"},"at":159}
+{"type":"tool_result","id":"c30","name":"bash","args":{"command":"npm test"},"isError":false,"at":160}
+{"type":"tool_call","id":"c31","name":"read","args":{"path":"README.md"},"at":161}
+{"type":"tool_result","id":"c31","name":"read","args":{"path":"README.md"},"isError":false,"at":162}
+{"type":"tool_call","id":"c32","name":"bash","args":{"command":"npm run lint"},"at":163}
+{"type":"tool_result","id":"c32","name":"bash","args":{"command":"npm run lint"},"isError":false,"at":164}
+{"type":"tool_call","id":"c33","name":"read","args":{"path":"CHANGELOG.md"},"at":165}
+{"type":"tool_result","id":"c33","name":"read","args":{"path":"CHANGELOG.md"},"isError":false,"at":166}
+{"type":"tool_call","id":"c34","name":"bash","args":{"command":"node scripts/gen-docs.js"},"at":167}
+{"type":"tool_result","id":"c34","name":"bash","args":{"command":"node scripts/gen-docs.js"},"isError":false,"at":168}
+{"type":"turn_end","id":"t1","at":169}

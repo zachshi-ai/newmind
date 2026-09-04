@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "id": "w-cross",
+  "wish": "修复 src/user.js 的 TypeError，让 npm test 全绿",
+  "anchors": {
+    "keywords": ["user", "test"],
+    "paths": ["src/user.js"]
+  },
+  "scope": {
+    "allowRoots": ["src/"]
+  },
+  "acceptance": [
+    { "ref": "a1", "name": "bash", "argsContains": "npm test" }
+  ],
+  "window": 10
+}
