@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "id": "w-002",
+  "wish": "修复 payments 模块的重复扣款，并让回归测试全绿",
+  "anchors": {
+    "keywords": ["payment", "duplicate", "扣款", "test"],
+    "paths": ["src/payments/"]
+  },
+  "scope": {
+    "allowRoots": ["src/payments/", "tests/payments/"]
+  },
+  "acceptance": [
+    { "ref": "a1", "name": "bash", "argsContains": "npm test" }
+  ],
+  "window": 10
+}
