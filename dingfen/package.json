@@ -1,0 +1,40 @@
+{
+  "name": "dingfen-dsh",
+  "version": "0.1.0",
+  "description": "定分 Dingfen — DeepSeek Harness 的封界层：开工领分（分册）/ 写前看界碑块 / 收工审争（争写·侵入·越分三宗对账，多流离线重放）/ 争值门禁。零 LLM 调用的封界式插件（结构性零监听 pre-execute）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/dingfen.js",
+  "bin": {
+    "dingfen": "src/bin/dingfen.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-reliability",
+    "multi-agent",
+    "concurrency",
+    "write-contention",
+    "lost-update",
+    "ownership-registry",
+    "stream-audit",
+    "postmortem"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
