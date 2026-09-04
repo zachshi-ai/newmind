@@ -1,0 +1,33 @@
+{
+  "name": "zhizhi-dsh",
+  "version": "0.1.0",
+  "description": "知止 Zhizhi — DeepSeek Harness 的行为节制层：止损 / 先读后写 / 完成核验。零 LLM 调用的确定性约束门 + 离线审计 CLI。",
+  "type": "module",
+  "main": "src/plugin/zhizhi.js",
+  "bin": {
+    "zhizhi": "src/bin/zhizhi.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

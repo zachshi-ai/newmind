@@ -1,0 +1,22 @@
+# zhizhi stream · 样例会话（whatif 审计用）
+# 一个典型的失控下午：Agent 在死循环里打转、盲写文件、然后没跑任何验证就"完成"了。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","name":"bash","args":{"command":"npm test"},"at":101}
+{"type":"tool_result","name":"bash","args":{"command":"npm test"},"isError":true,"errorDigest":"TypeError: Cannot read properties of undefined (reading 'id') at parseUser","at":102}
+{"type":"tool_call","name":"bash","args":{"command":"npm test"},"at":110}
+{"type":"tool_result","name":"bash","args":{"command":"npm test"},"isError":true,"errorDigest":"TypeError: Cannot read properties of undefined (reading 'id') at parseUser","at":111}
+{"type":"tool_call","name":"bash","args":{"command":"npm test"},"at":120}
+{"type":"tool_result","name":"bash","args":{"command":"npm test"},"isError":true,"errorDigest":"TypeError: Cannot read properties of undefined (reading 'id') at parseUser","at":121}
+{"type":"tool_call","name":"bash","args":{"command":"npm test"},"at":130}
+{"type":"tool_result","name":"bash","args":{"command":"npm test"},"isError":true,"errorDigest":"TypeError: Cannot read properties of undefined (reading 'id') at parseUser","at":131}
+{"type":"tool_call","name":"write","args":{"path":"src/patch.js"},"at":140}
+{"type":"tool_result","name":"write","args":{"path":"src/patch.js"},"isError":false,"at":141}
+{"type":"turn_end","id":"t1","at":149}
+{"type":"turn_start","id":"t2","at":200}
+{"type":"tool_call","name":"read","args":{"path":"src/user.js"},"at":201}
+{"type":"tool_result","name":"read","args":{"path":"src/user.js"},"isError":false,"at":202}
+{"type":"tool_call","name":"edit","args":{"path":"src/user.js"},"at":210}
+{"type":"tool_result","name":"edit","args":{"path":"src/user.js"},"isError":false,"at":211}
+{"type":"tool_call","name":"bash","args":{"command":"npm test"},"at":220}
+{"type":"tool_result","name":"bash","args":{"command":"npm test"},"isError":false,"at":230}
+{"type":"turn_end","id":"t2","at":240}
