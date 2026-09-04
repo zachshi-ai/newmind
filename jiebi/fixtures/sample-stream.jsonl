@@ -1,0 +1,23 @@
+# jiebi stream · 样例会话（reconcile 与 audit 的验收夹具）
+# 两个回合：t1 锁死"缓存"假设连跑四次同款探针（对比审计应记 monoculture）；
+# t2 修正方向：复现探针 → 读码 → 修复 → 验证，全部带证据引用（对账应逐条 verified）。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","id":"t1-c1","name":"bash","args":{"command":"npm test"},"at":101}
+{"type":"tool_result","id":"t1-c1","name":"bash","args":{"command":"npm test"},"isError":true,"errorDigest":"TypeError: Cannot read properties of undefined (reading 'id') at parseUser","at":102}
+{"type":"tool_call","id":"t1-c2","name":"bash","args":{"command":"npm test"},"at":110}
+{"type":"tool_result","id":"t1-c2","name":"bash","args":{"command":"npm test"},"isError":true,"at":111}
+{"type":"tool_call","id":"t1-c3","name":"bash","args":{"command":"npm test"},"at":120}
+{"type":"tool_result","id":"t1-c3","name":"bash","args":{"command":"npm test"},"isError":true,"at":121}
+{"type":"tool_call","id":"t1-c4","name":"bash","args":{"command":"npm test"},"at":130}
+{"type":"tool_result","id":"t1-c4","name":"bash","args":{"command":"npm test"},"isError":true,"at":131}
+{"type":"turn_end","id":"t1","at":139}
+{"type":"turn_start","id":"t2","at":200}
+{"type":"tool_call","id":"t2-c1","name":"bash","args":{"command":"node scripts/repro.js"},"at":201}
+{"type":"tool_result","id":"t2-c1","name":"bash","args":{"command":"node scripts/repro.js"},"isError":true,"errorDigest":"TypeError: user.id is undefined at parseUser","at":202}
+{"type":"tool_call","id":"t2-c2","name":"read","args":{"path":"src/user.js"},"at":210}
+{"type":"tool_result","id":"t2-c2","name":"read","args":{"path":"src/user.js"},"isError":false,"at":211}
+{"type":"tool_call","id":"t2-c3","name":"edit","args":{"path":"src/user.js"},"at":220}
+{"type":"tool_result","id":"t2-c3","name":"edit","args":{"path":"src/user.js"},"isError":false,"at":221}
+{"type":"tool_call","id":"t2-c4","name":"bash","args":{"command":"npm test"},"at":230}
+{"type":"tool_result","id":"t2-c4","name":"bash","args":{"command":"npm test"},"isError":false,"at":231}
+{"type":"turn_end","id":"t2","at":239}
