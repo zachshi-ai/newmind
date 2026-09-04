@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "id": "d-001",
+  "kind": "diagnosis",
+  "question": "测试失败的根因是什么？",
+  "alternatives": [
+    { "name": "缓存未失效" }
+  ],
+  "disconfirming": [],
+  "verdict": {
+    "choice": "缓存问题"
+  }
+}

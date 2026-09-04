@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "d-002",
+  "kind": "diagnosis",
+  "question": "npm test 连续失败的根因是什么？",
+  "alternatives": [
+    {
+      "name": "序列化层类型错误",
+      "steelman": "复现脚本稳定报 user.id undefined，栈直指 parseUser，且时间线与依赖升级吻合——它是能解释全部现象的最短路径。",
+      "killCondition": "若最小复现无法稳定复现该 TypeError，或修复类型后全量测试仍失败，则此案作废。",
+      "evidence": [
+        { "ref": "t2-c1", "expect": "fail", "note": "复现探针按预期失败，栈定位 parseUser" },
+        { "ref": "t2-c4", "expect": "success", "note": "修复后全量测试通过" }
+      ]
+    },
+    {
+      "name": "缓存未失效",
+      "steelman": "npm test 连续四次同样失败，若为陈旧构建缓存，清缓存应能恢复——这是最常见的低级原因，值得先排除。",
+      "killCondition": "若直接读码即见缺陷且失败与任何缓存层无关（同输入必现），则此案作废。",
+      "evidence": [
+        { "ref": "t1-c1", "expect": "fail", "note": "连败探针：同错必现，与缓存无关" }
+      ]
+    }
+  ],
+  "disconfirming": [
+    { "ref": "t2-c2", "note": "读码显示 parseUser 对缺失字段无守卫——与「缓存」解释相左，直接支持序列化假设。" }
+  ],
+  "verdict": {
+    "choice": "序列化层类型错误",
+    "weights": "复现脚本把故障从「整个测试套件」收敛到「单个函数」，证据链最短；缓存案无法解释为何读码直接可见缺陷。",
+    "falsifiable": "若新增一个绕过 parseUser 的调用路径仍报同样 TypeError，则本结论作废，重开账本。"
+  }
+}
