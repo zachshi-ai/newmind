@@ -1,0 +1,16 @@
+# 定分流 · 守分基线夹具（验收 A2：期望 6 调用、写 2、争值 0、带「定」、exit 0）
+# 单会话基线：无流间对手、无分册 → 无从相争。c1 bash 失败（exec 族不入写账）；
+# c3/c5 两笔 edit 皆落自家径——守分之写，无话。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","id":"f1","name":"bash","args":{"command":"npm test"},"at":100}
+{"type":"tool_result","id":"f1","name":"bash","args":{"command":"npm test"},"isError":true,"at":101}
+{"type":"tool_call","id":"f2","name":"read","args":{"path":"src/auth/login.js"},"at":102}
+{"type":"tool_result","id":"f2","name":"read","args":{"path":"src/auth/login.js"},"isError":false,"at":103}
+{"type":"tool_call","id":"f3","name":"edit","args":{"path":"src/auth/login.js"},"at":104}
+{"type":"tool_result","id":"f3","name":"edit","args":{"path":"src/auth/login.js"},"isError":false,"at":105}
+{"type":"tool_call","id":"f4","name":"read","args":{"path":"src/auth/token.js"},"at":106}
+{"type":"tool_result","id":"f4","name":"read","args":{"path":"src/auth/token.js"},"isError":false,"at":107}
+{"type":"tool_call","id":"f5","name":"edit","args":{"path":"src/auth/token.js"},"at":108}
+{"type":"tool_result","id":"f5","name":"edit","args":{"path":"src/auth/token.js"},"isError":false,"at":109}
+{"type":"tool_call","id":"f6","name":"bash","args":{"command":"npm test"},"at":110}
+{"type":"tool_result","id":"f6","name":"bash","args":{"command":"npm test"},"isError":false,"at":111}

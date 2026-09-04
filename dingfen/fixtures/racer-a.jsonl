@@ -1,0 +1,16 @@
+# 定分流 · 交错夹具·甲方（验收 A2：与 racer-b 合审，期望 11 调用、写 8、争写 2 处 = cap 60、共写 1、带「争」、exit 1）
+# core/auth.js：A@100 → B@120 → A@140 —— B 落在 A 相邻两写之间 → 争写 1 处（有序对 racer-a × racer-b）。
+# src/api/router.js：A@200 → B@220 → A@260 —— 同构，再记 1 处。两处 ×30 = 60（恰达 cap）。
+# HANDOFF.md：A@300 → B@340 —— 先后接手，共写，不计分。a6 bash 是 exec 族，不入写账。
+{"type":"tool_call","id":"a1","name":"edit","args":{"path":"core/auth.js"},"at":100}
+{"type":"tool_result","id":"a1","name":"edit","args":{"path":"core/auth.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"a2","name":"edit","args":{"path":"core/auth.js"},"at":140}
+{"type":"tool_result","id":"a2","name":"edit","args":{"path":"core/auth.js"},"isError":false,"at":141}
+{"type":"tool_call","id":"a3","name":"edit","args":{"path":"src/api/router.js"},"at":200}
+{"type":"tool_result","id":"a3","name":"edit","args":{"path":"src/api/router.js"},"isError":false,"at":201}
+{"type":"tool_call","id":"a4","name":"edit","args":{"path":"src/api/router.js"},"at":260}
+{"type":"tool_result","id":"a4","name":"edit","args":{"path":"src/api/router.js"},"isError":false,"at":261}
+{"type":"tool_call","id":"a5","name":"edit","args":{"path":"HANDOFF.md"},"at":300}
+{"type":"tool_result","id":"a5","name":"edit","args":{"path":"HANDOFF.md"},"isError":false,"at":301}
+{"type":"tool_call","id":"a6","name":"bash","args":{"command":"npm test"},"at":320}
+{"type":"tool_result","id":"a6","name":"bash","args":{"command":"npm test"},"isError":false,"at":321}

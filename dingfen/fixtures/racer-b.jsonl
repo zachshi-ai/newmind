@@ -1,0 +1,13 @@
+# 定分流 · 交错夹具·乙方（与 racer-a 合审，期望值见 racer-a 头注释）
+# b1 read（观察族，不入写账）；b2/b3 两次闯入 A 的写序之间（争写的另一只手）；
+# b4 HANDOFF.md 在 A@300 之后接手（共写，合法）；b5 bash exec 族。
+{"type":"tool_call","id":"b1","name":"read","args":{"path":"core/auth.js"},"at":110}
+{"type":"tool_result","id":"b1","name":"read","args":{"path":"core/auth.js"},"isError":false,"at":111}
+{"type":"tool_call","id":"b2","name":"edit","args":{"path":"core/auth.js"},"at":120}
+{"type":"tool_result","id":"b2","name":"edit","args":{"path":"core/auth.js"},"isError":false,"at":121}
+{"type":"tool_call","id":"b3","name":"edit","args":{"path":"src/api/router.js"},"at":220}
+{"type":"tool_result","id":"b3","name":"edit","args":{"path":"src/api/router.js"},"isError":false,"at":221}
+{"type":"tool_call","id":"b4","name":"edit","args":{"path":"HANDOFF.md"},"at":340}
+{"type":"tool_result","id":"b4","name":"edit","args":{"path":"HANDOFF.md"},"isError":false,"at":341}
+{"type":"tool_call","id":"b5","name":"bash","args":{"command":"npm test"},"at":360}
+{"type":"tool_result","id":"b5","name":"bash","args":{"command":"npm test"},"isError":false,"at":361}
