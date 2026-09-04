@@ -1,0 +1,38 @@
+{
+  "name": "lunshi-dsh",
+  "version": "0.1.0",
+  "description": "论世 Lunshi — DeepSeek Harness 的渠道权界层：渠道账（主/己/物三源世牌登记）/ 越词表（显式可配的涉命块检出）/ 僭行对账（参数逐字引用数据渠道越词）/ 越权值（染+僭的门禁分）/ 诫块（接缝处逐字节确定的权界清单）。零 LLM 调用的权界式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/lunshi.js",
+  "bin": {
+    "lunshi": "src/bin/lunshi.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-security",
+    "prompt-injection",
+    "content-provenance",
+    "trust-boundary",
+    "channel-authority",
+    "stream-audit"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
