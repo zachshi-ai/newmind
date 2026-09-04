@@ -1,0 +1,28 @@
+# 九变流 · 游骑开源样例（验收夹具 A2：期望失机值 40、带「胶」、变 1、游骑 2、exit 1）
+# c1 文件势变悬账未清，Agent 连开新战线：两段游骑（各 3 个全流首现的非观察对象，+20×2=40），
+# 每段都被一次观察打断（c5 读无关文档、c9 终于再察悬账对象）。
+# c9 再察 session.js → 悬账归还 → 势变裁决「变」；c10 有据修复成功。
+{"type":"turn_start","id":"t1","at":600}
+{"type":"tool_call","id":"t1-c1","name":"edit","args":{"path":"src/auth/session.js"},"at":601}
+{"type":"tool_result","id":"t1-c1","name":"edit","args":{"path":"src/auth/session.js"},"isError":true,"at":602}
+{"type":"tool_call","id":"t1-c2","name":"edit","args":{"path":"src/helpers/validate.js"},"at":603}
+{"type":"tool_result","id":"t1-c2","name":"edit","args":{"path":"src/helpers/validate.js"},"isError":false,"at":604}
+{"type":"tool_call","id":"t1-c3","name":"edit","args":{"path":"src/helpers/format.js"},"at":605}
+{"type":"tool_result","id":"t1-c3","name":"edit","args":{"path":"src/helpers/format.js"},"isError":false,"at":606}
+{"type":"tool_call","id":"t1-c4","name":"bash","args":{"command":"node scripts/scratch.js"},"at":607}
+{"type":"tool_result","id":"t1-c4","name":"bash","args":{"command":"node scripts/scratch.js"},"isError":false,"at":608}
+{"type":"tool_call","id":"t1-c5","name":"read","args":{"path":"docs/oncall.md"},"at":609}
+{"type":"tool_result","id":"t1-c5","name":"read","args":{"path":"docs/oncall.md"},"isError":false,"at":610}
+{"type":"turn_end","id":"t1","at":611}
+{"type":"turn_start","id":"t2","at":620}
+{"type":"tool_call","id":"t2-c1","name":"edit","args":{"path":"src/helpers/cleanup.js"},"at":621}
+{"type":"tool_result","id":"t2-c1","name":"edit","args":{"path":"src/helpers/cleanup.js"},"isError":false,"at":622}
+{"type":"tool_call","id":"t2-c2","name":"edit","args":{"path":"src/helpers/migrate.js"},"at":623}
+{"type":"tool_result","id":"t2-c2","name":"edit","args":{"path":"src/helpers/migrate.js"},"isError":false,"at":624}
+{"type":"tool_call","id":"t2-c3","name":"edit","args":{"path":"src/helpers/retry.js"},"at":625}
+{"type":"tool_result","id":"t2-c3","name":"edit","args":{"path":"src/helpers/retry.js"},"isError":false,"at":626}
+{"type":"tool_call","id":"t2-c4","name":"read","args":{"path":"src/auth/session.js"},"at":627}
+{"type":"tool_result","id":"t2-c4","name":"read","args":{"path":"src/auth/session.js"},"isError":false,"at":628}
+{"type":"tool_call","id":"t2-c5","name":"edit","args":{"path":"src/auth/session.js"},"at":629}
+{"type":"tool_result","id":"t2-c5","name":"edit","args":{"path":"src/auth/session.js"},"isError":false,"at":630}
+{"type":"turn_end","id":"t2","at":631}

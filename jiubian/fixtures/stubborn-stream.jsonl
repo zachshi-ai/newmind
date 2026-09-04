@@ -1,0 +1,21 @@
+# 九变流 · 盲捶死磕样例（验收夹具 A2：期望失机值 36、带「胶」、变 1、离 1、exit 1）
+# npm test 连败 5 次逐字相同，中间零再察：盲捶链 4 记（同对象一链，首记免分，3×12=36）。
+# c5 的势变：c6 异途改码、c7 有据重试 → 变；c7 的势变：流终无重试（c: 对象）→ 离。
+{"type":"turn_start","id":"t1","at":500}
+{"type":"tool_call","id":"t1-c1","name":"bash","args":{"command":"npm test"},"at":501}
+{"type":"tool_result","id":"t1-c1","name":"bash","args":{"command":"npm test"},"isError":true,"at":502}
+{"type":"tool_call","id":"t1-c2","name":"bash","args":{"command":"npm test"},"at":503}
+{"type":"tool_result","id":"t1-c2","name":"bash","args":{"command":"npm test"},"isError":true,"at":504}
+{"type":"tool_call","id":"t1-c3","name":"bash","args":{"command":"npm test"},"at":505}
+{"type":"tool_result","id":"t1-c3","name":"bash","args":{"command":"npm test"},"isError":true,"at":506}
+{"type":"tool_call","id":"t1-c4","name":"bash","args":{"command":"npm test"},"at":507}
+{"type":"tool_result","id":"t1-c4","name":"bash","args":{"command":"npm test"},"isError":true,"at":508}
+{"type":"tool_call","id":"t1-c5","name":"bash","args":{"command":"npm test"},"at":509}
+{"type":"tool_result","id":"t1-c5","name":"bash","args":{"command":"npm test"},"isError":true,"at":510}
+{"type":"turn_end","id":"t1","at":511}
+{"type":"turn_start","id":"t2","at":520}
+{"type":"tool_call","id":"t2-c1","name":"edit","args":{"path":"src/patches/quickfix.js"},"at":521}
+{"type":"tool_result","id":"t2-c1","name":"edit","args":{"path":"src/patches/quickfix.js"},"isError":false,"at":522}
+{"type":"tool_call","id":"t2-c2","name":"bash","args":{"command":"npm test"},"at":523}
+{"type":"tool_result","id":"t2-c2","name":"bash","args":{"command":"npm test"},"isError":true,"at":524}
+{"type":"turn_end","id":"t2","at":525}
