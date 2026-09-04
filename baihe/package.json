@@ -1,0 +1,38 @@
+{
+  "name": "baihe-dsh",
+  "version": "0.1.0",
+  "description": "捭阖 Baihe — DeepSeek Harness 的出域权界层：阖籍（敏感物清单，显式登记与默认形表取并集）/ 境账（出境调用逐案记账：出境、试出、内域档、外域泄物）/ 溃值（外域泄物 25/案、cap 60 的确定性泄密分，分带 密/疏/溃）/ 阖门块（接缝处逐字节确定的泄物点名）。零 LLM 调用的权界式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/baihe.js",
+  "bin": {
+    "baihe": "src/bin/baihe.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "secret-leakage",
+    "data-exfiltration",
+    "dlp",
+    "owasp-llm06",
+    "sensitive-data",
+    "audit"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
