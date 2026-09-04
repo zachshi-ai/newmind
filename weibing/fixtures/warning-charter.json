@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "id": "t-warn",
+  "brief": "把任何遗漏的边角完善掉，然后彻底看看报告",
+  "paths": ["support/"],
+  "scope": { "allowRoots": ["support/"], "allowAll": false },
+  "acceptance": [
+    { "ref": "a1", "name": "bash", "argsContains": "node --version" }
+  ],
+  "stop": { "maxSteps": 50 }
+}

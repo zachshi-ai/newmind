@@ -1,0 +1,2 @@
+coverage: 100%
+本文件是 clean-charter 的终验 artifact 存在性证据。

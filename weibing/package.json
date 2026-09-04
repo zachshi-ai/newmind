@@ -1,0 +1,38 @@
+{
+  "name": "weibing-dsh",
+  "version": "0.1.0",
+  "description": "治未病 Weibing — DeepSeek Harness 的开工体检层：任务书与环境在 t=0 过四诊（望闻问切），病灶计病值、险兆救其萌芽、医嘱逐条开方。零 LLM 调用的诊断式插件（结构性零监听）+ 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/weibing.js",
+  "bin": {
+    "weibing": "src/bin/weibing.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-reliability",
+    "preflight",
+    "premortem",
+    "task-intake",
+    "prevention",
+    "shift-left"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
