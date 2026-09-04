@@ -1,0 +1,22 @@
+# 九变流 · 健康应变样例（验收夹具 A2：期望失机值 0、带「合」、变 2、exit 0）
+# 两次势变都得到恰当回应：失败 → 先再察 → 有据重试。首触即再察，盲捶与游骑均为 0。
+# c1 bash npm test 失败（c: 势变）：c2 观察、c3 改码（异途动作），c4 重试 → 变；
+# c2 edit refund 失败（p: 势变）：c3 观察（再察）→ 变。
+{"type":"turn_start","id":"t1","at":400}
+{"type":"tool_call","id":"t1-c1","name":"bash","args":{"command":"npm test"},"at":401}
+{"type":"tool_result","id":"t1-c1","name":"bash","args":{"command":"npm test"},"isError":true,"at":402}
+{"type":"tool_call","id":"t1-c2","name":"read","args":{"path":"tests/payments/fee.spec.js"},"at":403}
+{"type":"tool_result","id":"t1-c2","name":"read","args":{"path":"tests/payments/fee.spec.js"},"isError":false,"at":404}
+{"type":"tool_call","id":"t1-c3","name":"edit","args":{"path":"src/payments/fee.js"},"at":405}
+{"type":"tool_result","id":"t1-c3","name":"edit","args":{"path":"src/payments/fee.js"},"isError":false,"at":406}
+{"type":"tool_call","id":"t1-c4","name":"bash","args":{"command":"npm test"},"at":407}
+{"type":"tool_result","id":"t1-c4","name":"bash","args":{"command":"npm test"},"isError":false,"at":408}
+{"type":"turn_end","id":"t1","at":409}
+{"type":"turn_start","id":"t2","at":420}
+{"type":"tool_call","id":"t2-c1","name":"edit","args":{"path":"src/payments/refund.js"},"at":421}
+{"type":"tool_result","id":"t2-c1","name":"edit","args":{"path":"src/payments/refund.js"},"isError":true,"at":422}
+{"type":"tool_call","id":"t2-c2","name":"read","args":{"path":"src/payments/refund.js"},"at":423}
+{"type":"tool_result","id":"t2-c2","name":"read","args":{"path":"src/payments/refund.js"},"isError":false,"at":424}
+{"type":"tool_call","id":"t2-c3","name":"edit","args":{"path":"src/payments/refund.js"},"at":425}
+{"type":"tool_result","id":"t2-c3","name":"edit","args":{"path":"src/payments/refund.js"},"isError":false,"at":426}
+{"type":"turn_end","id":"t2","at":427}
