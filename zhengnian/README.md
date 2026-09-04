@@ -121,10 +121,10 @@ Agent 侧协议见 [SKILL.md](SKILL.md)：长任务开工先立契约，完成�
 
 ## 测试与验收
 
-74 个测试（核心 52 + CLI 11 + 真实管道集成 11）全绿；集成测试挂在 npm 官方 `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 的真实执行管道上。验收标准表与实测输出见 [docs/04-acceptance.md](docs/04-acceptance.md)。
+75 个测试（核心 51 + CLI 13 + 真实管道集成 11）全绿；集成测试挂在 npm 官方 `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 的真实执行管道上。验收标准表与实测输出见 [docs/04-acceptance.md](docs/04-acceptance.md)。
 
 ```bash
-npm install && npm test   # 74 tests, 74 pass
+npm install && npm test   # 75 tests, 75 pass
 ```
 
 ## 仓库结构

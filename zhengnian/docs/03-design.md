@@ -87,7 +87,7 @@ schema 校验（`zhengnian contract`）分项：
 ### 攀缘的确定性定义
 
 - **写类动作**：结构化写工具（`write / edit / create / update / delete / mkdir / touch / move / rename / patch / apply_patch / str_replace / multiedit / notebook_edit`，大小写不敏感）＋ shell 类工具（`bash / shell / terminal / exec`）中命令命中变更模式（重定向 `>`/`>>`、`tee`、`sed -i`、`dd`、`cp`、`mv`、`rm`、`chmod`、`chown`、`ln`、`mkdir`、`touch`、`truncate`、`git add/commit/restore/clean/reset --hard/checkout --`）；
-- **主路径提取**：结构化工具取 `args.path / file_path / file / target / filename` 第一个存在的字符串；shell 取命令中第一个可提取的路径 token（重定向目标、tee 目标、变更命令的首个非选项参数）。**提取失败不罚**——宁漏勿错，计入 `unparsedWrites`；
+- **主路径提取**：结构化工具取 `args.path / file_path / file / target / filename` 第一个存在的字符串；shell 按变更形态取"写到哪里"的那个 token——重定向目标、tee 目标、cp/mv 的目的端、`sed -i` 的行尾文件、rm/chmod/mkdir 等单目标变更器跳过选项后的首个参数；git 变更（add/commit/restore/clean/reset/checkout）没有单一主路径，不硬提。**提取失败不罚**——宁漏勿错，计入 `unparsedWrites`；
 - **愿界判定**：路径与 `allowRoots` 都做归一化（剥 `./`、统一 `/`）后做前缀匹配；愿界以相对路径书写，绝对路径视为界外。
 
 ### 息尘的确定性定义
