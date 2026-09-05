@@ -1,0 +1,12 @@
+# 法仪流 · TDD 无罪夹具（验收 A4/A7：期望 3 调用、器动 1、曲尺 0、虚器 0、废尺 0，枉值 0、带「直」、exit 0）
+# test/a.test.js 是持性器径（默认形 **/test/** 命中），器写在红验之前——窗外，只记器动；
+# 窗（红 110 → 绿 130] 内唯一成功写是实测面 src/adapter.js（I=0）→ 无归因对象；
+# 末笔实测写 120 < 绿验 130 → 照末已绿，无废尺。
+{"type":"tool_call","id":"t1","name":"write","args":{"path":"test/a.test.js","content":"it('parses', () => {})"},"at":100}
+{"type":"tool_result","id":"t1","name":"write","args":{"path":"test/a.test.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"t2","name":"bash","args":{"command":"npm test"},"at":110}
+{"type":"tool_result","id":"t2","name":"bash","args":{"command":"npm test"},"isError":true,"at":111}
+{"type":"tool_call","id":"t3","name":"write","args":{"path":"src/adapter.js","content":"export const parse = () => 1"},"at":120}
+{"type":"tool_result","id":"t3","name":"write","args":{"path":"src/adapter.js"},"isError":false,"at":121}
+{"type":"tool_call","id":"t4","name":"bash","args":{"command":"npm test"},"at":130}
+{"type":"tool_result","id":"t4","name":"bash","args":{"command":"npm test"},"isError":false,"at":131}

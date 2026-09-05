@@ -1,0 +1,8 @@
+# 法仪流 · 废尺夹具（验收 A6/A7/A10：期望 3 调用、写 2、曲尺 0、虚器 0、废尺 1 案 = 30，枉值 30、带「枉」、exit 1）
+# 末笔实测写 src/b.js @120 之后无任何验尺事件——交付态从未被尺照过，绿是 110 的旧绿。
+{"type":"tool_call","id":"s1","name":"write","args":{"path":"src/a.js","content":"export const a = 1"},"at":100}
+{"type":"tool_result","id":"s1","name":"write","args":{"path":"src/a.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"s2","name":"bash","args":{"command":"npm test"},"at":110}
+{"type":"tool_result","id":"s2","name":"bash","args":{"command":"npm test"},"isError":false,"at":111}
+{"type":"tool_call","id":"s3","name":"write","args":{"path":"src/b.js","content":"export const b = 2"},"at":120}
+{"type":"tool_result","id":"s3","name":"write","args":{"path":"src/b.js"},"isError":false,"at":121}

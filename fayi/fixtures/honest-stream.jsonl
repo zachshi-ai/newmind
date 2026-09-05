@@ -1,0 +1,10 @@
+# 法仪流 · 尾红夹具（验收 A6/A10：期望 3 调用、写 2、废尺 0、尾红注记 1（不计分），枉值 0、带「直」、exit 0）
+# 末笔实测写 120 之后验尺为红（130）——尺新而话诚，红是任务的失败，不是尺的腐败。
+{"type":"tool_call","id":"r1","name":"write","args":{"path":"src/a.js","content":"export const a = 1"},"at":100}
+{"type":"tool_result","id":"r1","name":"write","args":{"path":"src/a.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"r2","name":"bash","args":{"command":"npm test"},"at":110}
+{"type":"tool_result","id":"r2","name":"bash","args":{"command":"npm test"},"isError":false,"at":111}
+{"type":"tool_call","id":"r3","name":"write","args":{"path":"src/b.js","content":"export const b = 2"},"at":120}
+{"type":"tool_result","id":"r3","name":"write","args":{"path":"src/b.js"},"isError":false,"at":121}
+{"type":"tool_call","id":"r4","name":"bash","args":{"command":"npm test"},"at":130}
+{"type":"tool_result","id":"r4","name":"bash","args":{"command":"npm test"},"isError":true,"at":131}
