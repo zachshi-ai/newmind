@@ -86,11 +86,13 @@
 
 ```
 words(cmd)：命令串小写 → 按 /[^a-z0-9_./-]+/ 切词 → 去首部连字符（-rf→rf、--force→force）
-           → 滤掉长度 <2 的词与纯数字词
+           → 对含 "/" 的词再按 "/" 切路径段（/tmp/src-mirror/ → tmp、src-mirror）
+           → 汇总滤掉长度 <2 的词与纯数字词
 相交：words(备形命令) ∩ words(险行命令) ≠ ∅
 ```
 
 - 例：`cp -r build /tmp/build-shadow` 之词 {cp, build, tmp, build-shadow} 与 `rm -rf build/` 之词 {rm, rf, build} 相交于 `build` → 影随其物，赦；
+- `rsync -a src/ /tmp/src-mirror/` 之词 {rsync, src, tmp, src-mirror} 与 `rm -rf src/unused.js` 之词 {rm, rf, src, unused.js} 相交于 `src` → 赦；
 - `cp src/a.js /tmp` 之词 {cp, src, a.js, tmp} 与 `rm -rf data-legacy/` 之词 {rm, rf, data-legacy} 不相交 → 不赦（备的是别的物）；
 - 大小写归一（lowercase）：宁可放过，不可错罚；
 - 词法相交是**粗而偏宽**的关系判定：`git commit -m "fix login"` 之词使 `rm -rf login-cache` 蒙赦的情形存在——存史本就全族全局，此类误差落在宽侧，与宁纵勿诬同向。
@@ -99,9 +101,10 @@ words(cmd)：命令串小写 → 按 /[^a-z0-9_./-]+/ 切词 → 去首部连字
 
 ```
 对每个 exec 族调用 c（命令串 = argsText）：
-  0. 非工具族 / 无命中           → 不入账
+  0. 非工具族 / 无命中           → 不入账（无命中的干 clean 在此登记断史之备）
   1. isError === true            → 虚险（未遂注记，0 分）
-  2. 含干跑词 / 干 clean          → 干跑事件（0 分；为其命中族登记在先之备）
+  2. 含干跑词                    → 干跑事件（0 分；为其命中族登记在先之备；clean-f 命中者改登记干 clean——范围预演只赦 clean）
+     （干 clean 的判定以「无其他险形命中」为界：复合命令里的真险照常落案，不被 clean 前缀带走）
   3. 含款词（册 exempt ∪ CLI）    → 落款（0 分；任务方声明权）
   4. 逐命中族查备：
        wipe / clean-f 之 sever   → 在先干跑(该族) ∨ 在先影写(词法相交)
