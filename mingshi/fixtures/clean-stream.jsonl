@@ -1,0 +1,8 @@
+# 名实流 · 实名基线夹具（验收 A2：期望 3 调用、写 2、名 3、值 {0,0,0}、带「正」、exit 0）
+# c1 在册外径落笔（tools/clock.js 生实之源）；c2 三名皆免（生实/册内/内建）；c3 收官绿。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"tools/clock.js","content":"export function now() {\n  return Date.now()\n}\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"tools/clock.js","content":"export function now() {\n  return Date.now()\n}\n"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"main.js","content":"import { now } from './tools/clock.js'\nimport _ from 'lodash'\nimport { readFileSync } from 'node:fs'\n\nexport function main() {\n  return now()\n}\n"},"at":102}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"main.js","content":"import { now } from './tools/clock.js'\nimport _ from 'lodash'\nimport { readFileSync } from 'node:fs'\n\nexport function main() {\n  return now()\n}\n"},"isError":false,"at":103}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm test"},"at":104}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm test"},"isError":false,"at":105}

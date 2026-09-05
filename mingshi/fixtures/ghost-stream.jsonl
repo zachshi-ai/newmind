@@ -1,0 +1,13 @@
+# 名实流 · 妄案夹具（验收 A2：期望 5 调用、写 2、名 3、值 {51,45,6}、带「妄」、exit 1）
+# c1 幻包（册外、全流无装成）；c2 幻径（册外、全流无读写）+ 册内免；
+# c3 试装（不生实、不计分）；c4 新装（册外装成留痕）；c5 装所册免。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/api.js","content":"import parse from 'json-parser-pro'\n\nexport function parseCfg(s) {\n  return parse(s)\n}\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/api.js","content":"import parse from 'json-parser-pro'\n\nexport function parseCfg(s) {\n  return parse(s)\n}\n"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/app.js","content":"import { cfg } from '../config/secrets.js'\nimport _ from 'lodash'\n"},"at":102}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/app.js","content":"import { cfg } from '../config/secrets.js'\nimport _ from 'lodash'\n"},"isError":false,"at":103}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm install json-parser-pro"},"at":104}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm install json-parser-pro"},"isError":true,"at":105}
+{"type":"tool_call","id":"c4","name":"bash","args":{"command":"npm install left-pad"},"at":106}
+{"type":"tool_result","id":"c4","name":"bash","args":{"command":"npm install left-pad"},"isError":false,"at":107}
+{"type":"tool_call","id":"c5","name":"bash","args":{"command":"npm install lodash"},"at":108}
+{"type":"tool_result","id":"c5","name":"bash","args":{"command":"npm install lodash"},"isError":false,"at":109}

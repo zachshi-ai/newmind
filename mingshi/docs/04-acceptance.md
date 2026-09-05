@@ -7,15 +7,15 @@
 
 | # | 验收项 | 标准（先于实现确定） | 验证方式 | 结果 |
 |---|--------|----------------------|----------|------|
-| A1 | 核心判定语义 | 流解析（`#` 注释、坏行报行号、id 配对回填、孤儿 result 建档）；对象键三级回退与工具族词表同 dingfen；提名词表（import/require/动态/export-from 各形 + 注释剥离 + 行内 `//` 截断 + 代码后缀门 + 无 `p:` 不判 + 去重）；相对名以被写文件目录为基解析（`..` 逃逸照判）；裸名取首段（scoped 取两段）；安装令提取（npm/pnpm/yarn、旗标滤除、版本剥离、无名不立案）；实的三源按序：内建（node: 前缀 + 默认表 + extraBuiltins）→ 册内（root glob / package 精确）→ 流内生实（成功读写之径逐字相等、装成之包名；试装不生实；全流先后皆采、合并审计跨会话）；判定序锁死：无册不判 → 免（内建/册内/生实）→ 幻径 +15/名 cap 30 → 幻包 +30/名 cap 60；装所册免、册外装成 strictDeps ? 犯装 +30/次 cap 60 : 新装 +6/次 cap 30、试装不计分；名值 total = min(100, ghost + stray)；分带 正 0–14 / 疑 15–29 / 妄 ≥30；门默认 30——core 用例 ≥ 42 且全绿，断言恰好该分值 | `npm test`（core 部分） | ⬜ |
-| A2 | 夹具分数（先于实现手算定死） | `clean-stream`+`clean-registry`：3 调用、写 2、名 3、名值 `{total:0, ghost:0, stray:0}`、带「正」、exit 0、exemptImports 3、registryCount 3；`ghost-stream`+`ghost-registry`：5 调用、写 2、名 3、名值 `{total:51, ghost:45, stray:6}`、带「妄」、exit 1、counts `{ghostPackages:1, ghostRelatives:1, strayInstalls:1, trialInstalls:1, exemptImports:1, exemptInstalls:1, registryCount:3}`；同流换 `strict-registry`：名值 `{total:75, ghost:45, stray:30}`、带「妄」、exit 1；同流无实册：名值 0、带「正」、exit 0、registryCount 0 | core 断言 + CLI 复现 | ⬜ |
-| A3 | 跨项目互认 | dingfen 的 `fixtures/fenced-stream.jsonl` 喂 `mingshi audit`（配 ghost-registry）：名 0、值 0、带「正」、exit 0（无内容字段即无名可提）；mingshi 的 `fixtures/ghost-stream.jsonl` 喂 `dingfen audit`（子进程真跑对方 bin）：争值 0、带「定」、exit 0——同格式流双向可审，多余内容字段互不误伤 | CLI 测试 | ⬜ |
-| A4 | CLI 语义 | `audit` 多流 + `--file` + `--gate` + `--json`；坏 JSON 行 / 流缺失 / 实册缺失或坏籍 → exit 2；`register` 全空参 / 重复登记 → exit 2，`--pkgfile` 快照后 `list` 可见；`revoke` 无此名 → exit 2；`list`/`block` 实册文件缺失 → exit 2；`gate --value` 按门判 0/1；`--version`/`--help` 正常——CLI 用例 ≥ 16 | CLI 测试 | ⬜ |
-| A5 | 名册块逐字节确定 | 同一实册两次 `mingshi block` shasum 相同；增一界后文本改变；空籍（文件在、无条目）输出确定性空籍文本 | CLI shasum 复现 | ⬜ |
-| A6 | 真实管道上的观察式插件（零拦截） | 在 **npm 官方包** `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 构成的真实工具管道上挂载名实插件：失败探针也无条件到达工具本体（结构性零拦截）；幻包写探针立案门红；写径生实探针免；新装/犯装两态可切；试装点名不计分；名册块两次渲染逐字节相同；`exportStream()` 导出流离线 `audit` 重放，案数与名值与运行时账**账实一致**——集成用例 ≥ 8 | 集成测试 | ⬜ |
-| A7 | 模型无关 | 核心 + 插件零 LLM 调用、零提示词注入、零网络、零子进程、零文件系统探测；插件源码无 pre-execute 监听器（结构性零拦截） | grep（下附命令，应无输出） | ⬜ |
-| A8 | 测试总量 | 全部用例 ≥ 72 且全绿（core + cli + 集成） | `npm test` | ⬜ |
-| A9 | 文档 | 选书映射（01）、场景价值与伪需求自检（02）、设计语义锁死（03）、本验收表（04）、SKILL.md、README 快速开始齐备；根 README 项目索引与方向登记更新 | 人工 + 链接 | ⬜ |
+| A1 | 核心判定语义 | 流解析（`#` 注释、坏行报行号、id 配对回填、孤儿 result 建档）；对象键三级回退与工具族词表同 dingfen；提名词表（import/require/动态/export-from 各形 + 注释剥离 + 行内 `//` 截断 + 代码后缀门 + 无 `p:` 不判 + 去重）；相对名以被写文件目录为基解析（`..` 逃逸照判）；裸名取首段（scoped 取两段）；安装令提取（npm/pnpm/yarn、旗标滤除、版本剥离、无名不立案）；实的三源按序：内建（node: 前缀 + 默认表 + extraBuiltins）→ 册内（root glob / package 精确）→ 流内生实（成功读写之径逐字相等、装成之包名；试装不生实；全流先后皆采、合并审计跨会话）；判定序锁死：无册不判 → 免（内建/册内/生实）→ 幻径 +15/名 cap 30 → 幻包 +30/名 cap 60；装所册免、册外装成 strictDeps ? 犯装 +30/次 cap 60 : 新装 +6/次 cap 30、试装不计分；名值 total = min(100, ghost + stray)；分带 正 0–14 / 疑 15–29 / 妄 ≥30；门默认 30——core 用例 ≥ 42 且全绿，断言恰好该分值 | `npm test`（core 部分） | ✅ 47 用例全绿 |
+| A2 | 夹具分数（先于实现手算定死） | `clean-stream`+`clean-registry`：3 调用、写 2、名 3、名值 `{total:0, ghost:0, stray:0}`、带「正」、exit 0、exemptImports 3、registryCount 3；`ghost-stream`+`ghost-registry`：5 调用、写 2、名 3、名值 `{total:51, ghost:45, stray:6}`、带「妄」、exit 1、counts `{ghostPackages:1, ghostRelatives:1, strayInstalls:1, trialInstalls:1, exemptImports:1, exemptInstalls:1, registryCount:3}`；同流换 `strict-registry`：名值 `{total:75, ghost:45, stray:30}`、带「妄」、exit 1；同流无实册：名值 0、带「正」、exit 0、registryCount 0 | core 断言 + CLI 复现 | ✅ 四组期望逐字吻合（0 / 51 / 75 / 0 分与全部计数） |
+| A3 | 跨项目互认 | dingfen 的 `fixtures/fenced-stream.jsonl` 喂 `mingshi audit`（配 ghost-registry）：名 0、值 0、带「正」、exit 0（无内容字段即无名可提）；mingshi 的 `fixtures/ghost-stream.jsonl` 喂 `dingfen audit`（子进程真跑对方 bin）：争值 0、带「定」、exit 0——同格式流双向可审，多余内容字段互不误伤 | CLI 测试 | ✅ 双向均零误伤（dingfen 流无名可提 / mingshi 流争值 0） |
+| A4 | CLI 语义 | `audit` 多流 + `--file` + `--gate` + `--json`；坏 JSON 行 / 流缺失 / 实册缺失或坏籍 → exit 2；`register` 全空参 / 重复登记 → exit 2，`--pkgfile` 快照后 `list` 可见；`revoke` 无此名 → exit 2；`list`/`block` 实册文件缺失 → exit 2；`gate --value` 按门判 0/1；`--version`/`--help` 正常——CLI 用例 ≥ 16 | CLI 测试 | ✅ 18 用例全绿 |
+| A5 | 名册块逐字节确定 | 同一实册两次 `mingshi block` shasum 相同；增一界后文本改变；空籍（文件在、无条目）输出确定性空籍文本 | CLI shasum 复现 | ✅ 逐字节一致（shasum b726e1db…×2）；空籍确定性文本 |
+| A6 | 真实管道上的观察式插件（零拦截） | 在 **npm 官方包** `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 构成的真实工具管道上挂载名实插件：失败探针也无条件到达工具本体（结构性零拦截）；幻包写探针立案门红；写径生实探针免；新装/犯装两态可切；试装点名不计分；名册块两次渲染逐字节相同；`exportStream()` 导出流离线 `audit` 重放，案数与名值与运行时账**账实一致**——集成用例 ≥ 8 | 集成测试 | ✅ 9 用例全绿（账实一致 36 = 幻包 30 + 新装 6） |
+| A7 | 模型无关 | 核心 + 插件零 LLM 调用、零提示词注入、零网络、零子进程、零文件系统探测；插件源码无 pre-execute 监听器（结构性零拦截） | grep（下附命令，应无输出） | ✅ 两组 grep 均无输出 |
+| A8 | 测试总量 | 全部用例 ≥ 72 且全绿（core + cli + 集成） | `npm test` | ✅ 74 tests, 74 pass |
+| A9 | 文档 | 选书映射（01）、场景价值与伪需求自检（02）、设计语义锁死（03）、本验收表（04）、SKILL.md、README 快速开始齐备；根 README 项目索引与方向登记更新 | 人工 + 链接 | ✅（本行即 A9 验证） |
 
 ## 复现命令
 
@@ -29,13 +29,105 @@ node src/bin/mingshi.js audit fixtures/ghost-stream.jsonl --file fixtures/strict
 node src/bin/mingshi.js audit fixtures/ghost-stream.jsonl; echo $?                                        # 0（无册不判）
 ```
 
-**A7 的 grep 命令**（应无输出；第二条用监听器注册的精确模式，避免误伤注释散文）：
+**A7 的 grep 命令**（应无输出；第一条用 import/调用的精确形态，避免误伤内建表数据与注释散文——如默认内建表里的 `'child_process'` 字符串、网址中的双斜杠）：
 
 ```bash
-grep -rniE "fetch\(|axios|https?://|openai|anthropic|completions|chat\.create|child_process|execSync|spawn|readFileSync\(|existsSync\(" src/core src/plugin | grep -v "^\s*//"
+grep -rniE "from ['\"](node:)?(child_process|fs|http|https|net|tls|dns)|require\(['\"]|fetch\(|axios|XMLHttpRequest|WebSocket|openai|anthropic|completions|chat\.create|spawnSync|execSync|child_process\.|readFileSync|writeFileSync|existsSync" src/core src/plugin | grep -v "^\s*[*/ ]"
 grep -rnE "ctx\.on\(['\"]tools/pre-execute" src/plugin
 ```
 
-## 实测记录（实现完成后回填）
+## 实测记录（2026-09-06，本机复跑真实输出）
 
-⬜ 待实现后逐项回填真实输出。
+```
+$ node --version
+v24.18.0
+$ npm ls @deepseek-ai/cordis @deepseek-ai/dsh-tools
+mingshi-dsh@0.1.0
+├── @deepseek-ai/cordis@4.0.2
+└── @deepseek-ai/dsh-tools@0.0.1-rc.1
+$ npm test
+ℹ tests 74
+ℹ pass 74
+ℹ fail 0
+（core 47 + cli 18 + 集成 9，分文件运行各自全绿）
+```
+
+A7 的 grep（均无输出，退出码 1）：
+
+```console
+$ grep -rniE "from ['\"](node:)?(child_process|fs|http|https|net|tls|dns)|require\(['\"]|fetch\(|axios|XMLHttpRequest|WebSocket|openai|anthropic|completions|chat\.create|spawnSync|execSync|child_process\.|readFileSync|writeFileSync|existsSync" src/core src/plugin | grep -v "^\s*[*/ ]"
+$ grep -rnE "ctx\.on\(['\"]tools/pre-execute" src/plugin
+```
+
+clean 基线夹具的审计（三名皆免 → 值 0 / 带「正」/ exit 0）：
+
+```console
+$ mingshi audit fixtures/clean-stream.jsonl --file fixtures/clean-registry.json
+{
+  "sessions": 1,
+  "calls": 3,
+  "writes": 2,
+  "imports": 3,
+  "score": { "total": 0, "ghost": 0, "stray": 0 },
+  "band": "正",
+  "gate": 30,
+  "verdict": "pass",
+  "ok": true,
+  "counts": { "ghostPackages": 0, "ghostRelatives": 0, "strayInstalls": 0, "trialInstalls": 0, "exemptImports": 3, "exemptInstalls": 0, "registryCount": 3 },
+  "issues": [
+    "实名 ×3：册内 1 + 生实 1 + 内建 1 —— 夫名，实谓也"
+  ]
+}
+$ echo $?
+0
+```
+
+ghost 妄案夹具的审计（幻包 30 + 幻径 15 + 新装 6 = 51 / 带「妄」/ exit 1）与 strict 执法态（75）：
+
+```console
+$ mingshi audit fixtures/ghost-stream.jsonl --file fixtures/ghost-registry.json
+{
+  "sessions": 1, "calls": 5, "writes": 2, "imports": 3,
+  "score": { "total": 51, "ghost": 45, "stray": 6 },
+  "band": "妄", "verdict": "fail", "ok": false,
+  "counts": { "ghostPackages": 1, "ghostRelatives": 1, "strayInstalls": 1, "trialInstalls": 1, "exemptImports": 1, "exemptInstalls": 1, "registryCount": 3 },
+  "issues": [
+    "幻包 ×1（+30/名）：json-parser-pro —— 名下无实：册外且全流无装成",
+    "幻径 ×1（+15/名）：../config/secrets.js → config/secrets.js —— 名下无实：册外且全流无读写",
+    "新装 ×1（+6/次）：left-pad —— 册外装成，留痕可见",
+    "试装 ×1（不计分）：json-parser-pro —— 装而未成，不生实",
+    "实名 ×1：册内 1 + 生实 0 + 内建 0 —— 夫名，实谓也"
+  ]
+}
+$ echo $?                                    # 1
+$ mingshi audit fixtures/ghost-stream.jsonl --file fixtures/strict-registry.json
+  → "score": { "total": 75, "ghost": 45, "stray": 30 }, "band": "妄"（新装升犯装 +30）
+$ echo $?                                    # 1
+```
+
+名册块（同一实册两次渲染，shasum 逐字节一致）：
+
+```console
+$ mingshi block --file fixtures/ghost-registry.json | shasum
+b726e1db57eb94c7541782e5b04fa86dd82c5155  -
+$ mingshi block --file fixtures/ghost-registry.json | shasum
+b726e1db57eb94c7541782e5b04fa86dd82c5155  -
+$ mingshi block --file fixtures/ghost-registry.json
+【名实 · 名册】
+树界 2 条：
+  · src/**
+  · test/**
+包册 1 个：
+  · lodash
+执法态：宽（册外装成记新装）
+名账：幻包 0 · 幻径 0 · 新装/犯装 0 · 试装 0 · 实名 0
+夫名，实谓也——名实
+本块由确定性规则生成；重放同一实册必得同一文本。
+```
+
+集成账实对账（双引擎写 + 装成 + 试装，导出流离线审计 = 运行时账，36 = 幻包 30 + 新装 6）：
+
+```console
+（integration.dsh.test.js：offline.score.total === live.score.total === 36 ✅
+ offline.counts === live.counts ✅（ghostPackages 1 · strayInstalls 1 · trialInstalls 1））
+```
