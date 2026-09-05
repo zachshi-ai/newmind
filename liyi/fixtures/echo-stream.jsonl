@@ -1,0 +1,13 @@
+# 立仪流 · 回声与陈账样例（验收夹具 A2：期望仪值 20、带「疏」、exit 0）
+# e1 以令为证：输出恰是命令自己的回读（用表空 → 回声 +20，单件落疏带不咬门）；
+# e2 答非所问：内容与所验对象无词相干（掠疑，只点名不计分）；
+# e3 同参复验而内容已变（陈账，旧果勿复引，只点名不计分）——判定序掠疑在前，
+#    e3 内容含词元命中（smoke）故不记掠疑而记陈账。
+# 手算：calls 3 / 成报 3 / 验类 3 / 空报 0 / 回声 1（+20）/ 掠疑 1 / 陈账 1 → 20 分「疏」。
+{"type":"principal","text":"用 vitest 验证修复，再用 smoke 探针确认服务活着。"}
+{"type":"tool_call","id":"e1","name":"bash","args":{"command":"vitest run src/parse.test.js"},"at":301}
+{"type":"tool_result","id":"e1","name":"bash","args":{"command":"vitest run src/parse.test.js"},"content":"vitest run src/parse.test.js","isError":false,"at":302}
+{"type":"tool_call","id":"e2","name":"bash","args":{"command":"npm run smoke"},"at":303}
+{"type":"tool_result","id":"e2","name":"bash","args":{"command":"npm run smoke"},"content":"All health checks OK · uptime 42s","isError":false,"at":304}
+{"type":"tool_call","id":"e3","name":"bash","args":{"command":"npm run smoke"},"at":305}
+{"type":"tool_result","id":"e3","name":"bash","args":{"command":"npm run smoke"},"content":"smoke: all services up · uptime 57s","isError":false,"at":306}

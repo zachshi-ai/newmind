@@ -1,0 +1,37 @@
+{
+  "name": "liyi-dsh",
+  "version": "0.1.0",
+  "description": "立仪 Liyi — DeepSeek Harness 的成色审计层：成报账（每声成功逐件登记）/ 验类词表（显式可配，ASCII 词界 + CJK 子串）/ 三表判定（空报·回声·掠疑·陈账）/ 仪值（虚+回的门禁分）/ 仪块（接缝处逐字节确定的成色清单）。零 LLM 调用的称量式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/liyi.js",
+  "bin": {
+    "liyi": "src/bin/liyi.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-reliability",
+    "verification-integrity",
+    "vacuous-success",
+    "evidence-standards",
+    "stream-audit"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
