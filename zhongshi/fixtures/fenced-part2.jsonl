@@ -1,0 +1,17 @@
+# 终始流 · 断点续跑样例 · 第二班（新会话续跑收尾）
+# 期望（part1 part2 拼接）：T1 有终（始#1 终#4）、T2 有终（始#5 终#6）、无失序 → 程值 0（近道）exit 0；
+# 期望（part2 part1 反序）：T1 半途+空终 1（终#2 后复作于#5）→ 程值 15+20=35（无终）exit 1——流序敏感。
+# c1 edit net/flink-reconnect.js   T1 W（续跑）；
+# c2 npm run test flink            T1 终形命中 → 终#4（拼接序）→ 有终；
+# c3 edit deploy/manifest.yml      T2 始#5（别名 manifest.yml 命中）；
+# c4 npm run manifest check        T2 终形命中 → 终#6 → 有终。
+{"type":"turn_start","id":"p2","at":400}
+{"type":"tool_call","id":"f2-c1","name":"edit","args":{"path":"net/flink-reconnect.js","content":"+2"},"at":401}
+{"type":"tool_result","id":"f2-c1","name":"edit","args":{"path":"net/flink-reconnect.js","content":"+2"},"isError":false,"at":402}
+{"type":"tool_call","id":"f2-c2","name":"bash","args":{"command":"npm run test flink"},"at":403}
+{"type":"tool_result","id":"f2-c2","name":"bash","args":{"command":"npm run test flink"},"isError":false,"at":404}
+{"type":"tool_call","id":"f2-c3","name":"edit","args":{"path":"deploy/manifest.yml","content":"+1"},"at":405}
+{"type":"tool_result","id":"f2-c3","name":"edit","args":{"path":"deploy/manifest.yml","content":"+1"},"isError":false,"at":406}
+{"type":"tool_call","id":"f2-c4","name":"bash","args":{"command":"npm run manifest check"},"at":407}
+{"type":"tool_result","id":"f2-c4","name":"bash","args":{"command":"npm run manifest check"},"isError":false,"at":408}
+{"type":"turn_end","id":"p2","at":409}

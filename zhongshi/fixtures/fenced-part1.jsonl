@@ -1,0 +1,9 @@
+# 终始流 · 断点续跑样例 · 第一班（会话中断处截断）
+# 期望（part1 单流）：T1 半途（始#1 末作#2）、T2 幽项 → 程值 15+30=45（无终）exit 1——真中断就该红。
+# c1 edit net/flink-reconnect.js   T1 始#1（W）；
+# c2 read net/flink-reconnect.js   T1 W（末作#2）——会话到此中断。
+{"type":"turn_start","id":"p1","at":300}
+{"type":"tool_call","id":"f1-c1","name":"edit","args":{"path":"net/flink-reconnect.js","content":"+1"},"at":301}
+{"type":"tool_result","id":"f1-c1","name":"edit","args":{"path":"net/flink-reconnect.js","content":"+1"},"isError":false,"at":302}
+{"type":"tool_call","id":"f1-c2","name":"read","args":{"path":"net/flink-reconnect.js"},"at":303}
+{"type":"tool_result","id":"f1-c2","name":"read","args":{"path":"net/flink-reconnect.js"},"isError":false,"at":304}

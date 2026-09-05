@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "items": [
+    { "id": "T1", "name": "断连修复", "aliases": ["flink-reconnect"], "terminal": ["test flink"], "abandon": [] },
+    { "id": "T2", "name": "部署清单更新", "aliases": ["manifest.yml"], "terminal": ["manifest check"], "abandon": [] }
+  ],
+  "order": [["T1", "T2"]]
+}

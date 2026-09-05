@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "items": [
+    { "id": "T1", "name": "用户表迁移", "aliases": ["migrate-users"], "terminal": ["migrate check"], "abandon": [] },
+    { "id": "T2", "name": "旧列清理", "aliases": ["drop-old-cols"], "terminal": [], "abandon": ["跳过旧列"] },
+    { "id": "T3", "name": "补索引", "aliases": ["add-index"], "terminal": ["index verify"], "abandon": [] },
+    { "id": "T4", "name": "回归验证", "aliases": ["regression-suite"], "terminal": ["full regression"], "abandon": [] }
+  ],
+  "order": [["T3", "T4"]]
+}

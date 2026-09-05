@@ -1,0 +1,30 @@
+# 终始流 · 空终伪毕样例（验收夹具：期望 半途 2、空终 1、失序 1、有弃 1、有终 1，程值 30+20+10=60（无终）、exit 1）
+# c1 npm run migrate-users --dry-run   T1 始#1（作工 W；干跑是豫立的词，本层只记行程）；
+# c2 npm run migrate check             T1 终形命中 → 终#2；
+# c3 npm run migrate-users --verify-only  T1 W → 空终端#1（终#2 后复作于#3）；
+# c4 git commit -m "跳过旧列：下游仍依赖"  T2 弃形命中 → 弃#4 → 有弃（0 分，合法）；
+# c5 edit db/add-index.sql             T3 始#5（W）；
+# c6 npm run regression-suite --smoke  T4 始#6（W）；
+# c7 npm run index verify              T3 终形命中 → 终#7 → 有终；
+# c8 edit docs/regression-notes.md     近 decoy：regression-notes ≠ regression-suite。
+# 案别：T1 半途（末作#3）+ 空终 1；T2 有弃；T3 有终；T4 半途（始#6 末作#6）。
+# 失序：立序 T3→T4，T4 首作工#6 早于 T3 首终#7 → 失序案 1。
+# 合计 15×2=30（半途 cap30 内）+ 20（空终）+ 10（失序）= 60 → 无终 → exit 1。
+{"type":"turn_start","id":"t1","at":200}
+{"type":"tool_call","id":"w1-c1","name":"bash","args":{"command":"npm run migrate-users --dry-run"},"at":201}
+{"type":"tool_result","id":"w1-c1","name":"bash","args":{"command":"npm run migrate-users --dry-run"},"isError":false,"at":202}
+{"type":"tool_call","id":"w1-c2","name":"bash","args":{"command":"npm run migrate check"},"at":203}
+{"type":"tool_result","id":"w1-c2","name":"bash","args":{"command":"npm run migrate check"},"isError":false,"at":204}
+{"type":"tool_call","id":"w1-c3","name":"bash","args":{"command":"npm run migrate-users --verify-only"},"at":205}
+{"type":"tool_result","id":"w1-c3","name":"bash","args":{"command":"npm run migrate-users --verify-only"},"isError":false,"at":206}
+{"type":"tool_call","id":"w1-c4","name":"bash","args":{"command":"git commit -m \"跳过旧列：下游仍依赖\""},"at":207}
+{"type":"tool_result","id":"w1-c4","name":"bash","args":{"command":"git commit -m \"跳过旧列：下游仍依赖\""},"isError":false,"at":208}
+{"type":"tool_call","id":"w1-c5","name":"edit","args":{"path":"db/add-index.sql","content":"+1"},"at":209}
+{"type":"tool_result","id":"w1-c5","name":"edit","args":{"path":"db/add-index.sql","content":"+1"},"isError":false,"at":210}
+{"type":"tool_call","id":"w1-c6","name":"bash","args":{"command":"npm run regression-suite --smoke"},"at":211}
+{"type":"tool_result","id":"w1-c6","name":"bash","args":{"command":"npm run regression-suite --smoke"},"isError":false,"at":212}
+{"type":"tool_call","id":"w1-c7","name":"bash","args":{"command":"npm run index verify"},"at":213}
+{"type":"tool_result","id":"w1-c7","name":"bash","args":{"command":"npm run index verify"},"isError":false,"at":214}
+{"type":"tool_call","id":"w1-c8","name":"edit","args":{"path":"docs/regression-notes.md","content":"+1"},"at":215}
+{"type":"tool_result","id":"w1-c8","name":"edit","args":{"path":"docs/regression-notes.md","content":"+1"},"isError":false,"at":216}
+{"type":"turn_end","id":"t1","at":217}
