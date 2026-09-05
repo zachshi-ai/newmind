@@ -1,0 +1,38 @@
+{
+  "name": "mingshi-dsh",
+  "version": "0.1.0",
+  "description": "名实 Mingshi — DeepSeek Harness 的核名层：实册（roots 树界 + packages 包册 + strictDeps 执法态）/ 名账（提取写内容中的 import/require 与安装令之包名）/ 实的三源（内建·册内·流内生实）/ 妄引（幻包+30·幻径+15）与新装·犯装·试装对账。零 LLM、零网络、零文件系统探测的核名式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/mingshi.js",
+  "bin": {
+    "mingshi": "src/bin/mingshi.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "supply-chain",
+    "slopsquatting",
+    "hallucinated-imports",
+    "dependency-allowlist",
+    "stream-audit",
+    "postmortem"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

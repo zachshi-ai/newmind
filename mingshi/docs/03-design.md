@@ -102,22 +102,22 @@ mingshi --help | --version
 
 ## 10 · 夹具（先于实现手算，逐字节锁定期望）
 
-### clean-stream（实名基线，配 clean-registry：roots `["src/**"]`，packages `["lodash"]`）
+### clean-stream（实名基线，配 clean-registry：roots `["src/**", "test/**"]`，packages `["lodash"]`）
 
 | id | 工具 | 要点 |
 |---|---|---|
-| c1 | write `src/helpers/date.js` | 内容无名（生实之源：径成功落笔） |
-| c2 | write `src/app.js` | 内容含三名：`./helpers/date.js`（→resolved `src/helpers/date.js`，**生实**免）、`lodash`（**册内**免）、`node:fs`（**内建**免） |
+| c1 | write `tools/clock.js` | 内容无名（生实之源：册外径成功落笔） |
+| c2 | write `main.js` | 内容含三名：`./tools/clock.js`（→resolved `tools/clock.js`，册外而**生实**免）、`lodash`（**册内**免）、`node:fs`（**内建**免） |
 | c3 | bash `npm test` | 成功 |
 
 期望：1 会话、3 调用、写 2、名 3、名值 `{total:0, ghost:0, stray:0}`、带「正」、exit 0；counts `{ghostPackages:0, ghostRelatives:0, strayInstalls:0, trialInstalls:0, exemptImports:3, exemptInstalls:0, registryCount:3}`。
 
-### ghost-stream（三案全现，配 ghost-registry：roots `["src/**"]`，packages `["lodash"]`）
+### ghost-stream（三案全现，配 ghost-registry：roots `["src/**", "test/**"]`，packages `["lodash"]`）
 
 | id | 工具 | 要点 |
 |---|---|---|
 | c1 | write `src/api.js` | 内容 `import parse from 'json-parser-pro'` → **幻包 +30**（册外、全流无装成） |
-| c2 | write `src/app.js` | 内容含三名：`../config/secrets.js`（→resolved `config/secrets.js`，不在 `src/**`、无读写之实）→ **幻径 +15**；`lodash`（册内免） |
+| c2 | write `src/app.js` | 内容含二名：`../config/secrets.js`（→resolved `config/secrets.js`，不在 `src/**`、无读写之实）→ **幻径 +15**；`lodash`（册内免） |
 | c3 | bash `npm install json-parser-pro` | isError true → **试装**（不生实，幻包不赦） |
 | c4 | bash `npm install left-pad` | 装成、册外 → **新装 +6** |
 | c5 | bash `npm install lodash` | 装成、册内 → 装所册免 |

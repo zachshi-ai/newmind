@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "roots": [
+    "src/**",
+    "test/**"
+  ],
+  "packages": [
+    "lodash"
+  ],
+  "strictDeps": false,
+  "extraBuiltins": [],
+  "extraExts": []
+}
