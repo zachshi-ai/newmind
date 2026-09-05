@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "guards": ["contract/**"],
+  "amends": ["contract/specs/**"],
+  "verify": ["make check"]
+}
