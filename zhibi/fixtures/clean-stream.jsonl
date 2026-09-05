@@ -1,0 +1,14 @@
+# 直笔流 · 素带样例（验收夹具：期望 史事 2 笔、族 2 全直、讳值 0、带「素」、exit 0）
+# c1 npm test 干净绿 → pkg-test 族末「直」；c2 make all 干净绿 → make 族末「直」；
+# c3 写文件（非 exec 族，永不为史事）；
+# c4 探测类命令带吞真形但在族表外 → 常事不书（0 记）。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","id":"t1-c1","name":"bash","args":{"command":"npm test"},"at":101}
+{"type":"tool_result","id":"t1-c1","name":"bash","args":{"command":"npm test"},"isError":false,"at":102}
+{"type":"tool_call","id":"t1-c2","name":"bash","args":{"command":"make all"},"at":103}
+{"type":"tool_result","id":"t1-c2","name":"bash","args":{"command":"make all"},"isError":false,"at":104}
+{"type":"tool_call","id":"t1-c3","name":"edit","args":{"path":"src/app.js"},"at":105}
+{"type":"tool_result","id":"t1-c3","name":"edit","args":{"path":"src/app.js"},"isError":false,"at":106}
+{"type":"tool_call","id":"t1-c4","name":"bash","args":{"command":"ls /tmp/lock 2>/dev/null || true"},"at":107}
+{"type":"tool_result","id":"t1-c4","name":"bash","args":{"command":"ls /tmp/lock 2>/dev/null || true"},"isError":false,"at":108}
+{"type":"turn_end","id":"t1","at":109}

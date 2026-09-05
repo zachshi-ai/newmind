@@ -1,0 +1,38 @@
+{
+  "name": "zhibi-dsh",
+  "version": "0.1.0",
+  "description": "直笔 Zhibi — DeepSeek Harness 的记录保真层：笔册（史词族表 ∪ 讳形表 ∪ 豁免词）/ 笔账（史事逐案判讳笔/空绿/诚红/试笔/豁笔）/ 讳值（空绿 +30/族、已赎讳笔 +10/案的确定性记录分，分带 素/讳/诬）/ 实录块（接缝处逐字节确定的族末清单与讳笔点名）。零 LLM 调用的秉笔式插件（结构性零拦截）+ 零依赖 CLI，时序无关（族内先后只用流内序列）、契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/zhibi.js",
+  "bin": {
+    "zhibi": "src/bin/zhibi.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "record-integrity",
+    "silent-failure",
+    "exit-code-laundering",
+    "error-masking",
+    "audit",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
