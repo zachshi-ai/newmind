@@ -46,7 +46,7 @@
     皆非                           → 干净成报，无发现
 ```
 
-## 4 · 默认效词表（DEFAULT_XIAO_WORDS，25 条；ASCII 词界匹配，CJK 子串匹配）
+## 4 · 默认效词表（DEFAULT_XIAO_WORDS，26 条：ASCII 18 + CJK 8；实现时勘误——定稿正文误记 25，以列表为准）
 
 ```
 test, spec, lint, check, verify, validate, audit, build, compile,
@@ -54,8 +54,8 @@ coverage, benchmark, smoke, probe, assert, tsc, pytest, jest, vitest,
 测试, 验证, 检查, 校验, 构建, 编译, 审计, 体检
 ```
 
-- **ASCII 词（前 18 条）：词界匹配**——在被检文本上以 `\b<word>\b` 正则判定（小写化后）。`"version":"latest"` 不命中 `test`（latest 中 test 前是字母，无词界）；`parse.test.js` 命中（`.` 是词界）。精度优先：防 `latest`/`protest` 类误伤。
-- **CJK 词（后 7 条）：子串匹配**（中文无词界概念）。
+- **纯字母数字词（前 18 条）：词界匹配**——在被检文本上以 `\b<word>\b` 正则判定（小写化后）。`"version":"latest"` 不命中 `test`（latest 中 test 前是字母，无词界）；`parse.test.js` 命中（`.` 是词界）。精度优先：防 `latest`/`protest` 类误伤。
+- **其余词（后 7 条 CJK 词，以及连字符形 `--quiet`、含空格形 `npm test`）：子串匹配**——`\b` 在连字符前不成立，旗形词必须走子串（免验词表的主用形）。
 - 被检文本 = 工具名（小写化）+ argsText（`JSON.stringify(args ?? {})` 小写化），二者的并集；
 - `--words <file>` / 插件 `words` 配置：JSON 字符串数组，与默认表**取并集**（追加不可删减默认保护），小写化、去重；
 - 词命中**坍缩**（最长词胜出，仅用于点名展示）：命中集合中若词 w 是另一命中词 w2 的子串（w ⊂ w2），w 被吸收；
@@ -64,7 +64,7 @@ coverage, benchmark, smoke, probe, assert, tsc, pytest, jest, vitest,
 ## 5 · 免验词表（DEFAULT_MIANYAN_WORDS = 空表，全靠显式声明）
 
 - `--exempt <file>` / 插件 `exempt` 配置：JSON 字符串数组，小写化去重；
-- 匹配规则与效类一致（ASCII 词界 / CJK 子串），只对 argsText；
+- 匹配规则与效类一致（纯字母数字词界 / 其余子串），只对 argsText；
 - 命中任一免验词 → 该成报豁免全部三问判定，计数 `exempted`，无发现、无分值；
 - 默认空表：v1 不预置任何免验词——什么该静默是每个仓库自己的事，声明权在使用者。
 
