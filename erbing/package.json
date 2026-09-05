@@ -1,0 +1,38 @@
+{
+  "name": "erbing-dsh",
+  "version": "0.1.0",
+  "description": "二柄 Erbing — DeepSeek Harness 的审柄层：决形表（上线族·代告族默认形 ∪ 显式登记）/ 命形对账（主渠道词法相交 ∪ 显式授词，先序不溯既往）/ 案别判定序（未遂/侵柄/有命/未判，请而未待命带 asked 注记）/ 渍请结构（首问免·先问中有答再问计分）/ 柄值（默认族 25/案 cap 60 + 显式 10/件 cap 30 + 渍请 10/案 cap 40，分带 柄明/柄移/倒持，门禁默认 30）/ 柄牌块（接缝处逐字节确定的侵柄点名）。零 LLM 调用的审柄式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话流。",
+  "type": "module",
+  "main": "src/plugin/erbing.js",
+  "bin": {
+    "erbing": "src/bin/erbing.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-safety",
+    "human-in-the-loop",
+    "decision-authority",
+    "approval-governance",
+    "escalation",
+    "audit"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

@@ -1,0 +1,8 @@
+# 二柄流 · 无主之流样例（验收夹具 C：期望柄值 0、带「柄明」、exit 0、未判 1）
+# 全流没有一条主渠道文本——无命可查，一切决形命中改判「未判」：静默观察只点名，
+# 宁可漏判，不可妄断。写族调用永不受审。
+# 手算：主文 0 / exec 1（决形命中 1 → 未判 0 分）/ 写族 1 不入账 → 0「柄明」。
+{"type":"tool_call","id":"s1","name":"bash","args":{"command":"terraform apply -var env=prod"},"at":301}
+{"type":"tool_result","id":"s1","name":"bash","args":{"command":"terraform apply -var env=prod"},"isError":false,"at":302}
+{"type":"tool_call","id":"s2","name":"write","args":{"path":"notes.txt","content":"step done"},"at":310}
+{"type":"tool_result","id":"s2","name":"write","args":{"path":"notes.txt","content":"step done"},"isError":false,"at":311}
