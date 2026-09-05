@@ -1,0 +1,38 @@
+{
+  "name": "fayi-dsh",
+  "version": "0.1.0",
+  "description": "法仪 Fayi — DeepSeek Harness 的持尺层：器册（持性器径/修性器径/验尺词，显式登记与默认形表取并集）/ 翻红窗归因（纯器写独占红→绿之窗即曲尺 +30/案 cap 60）/ 虚器词表（同字面/恒真/空体断言 +10/件 cap 30）/ 照末（末笔实测写后无绿验即废尺 +30）/ 枉值门禁（直/曲/枉，门 30）/ 绳墨块（接缝处逐字节确定的器册公示与尺况）。零 LLM 调用的持尺式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/fayi.js",
+  "bin": {
+    "fayi": "src/bin/fayi.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "reward-hacking",
+    "specification-gaming",
+    "test-tampering",
+    "acceptance-criteria",
+    "stream-audit",
+    "postmortem"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
