@@ -1,0 +1,12 @@
+# 度支流 · 有制不逾样例（验收夹具：期望 制值 0、带「足」、exit 0）
+# 制册：maxCalls 100 / maxMinutes 60；四次调用，时程 180000ms = 3.0 分钟——线内行走，守界 0 分。
+{"type":"turn_start","id":"t1","at":1730000000000}
+{"type":"tool_call","id":"t1-c1","name":"read","args":{"path":"src/app.js"},"at":1730000000000}
+{"type":"tool_result","id":"t1-c1","name":"read","args":{"path":"src/app.js"},"isError":false,"at":1730000001000}
+{"type":"tool_call","id":"t1-c2","name":"edit","args":{"path":"src/app.js"},"at":1730000060000}
+{"type":"tool_result","id":"t1-c2","name":"edit","args":{"path":"src/app.js"},"isError":false,"at":1730000061000}
+{"type":"tool_call","id":"t1-c3","name":"bash","args":{"command":"npm test"},"at":1730000120000}
+{"type":"tool_result","id":"t1-c3","name":"bash","args":{"command":"npm test"},"isError":false,"at":1730000123000}
+{"type":"tool_call","id":"t1-c4","name":"bash","args":{"command":"git status"},"at":1730000180000}
+{"type":"tool_result","id":"t1-c4","name":"bash","args":{"command":"git status"},"isError":false,"at":1730000181000}
+{"type":"turn_end","id":"t1","at":1730000181000}

@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "id": "fix-login-bug",
+  "budget": { "maxCalls": 100, "maxMinutes": 60 }
+}

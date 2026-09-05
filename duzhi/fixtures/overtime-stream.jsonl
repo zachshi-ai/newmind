@@ -1,0 +1,11 @@
+# 度支流 · 时程过线样例（验收夹具：期望 逾制 2 案 ×6=12、带「足」、exit 0；--gate 10 → exit 1）
+# 制册：maxMinutes 1（60000ms）；四次调用 at = t0 / +20s / +70s / +100s。
+# 严格大于：恰在线上合法；70000 与 100000 过线，20000 未过——2×6=12 < 门 30 → 足。
+{"type":"tool_call","id":"m1","name":"read","args":{"path":"schema.sql"},"at":1730000000000}
+{"type":"tool_result","id":"m1","isError":false,"at":1730000001000}
+{"type":"tool_call","id":"m2","name":"bash","args":{"command":"psql -f schema.sql"},"at":1730000020000}
+{"type":"tool_result","id":"m2","isError":false,"at":1730000025000}
+{"type":"tool_call","id":"m3","name":"bash","args":{"command":"psql -f seed.sql"},"at":1730000070000}
+{"type":"tool_result","id":"m3","isError":false,"at":1730000074000}
+{"type":"tool_call","id":"m4","name":"edit","args":{"path":"docs/db.md"},"at":1730000100000}
+{"type":"tool_result","id":"m4","isError":false,"at":1730000101000}
