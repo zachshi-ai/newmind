@@ -1,0 +1,36 @@
+{
+  "name": "zhongshi-dsh",
+  "version": "0.1.0",
+  "description": "终始 Zhongshi — DeepSeek Harness 的记程层：事册（items ∪ order，声明权全在任务方，无册不判）/ 程账（逐事行程账：作工之迹为始、显式终形为终、显式弃形为弃）/ 案别（幽项/半途/空终/有终/有弃，末笔定案）/ 先后账（order 失序案）/ 程值（近道/鲜终/无终，门禁默认 30）/ 程账块（接缝处逐字节确定的续跑图）。零 LLM 调用的记程式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/zhongshi.js",
+  "bin": {
+    "zhongshi": "src/bin/zhongshi.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "task-completeness",
+    "checklist-discipline",
+    "resume-map",
+    "audit"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

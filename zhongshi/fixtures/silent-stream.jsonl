@@ -1,0 +1,34 @@
+# 终始流 · 静默漏项样例（验收夹具：期望 幽项 2、半途 1、有终 1，程值 60+15=75（无终）、exit 1）
+# c1 read src/billing/ledger.js     无项词命中；
+# c2 grep -rn dedupe src/           T1 始#2（作工 W）；
+# c3 edit src/billing/dedupe.js     T1 W；
+# c4 npm test -- test dedupe        T1 终形命中 → 终#4（判定序 终 > 工）→ 有终；
+# c5 grep -rn edge-cases test/      T3 始#5（W）；
+# c6 edit test/billing/edge-cases.spec.js  T3 W；
+# c7 npm run lint                   无命中；
+# c8 read docs/sync-notes.md        近 decoy：sync-notes ≠ docs-sync；
+# c9 git commit -m "wip edge-cases" T3 W（末作#9）→ 半途（未宣终形，行尾点名）；
+# c10 npm run build                 无命中。
+# T2、T4 全流无作工 → 幽项 ×2（30×2=60 cap60）。合计 75 → 无终 → exit 1。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","id":"s1-c1","name":"read","args":{"path":"src/billing/ledger.js"},"at":101}
+{"type":"tool_result","id":"s1-c1","name":"read","args":{"path":"src/billing/ledger.js"},"isError":false,"at":102}
+{"type":"tool_call","id":"s1-c2","name":"bash","args":{"command":"grep -rn dedupe src/"},"at":103}
+{"type":"tool_result","id":"s1-c2","name":"bash","args":{"command":"grep -rn dedupe src/"},"isError":false,"at":104}
+{"type":"tool_call","id":"s1-c3","name":"edit","args":{"path":"src/billing/dedupe.js","content":"+1"},"at":105}
+{"type":"tool_result","id":"s1-c3","name":"edit","args":{"path":"src/billing/dedupe.js","content":"+1"},"isError":false,"at":106}
+{"type":"tool_call","id":"s1-c4","name":"bash","args":{"command":"npm test -- test dedupe"},"at":107}
+{"type":"tool_result","id":"s1-c4","name":"bash","args":{"command":"npm test -- test dedupe"},"isError":false,"at":108}
+{"type":"tool_call","id":"s1-c5","name":"bash","args":{"command":"grep -rn edge-cases test/"},"at":109}
+{"type":"tool_result","id":"s1-c5","name":"bash","args":{"command":"grep -rn edge-cases test/"},"isError":false,"at":110}
+{"type":"tool_call","id":"s1-c6","name":"edit","args":{"path":"test/billing/edge-cases.spec.js","content":"+1"},"at":111}
+{"type":"tool_result","id":"s1-c6","name":"edit","args":{"path":"test/billing/edge-cases.spec.js","content":"+1"},"isError":false,"at":112}
+{"type":"tool_call","id":"s1-c7","name":"bash","args":{"command":"npm run lint"},"at":113}
+{"type":"tool_result","id":"s1-c7","name":"bash","args":{"command":"npm run lint"},"isError":false,"at":114}
+{"type":"tool_call","id":"s1-c8","name":"read","args":{"path":"docs/sync-notes.md"},"at":115}
+{"type":"tool_result","id":"s1-c8","name":"read","args":{"path":"docs/sync-notes.md"},"isError":false,"at":116}
+{"type":"tool_call","id":"s1-c9","name":"bash","args":{"command":"git commit -m \"wip edge-cases\""},"at":117}
+{"type":"tool_result","id":"s1-c9","name":"bash","args":{"command":"git commit -m \"wip edge-cases\""},"isError":false,"at":118}
+{"type":"tool_call","id":"s1-c10","name":"bash","args":{"command":"npm run build"},"at":119}
+{"type":"tool_result","id":"s1-c10","name":"bash","args":{"command":"npm run build"},"isError":false,"at":120}
+{"type":"turn_end","id":"t1","at":121}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "items": [
+    { "id": "T1", "name": "重复扣款修复", "aliases": ["dedupe"], "terminal": ["test dedupe"], "abandon": [] },
+    { "id": "T2", "name": "账单导出", "aliases": ["invoice-export"], "terminal": ["invoice check"], "abandon": [] },
+    { "id": "T3", "name": "边界用例", "aliases": ["edge-cases"], "terminal": [], "abandon": [] },
+    { "id": "T4", "name": "文档同步", "aliases": ["docs-sync"], "terminal": ["docs check"], "abandon": [] }
+  ],
+  "order": []
+}
