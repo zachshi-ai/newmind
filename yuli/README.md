@@ -26,7 +26,7 @@
 ```bash
 cd yuli
 npm install                  # 仅集成测试需要官方 @deepseek-ai/* 包；核心与 CLI 零依赖
-npm test                     # 67 tests 全绿（core 40 + cli 17 + 真实管道集成 10）
+npm test                     # 67 tests 全绿（core 41 + cli 16 + 真实管道集成 10）
 
 # 验尸任何历史会话流（契约无关）
 node src/bin/yuli.js audit <stream.jsonl>                       # 险值 + 分带 + 门禁（≥30 废 → exit 1）
