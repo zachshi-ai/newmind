@@ -1,0 +1,38 @@
+{
+  "name": "yuli-dsh",
+  "version": "0.1.0",
+  "description": "豫立 Yuli — DeepSeek Harness 的行前定层：险册（四族险形默认形表 ∪ 显式登记）/ 备形对账（影写·词法相交、存史·全族、干跑·其族、布影）/ 案别判定序（裸险/虚险/落款/有备）/ 险值（默认族 30/案 cap 60 + 显式 10/件 cap 30，分带 豫/跲/废，门禁默认 30）/ 豫牌块（接缝处逐字节确定的裸险点名）。零 LLM 调用的行前定式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可验尸任何历史会话。",
+  "type": "module",
+  "main": "src/plugin/yuli.js",
+  "bin": {
+    "yuli": "src/bin/yuli.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-safety",
+    "irreversible-actions",
+    "destructive-commands",
+    "backup-discipline",
+    "dry-run",
+    "audit"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
