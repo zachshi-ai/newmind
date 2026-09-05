@@ -1,0 +1,15 @@
+# 度支流 · 无制样例（验收夹具：期望 无制 40、带「非」、exit 1）
+# 无制册无旗标：从未被量纲约束——治理发现，不是诬告。
+# 追认验尸：--max-calls 4 → 第 5、6 次过线 2×6=12（足）exit 0；--max-calls 3 → 3×6=18（急）exit 0。
+{"type":"tool_call","id":"u1","name":"read","args":{"path":"src/index.js"},"at":1000}
+{"type":"tool_result","id":"u1","isError":false,"at":1100}
+{"type":"tool_call","id":"u2","name":"bash","args":{"command":"npm test"},"at":2000}
+{"type":"tool_result","id":"u2","isError":false,"at":2400}
+{"type":"tool_call","id":"u3","name":"edit","args":{"path":"src/index.js"},"at":3000}
+{"type":"tool_result","id":"u3","isError":false,"at":3100}
+{"type":"tool_call","id":"u4","name":"bash","args":{"command":"npm run lint"},"at":4000}
+{"type":"tool_result","id":"u4","isError":false,"at":4300}
+{"type":"tool_call","id":"u5","name":"bash","args":{"command":"npm test"},"at":5000}
+{"type":"tool_result","id":"u5","isError":false,"at":5400}
+{"type":"tool_call","id":"u6","name":"read","args":{"path":"README.md"},"at":6000}
+{"type":"tool_result","id":"u6","isError":false,"at":6100}

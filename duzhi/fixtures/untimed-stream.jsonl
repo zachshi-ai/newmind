@@ -1,0 +1,11 @@
+# 度支流 · 无时不判样例（验收夹具：全流无 at；期望 制值 0、带「足」、exit 0）
+# 制册：maxMinutes 5——时长维度诚实退化（spanMs null、时程逾判不判），调用维度照判。
+# 追认 --max-calls 2 → 第 3、4 次过线 2×6=12（足）exit 0。
+{"type":"tool_call","id":"n1","name":"read","args":{"path":"a.js"}}
+{"type":"tool_result","id":"n1","isError":false}
+{"type":"tool_call","id":"n2","name":"edit","args":{"path":"a.js"}}
+{"type":"tool_result","id":"n2","isError":false}
+{"type":"tool_call","id":"n3","name":"bash","args":{"command":"npm test"}}
+{"type":"tool_result","id":"n3","isError":false}
+{"type":"tool_call","id":"n4","name":"bash","args":{"command":"git status"}}
+{"type":"tool_result","id":"n4","isError":false}

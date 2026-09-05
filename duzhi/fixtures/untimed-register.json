@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "id": "clockless-import",
+  "budget": { "maxMinutes": 5 }
+}

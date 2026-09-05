@@ -1,0 +1,39 @@
+{
+  "name": "duzhi-dsh",
+  "version": "0.1.0",
+  "description": "度支 Duzhi — DeepSeek Harness 的量纲治理层：制册（budget v1：maxCalls/maxMinutes 两条线，声明权在任务方）/ 用账（出=每次工具调用含失败 ∧ 时程=末 at−首 at；逐调用判逾案，两线同越一案计一次）/ 制值（(无制?40:0)+min(60,6×逾案)，分带 足/急/非，门 30）/ 余量块（接缝处逐字节确定的蓄支图：入/出/蓄/带/逾点名）。零 LLM 调用的度支式插件（结构性零拦截）+ 零依赖 CLI，契约无关、可追认可验尸任何历史会话流；无时之流时长维度诚实退化。",
+  "type": "module",
+  "main": "src/plugin/duzhi.js",
+  "bin": {
+    "duzhi": "src/bin/duzhi.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "budget",
+    "cost-governance",
+    "resource-accounting",
+    "runaway-agents",
+    "finops",
+    "audit",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
