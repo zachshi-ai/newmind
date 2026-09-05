@@ -1,0 +1,12 @@
+# 效验流 · 免验豁免样例（验收夹具 A2：配 fixtures/exempt-words.json，期望效值 0、带「明」、exit 0）
+# 两件效类成报按设计静默（--reporter=silent 的测试、--quiet 的检查），
+# 由显式免验词表豁免——什么该静默是仓库自己的事，声明权在使用者；
+# x3 无免词且有实内容 → 正常判定记干净，证明免验词表不豁免一切。
+# 手算：calls 3 / 成报 3 / 效类 3 / 免验 2 / 空言 0 / 回令 0 → 0 分「明」。
+{"type":"principal","text":"静默跑一遍测试与检查，然后正常跑测试确认结果。"}
+{"type":"tool_call","id":"x1","name":"bash","args":{"command":"npm test --reporter=silent"},"at":401}
+{"type":"tool_result","id":"x1","name":"bash","args":{"command":"npm test --reporter=silent"},"isError":false,"at":402}
+{"type":"tool_call","id":"x2","name":"bash","args":{"command":"npm run check --quiet"},"at":403}
+{"type":"tool_result","id":"x2","name":"bash","args":{"command":"npm run check --quiet"},"content":"","isError":false,"at":404}
+{"type":"tool_call","id":"x3","name":"bash","args":{"command":"npm test"},"at":405}
+{"type":"tool_result","id":"x3","name":"bash","args":{"command":"npm test"},"content":"Tests: 3 passed, 3 total","isError":false,"at":406}
