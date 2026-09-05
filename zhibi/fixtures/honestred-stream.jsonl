@@ -1,0 +1,9 @@
+# 直笔流 · 诚红样例（验收夹具：期望 诚红 1（0 分）→ 讳值 0、带「素」、exit 0）
+# c1 make all 干净绿 → make 族末直；c2 npm test 干净见红（无讳形）→ 族末红。
+# 红而不讳，笔虽秃而史直：红是任务的失败，不是记录的腐败。
+{"type":"turn_start","id":"t1","at":400}
+{"type":"tool_call","id":"t1-c1","name":"bash","args":{"command":"make all"},"at":401}
+{"type":"tool_result","id":"t1-c1","name":"bash","args":{"command":"make all"},"isError":false,"at":402}
+{"type":"tool_call","id":"t1-c2","name":"bash","args":{"command":"npm test"},"at":403}
+{"type":"tool_result","id":"t1-c2","name":"bash","args":{"command":"npm test"},"isError":true,"at":404}
+{"type":"turn_end","id":"t1","at":405}
