@@ -139,6 +139,7 @@ test('audit：坏册 exit 2；多流合审（两夹具拼接会话数 2）', () 
   const badBook = join(root, 'test', '.tmp-bad-book.json')
   writeFileSync(badBook, 'not-json')
   assert.equal(audit('clean-stream.jsonl', '--file', badBook).status, 2)
+  rmSync(badBook) // 临时坏册用后即焚（此件曾被误入库，本行为修复）
   const r = run(['audit', F('clean-stream.jsonl'), F('leftover-stream.jsonl'), '--json'])
   const s = scoreOf(r)
   assert.equal(s.sessions, 2)
