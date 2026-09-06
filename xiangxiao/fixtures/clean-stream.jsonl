@@ -1,0 +1,8 @@
+# 乡校流 · 净声夹具（验收 A2：期望 3 调用、写 2、cases 0、壅值 {0,0,0,0}、带「畅」、exit 0、有凭之默 1）
+# c1 有凭之默（@ts-expect-error 自带反证，注记不计分）；c2 普通代码；c3 成功之验。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/parse.ts","content":"export function len(x: unknown): number {\n  // @ts-expect-error 未知形状先按 any 取长度，尺自会验它\n  const n = (x as any).length\n  return n\n}\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/parse.ts","content":"export function len(x: unknown): number {\n  // @ts-expect-error 未知形状先按 any 取长度，尺自会验它\n  const n = (x as any).length\n  return n\n}\n"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/cli.js","content":"export function main(argv) {\n  return argv.length\n}\n"},"at":102}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/cli.js","content":"export function main(argv) {\n  return argv.length\n}\n"},"isError":false,"at":103}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm test"},"at":104}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm test"},"isError":false,"at":105}

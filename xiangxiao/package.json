@@ -1,0 +1,37 @@
+{
+  "name": "xiangxiao-dsh",
+  "version": "0.1.0",
+  "description": "乡校 Xiangxiao — DeepSeek Harness 的谏诤通道层：默认形表（写侧静音指令/exec 绕检旗标/测试跳过指令）逐案点名、首见定案（读侧先见→保留）、壅值（畅/壅/毁）门禁、谏牌块供给。零 LLM 调用的观察式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/xiangxiao.js",
+  "bin": {
+    "xiangxiao": "src/bin/xiangxiao.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "critic-channel",
+    "suppression-audit",
+    "reward-hacking",
+    "ci-integrity",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

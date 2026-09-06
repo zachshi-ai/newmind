@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "mute": [
+    "WPS-4119"
+  ],
+  "forms": [],
+  "noDefaults": false,
+  "extraExts": []
+}

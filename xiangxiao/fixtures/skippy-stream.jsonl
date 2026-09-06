@@ -1,0 +1,8 @@
+# 乡校流 · 中带夹具（验收 A2：期望 3 调用、写 2、cases 2、壅值 {total:20, skip:20}、带「壅」、exit 0）
+# c1 s01 js-skip 第 1 行 → 略测 1 案；c2 s04 pytest-skip 第 3 行 → 略测第 2 案；c3 成功之验。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"test/legacy.test.js","content":"it.skip('legacy flow', () => {\n  expect(1).toBe(1)\n})\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"test/legacy.test.js","content":"it.skip('legacy flow', () => {\n  expect(1).toBe(1)\n})\n"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"test/test_legacy.py","content":"import pytest\n\n@pytest.mark.skip(reason=\"flaky on ci\")\ndef test_sync():\n    assert True\n"},"at":102}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"test/test_legacy.py","content":"import pytest\n\n@pytest.mark.skip(reason=\"flaky on ci\")\ndef test_sync():\n    assert True\n"},"isError":false,"at":103}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm test"},"at":104}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm test"},"isError":false,"at":105}

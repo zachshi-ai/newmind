@@ -1,0 +1,9 @@
+# 乡校流 · 首见定案夹具（验收 A2：期望 3 调用、写 2、cases 1、壅值 {total:10, skip:10}、带「畅」、exit 0、保留 1）
+# k1 读侧先见（result content 含既有 @ts-ignore）；k2 同径重写保留（不计分）；
+# k3 新径写略形（s01）→ 略测案。
+{"type":"tool_call","id":"k1","name":"read","args":{"path":"src/old.js"},"at":100}
+{"type":"tool_result","id":"k1","name":"read","args":{"path":"src/old.js"},"isError":false,"content":"export function stale() {\n  // @ts-ignore 旧债：上游类型未升级\n  return legacy()\n}\n","at":101}
+{"type":"tool_call","id":"k2","name":"write","args":{"path":"src/old.js","content":"export function stale() {\n  // @ts-ignore 旧债：上游类型未升级\n  return legacy()\n}\n"},"at":102}
+{"type":"tool_result","id":"k2","name":"write","args":{"path":"src/old.js","content":"export function stale() {\n  // @ts-ignore 旧债：上游类型未升级\n  return legacy()\n}\n"},"isError":false,"at":103}
+{"type":"tool_call","id":"k3","name":"write","args":{"path":"test/fresh.test.js","content":"describe.skip('wip suite', () => {\n  it('later', () => {})\n})\n"},"at":104}
+{"type":"tool_result","id":"k3","name":"write","args":{"path":"test/fresh.test.js","content":"describe.skip('wip suite', () => {\n  it('later', () => {})\n})\n"},"isError":false,"at":105}
