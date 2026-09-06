@@ -1,0 +1,9 @@
+# 舍筏流 · 清白夹具(A2:期望 3 调用、落物 0、cases 0、筏值 {total:0, infield:0, exfield:0}、带「净」、exit 0)
+# c1 写 src/util.js(非筏形);c2 改 docs/guide.md(非筏形);c3 跑 npm test(无径词面)。
+#   —— 三笔调用全不触筏形:交付径天然沉默,筏账无案。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/util.js","content":"export function add(a, b) {\n  return a + b\n}\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/util.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"edit","args":{"path":"docs/guide.md","content":"## 用法\n\n调用 add(a, b)。\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"edit","args":{"path":"docs/guide.md"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm test"},"at":120}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm test"},"isError":false,"content":"3 tests pass\n","at":121}

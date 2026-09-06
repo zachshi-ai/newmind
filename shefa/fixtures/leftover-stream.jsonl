@@ -1,0 +1,14 @@
+# 舍筏流 · 遗筏夹具(A2:期望 5 调用、落物 3、筏径 3、cases 3、筏值 {total:60, infield:30, exfield:30}、带「积」、exit 1)
+# c1 写 scratch/repro.js(筏形 scratch/ · 域内);c2 bash cp 出 src/utils.js.bak(目标词元 .bak · 域内);
+# c3 写 /tmp/probe.py(筏形 tmp/ · 系统区域外);c4 改 src/fix.js(非筏形);c5 npm test(无径词面)。
+#   —— 三件渡河之筏全数留场:两案域内遗(15×2=30)、一案外逸(30),合计 60 积。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"scratch/repro.js","content":"// 手工复现:并发下计数器漂移\nconst { tick } = require('../src/counter')\nsetInterval(() => tick(), 1)\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"scratch/repro.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"cp src/utils.js src/utils.js.bak"},"at":110}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"cp src/utils.js src/utils.js.bak"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"write","args":{"path":"/tmp/probe.py","content":"import json, sys\nprint(json.load(open(sys.argv[1])).keys())\n"},"at":120}
+{"type":"tool_result","id":"c3","name":"write","args":{"path":"/tmp/probe.py"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"edit","args":{"path":"src/fix.js","content":"if (lock === null) lock = acquire()\n"},"at":130}
+{"type":"tool_result","id":"c4","name":"edit","args":{"path":"src/fix.js"},"isError":false,"at":131}
+{"type":"tool_call","id":"c5","name":"bash","args":{"command":"npm test"},"at":140}
+{"type":"tool_result","id":"c5","name":"bash","args":{"command":"npm test"},"isError":false,"content":"12 tests pass\n","at":141}

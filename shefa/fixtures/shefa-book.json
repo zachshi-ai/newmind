@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "keep": ["scratch/", ".bak"],
+  "raft": [],
+  "roots": ["src/**", "scratch/**", "/tmp/**"],
+  "noDefaults": false
+}
