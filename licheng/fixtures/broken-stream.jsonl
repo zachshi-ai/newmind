@@ -1,0 +1,14 @@
+# 会话流 · 破账样例（与 broken-ledger.jsonl 配对）
+# c01 兑现 p-001；c02 写的是 docs/api.md——不含 README 也不含 REPORT；
+# p-002 无凭悬结；5 条 speech 全部命中默认词表 → markerHits 5，
+# 账上立诺 3 → unaccounted 2（advisory，不计分）。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","id":"c01","name":"bash","args":{"command":"npm test"},"at":101}
+{"type":"tool_result","id":"c01","name":"bash","args":{"command":"npm test"},"isError":false,"at":102}
+{"type":"tool_call","id":"c02","name":"write","args":{"path":"docs/api.md"},"at":103}
+{"type":"tool_result","id":"c02","name":"write","args":{"path":"docs/api.md"},"isError":false,"at":104}
+{"type":"speech","text":"接下来我会补齐边界用例","turn":"t1","at":105}
+{"type":"speech","text":"稍后把性能也优化一下","turn":"t1","at":106}
+{"type":"speech","text":"回头我打算把这块重构","turn":"t2","at":107}
+{"type":"speech","text":"然后我会更新文档","turn":"t2","at":108}
+{"type":"speech","text":"随后把示例同步","turn":"t2","at":109}

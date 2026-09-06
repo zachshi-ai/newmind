@@ -1,0 +1,7 @@
+# 绳账 · 破账样例（settle 的验收夹具）
+# p-001 兑现；p-002 无凭且悬（咎30+吝10）；p-003 带凭弃约（悔0）。
+# 期望：立 3 · 兑现 1 · 改诺 0 · 弃约 1 · 失诺 1；咎值 40（咎），exit 1。
+{"type":"promise","id":"p-001","what":"跑全量测试并贴出输出","discharge":{"tool":"bash","contains":"npm test","ok":true}}
+{"type":"promise","id":"p-002","what":"同步 README 示例"}
+{"type":"promise","id":"p-003","what":"生成覆盖率报告","discharge":{"tool":"write","contains":"REPORT"}}
+{"type":"abandon","id":"p-003a","supersedes":"p-003","reason":"宿主 mid-run 指示改用方案 B，覆盖率报告作废"}
