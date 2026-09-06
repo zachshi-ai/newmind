@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "exempt": [
+    "package-lock.json",
+    "src/generated"
+  ],
+  "hugeLines": 400,
+  "fanDirs": 6,
+  "fanFiles": 20,
+  "churnFree": 3
+}
