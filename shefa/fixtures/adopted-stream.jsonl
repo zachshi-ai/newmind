@@ -1,0 +1,11 @@
+# 舍筏流 · 收编夹具(A2:期望 4 调用、落物 1、cases 0、筏值 {total:0}、带「净」、exit 0、counts {dropped:1, adopted:1})
+# c1 写 scratch/check.js;c2 git add 见证;c3 git commit 收编;c4 改 src/app.js。
+#   —— 筏入津渡:add 见证 + 更后 commit,收编合法(验证夹具的产物本就该进版本库)。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"scratch/check.js","content":"// 手工核对脚本(收编为验证夹具)\nassert(require('./src/fix').lock())\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"scratch/check.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"git add scratch/check.js"},"at":110}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"git add scratch/check.js"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"git commit -m 'wip: add scratch check'"},"at":120}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"git commit -m 'wip: add scratch check'"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"edit","args":{"path":"src/app.js","content":"app.use(fix)\n"},"at":130}
+{"type":"tool_result","id":"c4","name":"edit","args":{"path":"src/app.js"},"isError":false,"at":131}

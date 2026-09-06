@@ -1,0 +1,11 @@
+# 舍筏流 · 善舍夹具(A2:期望 4 调用、落物 2、cases 0、筏值 {total:0}、带「净」、exit 0、counts {dropped:2, removed:2})
+# c1 写 scratch/repro.js;c2 写 src/utils.js.bak;c3 bash rm 一并删净(词元逐字命中两案径);c4 改 src/fix.js。
+#   —— 渡即舍筏:rm 凭据在末落之后,两案全销。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"scratch/repro.js","content":"// 手工复现\nconsole.log('bug here')\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"scratch/repro.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/utils.js.bak","content":"const old = 1\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/utils.js.bak"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"rm scratch/repro.js src/utils.js.bak"},"at":120}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"rm scratch/repro.js src/utils.js.bak"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"edit","args":{"path":"src/fix.js","content":"if (lock === null) lock = acquire()\n"},"at":130}
+{"type":"tool_result","id":"c4","name":"edit","args":{"path":"src/fix.js"},"isError":false,"at":131}

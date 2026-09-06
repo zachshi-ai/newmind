@@ -1,0 +1,21 @@
+# 舍筏流 · 混合夹具(A2:期望 8 调用、落物 4、筏径 4、cases 2、筏值 {total:45, infield:15, exfield:30}、带「积」、exit 1)
+# c1 写 src/utils.js.bak(案);c2 rm 销之(舍);c3 写 scratch/verify.py(案);c4 git add 见证;c5 git commit(归);
+# c6 写 scratch/tmpdump.txt(案 · 域内遗);c7 bash 重定向落物 /var/tmp/state.json(筏形 tmp/ · 系统区外逸);
+# c8 写 src/deliver.js(非筏形)。
+#   —— 四筏两舍两留:遗 15 + 外逸 30 = 45 积。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/utils.js.bak","content":"const old = 1\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/utils.js.bak"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"rm src/utils.js.bak"},"at":110}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"rm src/utils.js.bak"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"write","args":{"path":"scratch/verify.py","content":"# 核对脚本(收编为验证夹具)\n"},"at":120}
+{"type":"tool_result","id":"c3","name":"write","args":{"path":"scratch/verify.py"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"bash","args":{"command":"git add scratch/verify.py"},"at":130}
+{"type":"tool_result","id":"c4","name":"bash","args":{"command":"git add scratch/verify.py"},"isError":false,"at":131}
+{"type":"tool_call","id":"c5","name":"bash","args":{"command":"git commit -m save"},"at":140}
+{"type":"tool_result","id":"c5","name":"bash","args":{"command":"git commit -m save"},"isError":false,"at":141}
+{"type":"tool_call","id":"c6","name":"write","args":{"path":"scratch/tmpdump.txt","content":"counter=97 lock=acquired retry=2\n"},"at":150}
+{"type":"tool_result","id":"c6","name":"write","args":{"path":"scratch/tmpdump.txt"},"isError":false,"at":151}
+{"type":"tool_call","id":"c7","name":"bash","args":{"command":"echo dump > /var/tmp/state.json"},"at":160}
+{"type":"tool_result","id":"c7","name":"bash","args":{"command":"echo dump > /var/tmp/state.json"},"isError":false,"at":161}
+{"type":"tool_call","id":"c8","name":"write","args":{"path":"src/deliver.js","content":"module.exports = { fixed: true }\n"},"at":170}
+{"type":"tool_result","id":"c8","name":"write","args":{"path":"src/deliver.js"},"isError":false,"at":171}

@@ -1,0 +1,37 @@
+{
+  "name": "shefa-dsh",
+  "version": "0.1.0",
+  "description": "舍筏 Shefa — DeepSeek Harness 的作业遗物层：落物通道（write 筏形 ∪ exec 落物词法）逐案登记、舍/归/外逸/遗四态销案对账、筏值（净/滞/积）门禁、舍牌块供给。零 LLM 调用的敛迹式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/shefa.js",
+  "bin": {
+    "shefa": "src/bin/shefa.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "workspace-hygiene",
+    "cleanup-discipline",
+    "raft-metaphor",
+    "agent-reliability",
+    "ci-integrity"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
