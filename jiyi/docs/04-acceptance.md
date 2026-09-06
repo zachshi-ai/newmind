@@ -7,17 +7,17 @@
 
 | # | 验收项 | 标准（先于实现确定） | 验证方式 | 结果 |
 |---|--------|----------------------|----------|------|
-| A1 | 核心判定语义 | 流解析（`#` 注释、坏行报行号、id 配对回填、孤儿 result 建档）与对象键/工具族词表同 mingshi；疑册归并（显式 ∪ 默认形表按 (path,on) 去重、显式档优先、noDefaults 可关、any 与默认 write 不互并）；触发域（write/exec/any 首笔调用，成败皆算，域内无调用不判）；问凭据两通道（成功 observe 对象键路径经 normalizePath 规整后相等 ∪ 成功 exec 命令文本含 path 原文子串）；判定序锁死（谋及〔含动即问同笔〕→空疑→迟问→独谋显式/未见/独谋默认→无动）；计分锁死（迟问 +5/条 cap15、独谋显式 +15/条 cap45、独谋默认 +5/条 cap15、total=min(100,late+blind)）；分带 谋 0–14 / 疏 15–29 / 独 ≥30；门默认 30——core 用例 ≥ 42 且全绿，断言恰好该分值 | `npm test`（core 部分） | ⬜ |
-| A2 | 夹具分数（先于实现手算定死） | `clean-stream`+`clean-askfile`：3 调用、疑条 3、谋值 `{total:0, late:0, blind:0}`、带「谋」、exit 0、counts `{triggered:3, fulfilled:1, late:0, blind:0, emptyAsk:0, unseen:2, askCount:3}`；`blind-stream`+`blind-askfile`：5 调用、疑条 5、谋值 `{total:10, late:10, blind:0}`、带「谋」、exit 0、counts `{triggered:5, fulfilled:0, late:2, blind:0, emptyAsk:1, unseen:2, askCount:5}`；`guilt-stream`+`guilt-askfile`：3 调用、疑条 4、谋值 `{total:30, late:0, blind:30}`、带「独」、exit 1、counts `{triggered:4, fulfilled:0, late:0, blind:2, emptyAsk:0, unseen:2, askCount:4}`；`guilt-stream` 无册：值 0、带「谋」、exit 0、issues 含「无稽疑册」 | core 断言 + CLI 复现 | ⬜ |
-| A3 | 跨项目互认 | dingfen 的 `fixtures/fenced-stream.jsonl`（6 调用，含 2 笔 edit）喂 `jiyi audit`（配 clean-askfile）：3 疑条全触发、独谋（显式）1 + 未见 2 → 谋值 `{total:15, late:0, blind:15}`、带「疏」、exit 0（单显式独谋 15 落疏带不咬门——对异仓流不冤枉门禁）；配空籍疑册（asks 空 ∪ noDefaults true）喂同流：无册不判、值 0、带「谋」、exit 0；jiyi 的 `fixtures/guilt-stream.jsonl` 喂 `dingfen audit`（子进程真跑对方 bin）：争值 0、带「定」、exit 0——同格式流双向可审，互不误伤 | CLI 测试 | ⬜ |
-| A4 | CLI 语义 | `audit` 多流 + `--file` + `--gate` + `--json`；坏 JSON 行 / 流缺失 / 疑册缺失或坏籍 → exit 2；`register` 无 `--ask` → exit 2、`--on` 非法值 → exit 2、`--ask`/`--on` 成对可重复、重复登记同 (path,on) 去重；`revoke` 无此条 → exit 2；`list`/`block` 疑册文件缺失 → exit 2；`gate --value` 按门判 0/1；`--version`/`--help` 正常——CLI 用例 ≥ 16 | CLI 测试 | ⬜ |
-| A5 | 稽块逐字节确定 | 同一疑册两次 `jiyi block` shasum 相同；增一条显式疑条后文本改变；空籍（asks 空 ∪ noDefaults true）输出确定性空籍文本 | CLI shasum 复现 | ⬜ |
-| A6 | 真实管道上的观察式插件（零拦截） | 在 **npm 官方包** `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 构成的真实工具管道上挂载稽疑插件：失败探针也无条件到达工具本体（结构性零拦截）；显式疑条独谋案门红；谋及豁免探针免；迟问案计 5；空疑（404 读取）免；未见（默认条无踪）不罚；bash 命令含名认问凭据；稽块两次渲染逐字节相同；`exportStream()` 导出流离线 `audit` 重放，案数与谋值与运行时账**账实一致**——集成用例 ≥ 8 | 集成测试 | ⬜ |
-| A7 | 模型无关 | 核心 + 插件零 LLM 调用、零提示词注入、零网络、零子进程、零文件系统探测；插件源码无 pre-execute 监听器（结构性零拦截） | grep（下附命令，应无输出） | ⬜ |
-| A8 | 测试总量 | 全部用例 ≥ 70 且全绿（core + cli + 集成） | `npm test` | ⬜ |
-| A9 | 文档 | 选书映射（01）、场景价值与伪需求自检（02）、设计语义锁死（03）、本验收表（04）、SKILL.md、README 快速开始齐备；根 README 项目索引与方向登记更新 | 人工 + 链接 | ⬜ |
+| A1 | 核心判定语义 | 流解析（`#` 注释、坏行报行号、id 配对回填、孤儿 result 建档）与对象键/工具族词表同 mingshi；疑册归并（显式 ∪ 默认形表按 (path,on) 去重、显式档优先、noDefaults 可关、any 与默认 write 不互并）；触发域（write/exec/any 首笔调用，成败皆算，域内无调用不判）；问凭据两通道（成功 observe 对象键路径经 normalizePath 规整后相等 ∪ 成功 exec 命令文本含 path 原文子串）；判定序锁死（谋及〔含动即问同笔〕→空疑→迟问→独谋显式/未见/独谋默认→无动）；计分锁死（迟问 +5/条 cap15、独谋显式 +15/条 cap45、独谋默认 +5/条 cap15、total=min(100,late+blind)）；分带 谋 0–14 / 疏 15–29 / 独 ≥30；门默认 30——core 用例 ≥ 42 且全绿，断言恰好该分值 | `npm test`（core 部分） | ✅ 55 用例全绿，分值逐字断言 |
+| A2 | 夹具分数（先于实现手算定死） | `clean-stream`+`clean-askfile`：3 调用、疑条 3、谋值 `{total:0, late:0, blind:0}`、带「谋」、exit 0、counts `{triggered:3, fulfilled:1, late:0, blind:0, emptyAsk:0, unseen:2, askCount:3}`；`blind-stream`+`blind-askfile`：5 调用、疑条 5、谋值 `{total:10, late:10, blind:0}`、带「谋」、exit 0、counts `{triggered:5, fulfilled:0, late:2, blind:0, emptyAsk:1, unseen:2, askCount:5}`；`guilt-stream`+`guilt-askfile`：3 调用、疑条 4、谋值 `{total:30, late:0, blind:30}`、带「独」、exit 1、counts `{triggered:4, fulfilled:0, late:0, blind:2, emptyAsk:0, unseen:2, askCount:4}`；`guilt-stream` 无册：值 0、带「谋」、exit 0、issues 含「无稽疑册」 | core 断言 + CLI 复现 | ✅ 四组期望逐字吻合（0 / 10 / 30 / 0 分与全部计数） |
+| A3 | 跨项目互认 | dingfen 的 `fixtures/fenced-stream.jsonl`（6 调用，含 2 笔 edit）喂 `jiyi audit`（配 clean-askfile）：3 疑条全触发、独谋（显式）1 + 未见 2 → 谋值 `{total:15, late:0, blind:15}`、带「疏」、exit 0（单显式独谋 15 落疏带不咬门——对异仓流不冤枉门禁）；配空籍疑册（asks 空 ∪ noDefaults true）喂同流：无册不判、值 0、带「谋」、exit 0；jiyi 的 `fixtures/guilt-stream.jsonl` 喂 `dingfen audit`（子进程真跑对方 bin）：争值 0、带「定」、exit 0——同格式流双向可审，互不误伤 | CLI 测试 | ✅ 双向三断言全过（15/疏/0 · 0/谋/0 · 争值 0/定/0） |
+| A4 | CLI 语义 | `audit` 多流 + `--file` + `--gate` + `--json`；坏 JSON 行 / 流缺失 / 疑册缺失或坏籍 → exit 2；`register` 无 `--ask` → exit 2、`--on` 非法值 → exit 2、`--ask`/`--on` 成对可重复、重复登记同 (path,on) 去重；`revoke` 无此条 → exit 2；`list`/`block` 疑册文件缺失 → exit 2；`gate --value` 按门判 0/1；`--version`/`--help` 正常——CLI 用例 ≥ 16 | CLI 测试 | ✅ 23 用例全绿 |
+| A5 | 稽块逐字节确定 | 同一疑册两次 `jiyi block` shasum 相同；增一条显式疑条后文本改变；空籍（asks 空 ∪ noDefaults true）输出确定性空籍文本 | CLI shasum 复现 | ✅ 逐字节一致（shasum 2bf7069d…×2）；空籍确定性文本 |
+| A6 | 真实管道上的观察式插件（零拦截） | 在 **npm 官方包** `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 构成的真实工具管道上挂载稽疑插件：失败探针也无条件到达工具本体（结构性零拦截）；显式疑条独谋案门红；谋及豁免探针免；迟问案计 5；空疑（404 读取）免；未见（默认条无踪）不罚；bash 命令含名认问凭据；稽块两次渲染逐字节相同；`exportStream()` 导出流离线 `audit` 重放，案数与谋值与运行时账**账实一致**——集成用例 ≥ 8 | 集成测试 | ✅ 10 用例全绿（账实一致 20 = 迟问 5 + 独谋 15） |
+| A7 | 模型无关 | 核心 + 插件零 LLM 调用、零提示词注入、零网络、零子进程、零文件系统探测；插件源码无 pre-execute 监听器（结构性零拦截） | grep（下附命令，应无输出） | ✅ 两组 grep 均无输出 |
+| A8 | 测试总量 | 全部用例 ≥ 70 且全绿（core + cli + 集成） | `npm test` | ✅ 88 tests, 88 pass（core 55 + cli 23 + 集成 10） |
+| A9 | 文档 | 选书映射（01）、场景价值与伪需求自检（02）、设计语义锁死（03）、本验收表（04）、SKILL.md、README 快速开始齐备；根 README 项目索引与方向登记更新 | 人工 + 链接 | ✅（本行即 A9 验证） |
 
-## 复现命令（交付后回填实测输出）
+## 复现命令
 
 ```bash
 cd jiyi
@@ -34,4 +34,91 @@ node src/bin/jiyi.js audit fixtures/guilt-stream.jsonl; echo $?                 
 ```bash
 grep -rniE "from ['\"](node:)?(child_process|fs|http|https|net|tls|dns)|require\(['\"]|fetch\(|axios|XMLHttpRequest|WebSocket|openai|anthropic|completions|chat\.create|spawnSync|execSync|child_process\.|readFileSync|writeFileSync|existsSync" src/core src/plugin | grep -v "^\s*[*/ ]"
 grep -rnE "ctx\.on\(['\"]tools/pre-execute" src/plugin
+```
+
+## 实测记录（2026-09-06，本机复跑真实输出）
+
+```
+$ node --version
+v24.18.0
+$ npm ls @deepseek-ai/cordis @deepseek-ai/dsh-tools
+jiyi-dsh@0.1.0
+├── @deepseek-ai/cordis@4.0.2
+└── @deepseek-ai/dsh-tools@0.0.1-rc.1
+$ npm test
+ℹ tests 88
+ℹ pass 88
+ℹ fail 0
+（core 55 + cli 23 + 集成 10，分文件运行各自全绿）
+```
+
+A7 的 grep（均无输出，退出码 1）：
+
+```console
+$ grep -rniE "from ['\"](node:)?(child_process|fs|http|https|net|tls|dns)|require\(['\"]|fetch\(|axios|XMLHttpRequest|WebSocket|openai|anthropic|completions|chat\.create|spawnSync|execSync|child_process\.|readFileSync|writeFileSync|existsSync" src/core src/plugin | grep -v "^\s*[*/ ]"
+$ grep -rnE "ctx\.on\(['\"]tools/pre-execute" src/plugin
+```
+
+clean 基线夹具的审计（谋及 1 + 未见 2 → 值 0 / 带「谋」/ exit 0）：
+
+```console
+$ jiyi audit fixtures/clean-stream.jsonl --file fixtures/clean-askfile.json
+{
+  "sessions": 1,
+  "calls": 3,
+  "asks": 3,
+  "score": { "total": 0, "late": 0, "blind": 0 },
+  "band": "谋",
+  "gate": 30,
+  "verdict": "pass",
+  "ok": true,
+  "counts": { "triggered": 3, "fulfilled": 1, "late": 0, "blind": 0, "emptyAsk": 0, "unseen": 2, "askCount": 3 },
+  "issues": [
+    "未见 ×2（不计分）：CLAUDE.md、README.md —— 默认条全流无踪：疑而不罚",
+    "谋及 ×1：AGENTS.md —— 先问后动：首触发之前已有问凭据"
+  ]
+}
+$ echo $?
+0
+```
+
+blind 迟问夹具（迟问 2 = 10 / 带「谋」/ exit 0）与 guilt 独谋红案（独谋显式 2 = 30 / 带「独」/ exit 1）：
+
+```console
+$ jiyi audit fixtures/blind-stream.jsonl --file fixtures/blind-askfile.json
+  → "score": { "total": 10, "late": 10, "blind": 0 }, "band": "谋", exit 0
+  → "迟问 ×2（+5/条）：AGENTS.md、package.json —— 先动后问：首触发之后才有问凭据"
+  → "空疑 ×1（不计分）：CONTRIBUTING.md —— 问而环境答无：读取失败，疑自解"
+$ jiyi audit fixtures/guilt-stream.jsonl --file fixtures/guilt-askfile.json
+  → "score": { "total": 30, "late": 0, "blind": 30 }, "band": "独", "verdict": "fail", exit 1
+  → "独谋（显式）×2（+15/条）：AGENTS.md、Makefile —— 谋不及物：首动之前流内无问凭据"
+$ jiyi audit fixtures/guilt-stream.jsonl
+  → "score": { "total": 0, … }, issues 含「无稽疑册——声明权在任务方，先立册再审计」，exit 0
+```
+
+稽块（同一疑册两次渲染，shasum 逐字节一致）：
+
+```console
+$ jiyi block --file fixtures/guilt-askfile.json | shasum
+2bf7069d0b207f764f46c67599737fb9f254072f  -
+$ jiyi block --file fixtures/guilt-askfile.json | shasum
+2bf7069d0b207f764f46c67599737fb9f254072f  -
+$ jiyi block --file fixtures/guilt-askfile.json
+【稽疑 · 疑册】
+疑条 4 条（显式 2 ∪ 默认 2，noDefaults 否）：
+  · AGENTS.md（write）[显式]
+  · Makefile（exec）[显式]
+  · CLAUDE.md（write）[默认]
+  · README.md（write）[默认]
+问账：谋及 0 · 空疑 0 · 迟问 0 · 独谋 0 · 未见 0
+谋值：0（谋）
+汝则有大疑，谋及乃心，谋及卿士，谋及庶人，谋及卜筮——谋及乃心，从不单独定案。
+本块由确定性规则生成；重放同一疑册必得同一文本。
+```
+
+集成账实对账（写 + 读 + 执行三探针，导出流离线审计 = 运行时账，20 = 迟问 5 + 独谋 15）：
+
+```console
+（integration.dsh.test.js：offline.score === live.score === {total 20, late 5, blind 15} ✅
+ offline.counts === live.counts ✅（fulfilled 0 · late 1 · blind 1））
 ```
