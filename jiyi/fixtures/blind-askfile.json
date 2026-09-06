@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "asks": [
+    { "path": "AGENTS.md", "on": "write" },
+    { "path": "package.json", "on": "exec" },
+    { "path": "CONTRIBUTING.md", "on": "write" }
+  ],
+  "noDefaults": false
+}
