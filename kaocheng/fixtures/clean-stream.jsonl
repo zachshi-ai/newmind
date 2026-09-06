@@ -1,0 +1,11 @@
+# 考诚流 · clean（验收 A2：期望 4 调用、诚物 2、诚值 0、带「诚」、exit 0）
+# 契上两物皆按契交付：报告 4 行（末尾换行不计）含「结论」；结果 JSON 可解析且含 summary/count。
+# 册外之写（src/app.js）与读取皆不入考。
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"src/app.js"},"at":101}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"src/app.js"},"isError":false,"content":"const a = 1\n","at":102}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/app.js","content":"const a = 1\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/app.js"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"write","args":{"path":"docs/report.md","content":"# 报告\n\n过程从略。\n结论：全部通过。\n"},"at":120}
+{"type":"tool_result","id":"c3","name":"write","args":{"path":"docs/report.md"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"write","args":{"path":"out/result.json","content":"{\"summary\":\"ok\",\"count\":3}\n"},"at":130}
+{"type":"tool_result","id":"c4","name":"write","args":{"path":"out/result.json"},"isError":false,"at":131}

@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "items": [
+    { "name": "报告", "path": "docs/report.md", "form": "text", "minLines": 3, "words": ["结论"] },
+    { "name": "结果", "path": "out/result.json", "form": "json", "fields": ["summary", "count"] }
+  ]
+}
