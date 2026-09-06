@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "duty": [".env", ".npmrc"],
+  "secrets": [],
+  "peeks": [],
+  "noDefaults": false
+}
