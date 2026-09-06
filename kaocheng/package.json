@@ -1,0 +1,37 @@
+{
+  "name": "kaocheng-dsh",
+  "version": "0.1.0",
+  "description": "考诚 Kaocheng — DeepSeek Harness 的交付契约层：契册五条（径/结形/域/词/卷）对物之末据逐件考、工据灭据两通道词法、幽/灭/壳/畸/疵/诚六案别、诚值（诚/欠/欺）分带门禁、考牌块供给。零 LLM 调用的考诚式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/kaocheng.js",
+  "bin": {
+    "kaocheng": "src/bin/kaocheng.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "delivery-contract",
+    "acceptance-criteria",
+    "agent-reliability",
+    "deliverable-audit",
+    "context-hygiene"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

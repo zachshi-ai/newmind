@@ -1,0 +1,7 @@
+# 考诚流 · workseen（工见未考：期望 2 调用、工见未考 1、诚物 1、诚值 0、带「诚」、exit 0）
+# 结果物由重定向生成（exec 生产词法：重定向目标命中契径）——工见成立、结形黑盒沉默（注记不计分）。
+# 报告按契交付。契约全数不红——工见未考是注记不是罪名。
+{"type":"tool_call","id":"w1","name":"bash","args":{"command":"node gen.js > out/result.json"},"at":101}
+{"type":"tool_result","id":"w1","name":"bash","args":{"command":"node gen.js > out/result.json"},"isError":false,"at":102}
+{"type":"tool_call","id":"w2","name":"write","args":{"path":"docs/report.md","content":"甲。\n乙。\n结论：交付。\n"},"at":110}
+{"type":"tool_result","id":"w2","name":"write","args":{"path":"docs/report.md"},"isError":false,"at":111}
