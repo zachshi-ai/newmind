@@ -1,0 +1,38 @@
+{
+  "name": "licheng-dsh",
+  "version": "0.1.0",
+  "description": "立诚 Licheng — DeepSeek Harness 的承诺信用层：绳账（承诺/改诺/弃约的机器账本）/ 咎值（失诺+30 轻诺+10 的确定性信用分）/ 结账门（兑现凭据必须在会话流里真实发生）。零 LLM 调用的结绳式插件（结构性零拦截）+ 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/licheng.js",
+  "bin": {
+    "licheng": "src/bin/licheng.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "agent-reliability",
+    "commitment-tracking",
+    "promise-ledger",
+    "agent-honesty",
+    "accountability",
+    "credit-score"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

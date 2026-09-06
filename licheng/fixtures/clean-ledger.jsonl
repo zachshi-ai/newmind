@@ -1,0 +1,4 @@
+# 绳账 · 干净样例（settle 的验收夹具）
+# p-001/p-002 均带凭据且在 clean-stream.jsonl 里真实命中：咎值 0（无咎），exit 0。
+{"type":"promise","id":"p-001","what":"跑全量测试并贴出输出","discharge":{"tool":"bash","contains":"npm test","ok":true}}
+{"type":"promise","id":"p-002","what":"更新 README 示例","discharge":{"tool":"write","contains":"README"}}

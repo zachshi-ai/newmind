@@ -1,0 +1,7 @@
+# 会话流 · 干净样例（与 clean-ledger.jsonl 配对）
+# 两次调用恰好兑现两结；无 speech 事件：unaccounted 诚实为 null。
+{"type":"turn_start","id":"t1","at":100}
+{"type":"tool_call","id":"c01","name":"bash","args":{"command":"npm test"},"at":101}
+{"type":"tool_result","id":"c01","name":"bash","args":{"command":"npm test"},"isError":false,"at":102}
+{"type":"tool_call","id":"c02","name":"write","args":{"path":"README.md","content":"示例已更新"},"at":103}
+{"type":"tool_result","id":"c02","name":"write","args":{"path":"README.md","content":"示例已更新"},"isError":false,"at":104}
