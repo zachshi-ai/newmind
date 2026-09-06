@@ -1,0 +1,15 @@
+# 稽疑流 · 迟问与空疑夹具（验收 A2：期望 5 调用、疑条 5、值 {total 10, late 10, blind 0}、带「谋」、exit 0、counts {triggered 5, fulfilled 0, late 2, blind 0, emptyAsk 1, unseen 2, askCount 5}）
+# AGENTS.md(write)：首笔 write 是 c1，凭据 c2 在其后 → 迟问 +5。
+# package.json(exec)：首笔 exec 是 c3，凭据 c5（bash 命令含名，词法相交）在触发后 → 迟问 +5。
+# CONTRIBUTING.md(write)：全流无成功凭据，c4 失败读取（环境答无）→ 空疑免。
+# 默认条 CLAUDE.md(write)、README.md(write)：全流无踪 → 未见。
+{"type":"tool_call","id":"c1","name":"edit","args":{"path":"src/app.js","content":"export const x = 1\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"edit","args":{"path":"src/app.js","content":"export const x = 1\n"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"read","args":{"path":"AGENTS.md"},"at":102}
+{"type":"tool_result","id":"c2","name":"read","args":{"path":"AGENTS.md"},"isError":false,"at":103}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"ls -la"},"at":104}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"ls -la"},"isError":false,"at":105}
+{"type":"tool_call","id":"c4","name":"read","args":{"path":"CONTRIBUTING.md"},"at":106}
+{"type":"tool_result","id":"c4","name":"read","args":{"path":"CONTRIBUTING.md"},"isError":true,"at":107}
+{"type":"tool_call","id":"c5","name":"bash","args":{"command":"cat package.json"},"at":108}
+{"type":"tool_result","id":"c5","name":"bash","args":{"command":"cat package.json"},"isError":false,"at":109}

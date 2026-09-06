@@ -1,0 +1,9 @@
+# 稽疑流 · 谋及基线夹具（验收 A2：期望 3 调用、疑条 3、值 {0,0,0}、带「谋」、exit 0、counts {triggered 3, fulfilled 1, late 0, blind 0, emptyAsk 0, unseen 2, askCount 3}）
+# 显式条 AGENTS.md(write)：首笔 write 是 c2，其前 c1 已成功读取 → 谋及。
+# 默认条 CLAUDE.md(write)、README.md(write)：触发域命中但全流无踪 → 未见（不计分）。
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"AGENTS.md"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"AGENTS.md"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"edit","args":{"path":"src/app.js","content":"export const x = 1\n"},"at":102}
+{"type":"tool_result","id":"c2","name":"edit","args":{"path":"src/app.js","content":"export const x = 1\n"},"isError":false,"at":103}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm run build"},"at":104}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm run build"},"isError":false,"at":105}

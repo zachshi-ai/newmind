@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "asks": [
+    { "path": "AGENTS.md", "on": "write" },
+    { "path": "Makefile", "on": "exec" }
+  ],
+  "noDefaults": false
+}
