@@ -1,0 +1,38 @@
+{
+  "name": "shuitu-dsh",
+  "version": "0.1.0",
+  "description": "水土 Shuitu — DeepSeek Harness 的环境水土层：改动通道（write 径改径形 ∪ exec 装/改/驻三族词法）逐案登记、配对复位凭据对账（豁 > 复 > 遗判定序）、异值（淮/移/枳）门禁、土牌块供给。零 LLM 调用的察土式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/shuitu.js",
+  "bin": {
+    "shuitu": "src/bin/shuitu.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "environment-hygiene",
+    "machine-drift",
+    "reproducibility",
+    "standing-state",
+    "agent-reliability",
+    "ci-integrity"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

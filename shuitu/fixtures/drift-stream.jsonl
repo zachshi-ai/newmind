@@ -1,0 +1,11 @@
+# 水土流 · 漂移夹具(A2:期望 4 调用、案 3、改动 3、异值 {total:60, reside:30, inst:15, conf:15}、带「枳」、exit 1)
+# c1 npm install -g nodemon(装案 装:npm:nodemon);c2 git config --global user.email(改案 改:gitconfig:user.email,scope 后 2 词元=写);
+# c3 brew services start redis(驻案 驻:brew:redis);c4 改 src/fix.js(非径形)。  —— 三笔常驻境变全数未复位:驻 30 + 装 15 + 改 15 = 60 枳。
+{"type":"tool_call","id":"c1","name":"bash","args":{"command":"npm install -g nodemon"},"at":100}
+{"type":"tool_result","id":"c1","name":"bash","args":{"command":"npm install -g nodemon"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"git config --global user.email bot@example.com"},"at":110}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"git config --global user.email bot@example.com"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"brew services start redis"},"at":120}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"brew services start redis"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"write","args":{"path":"src/fix.js","content":"export const fix = 1\n"},"at":130}
+{"type":"tool_result","id":"c4","name":"write","args":{"path":"src/fix.js"},"isError":false,"at":131}

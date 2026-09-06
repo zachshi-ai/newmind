@@ -1,0 +1,19 @@
+# 水土流 · 复位夹具(A2:期望 7 调用、案 3、改动 3、异值 {total:0}、带「淮」、exit 0)
+# c1 pip install --user yq(装案 装:pip:yq);c2 pip uninstall -y yq(pip 卸免 scope、包名对齐→复);
+# c3 npm i -g cowsay(装案,动词 i);c4 npm uninstall -g cowsay(node 卸需 scope:-g 在场→复);
+# c5 git config --global core.editor vim(改案);c6 git config --global --unset core.editor(同 scope 同 key→复);
+# c7 改 src/deliver.js(非径形)。  —— 装了就卸、改了就还原:三案全复,淮带。
+{"type":"tool_call","id":"c1","name":"bash","args":{"command":"pip install --user yq"},"at":100}
+{"type":"tool_result","id":"c1","name":"bash","args":{"command":"pip install --user yq"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"pip uninstall -y yq"},"at":110}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"pip uninstall -y yq"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm i -g cowsay"},"at":120}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm i -g cowsay"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"bash","args":{"command":"npm uninstall -g cowsay"},"at":130}
+{"type":"tool_result","id":"c4","name":"bash","args":{"command":"npm uninstall -g cowsay"},"isError":false,"at":131}
+{"type":"tool_call","id":"c5","name":"bash","args":{"command":"git config --global core.editor vim"},"at":140}
+{"type":"tool_result","id":"c5","name":"bash","args":{"command":"git config --global core.editor vim"},"isError":false,"at":141}
+{"type":"tool_call","id":"c6","name":"bash","args":{"command":"git config --global --unset core.editor"},"at":150}
+{"type":"tool_result","id":"c6","name":"bash","args":{"command":"git config --global --unset core.editor"},"isError":false,"at":151}
+{"type":"tool_call","id":"c7","name":"write","args":{"path":"src/deliver.js","content":"export default {}\n"},"at":160}
+{"type":"tool_result","id":"c7","name":"write","args":{"path":"src/deliver.js"},"isError":false,"at":161}
