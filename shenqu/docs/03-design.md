@@ -74,8 +74,8 @@
 
 1. **豁免**：同上，写不入账，止。
 2. **写前查账**（该 (session, 规整径) 的见闻史，**先查后记**——本次写不算自己的凭据）：残见 ≥ 1 ∧ 全览 = 0 ∧ 自书 = 0 → **盲动立案 +30/案，cap 60**。
-3. **自书登记**：该径写入数 +1（自己成功写过的径，此后视同有据——自己写的自己知道；单会话视图，跨会话之变归定分）。
-4. 写前**无任何入账见闻也无自书** → 不归本层（写前读过没有是知止的地盘），静默；全是无据之见 → 同静默（宁纵）。
+3. **自书登记（只记无案之写）**：写时立案（盲动）则该笔不记自书——**盲写不生据**，同径次刀仍可立案（逐笔立案，cap 60 才可达）；写时清白（有全览、有自书、或该径无残见）才记自书。无见闻之写（不归本层）亦记自书——作者知道自己写过什么：create → 取窗 → patch 的 TDD 链条清白。
+4. 写前**无任何入账见闻也无自书** → 不归本层（写前读过没有是知止的地盘），静默但记自书；全是无据之见 → 同静默（宁纵）。
 
 同一径先后多笔写皆在残见之后：逐笔立案（每笔动刀各是一案），cap 60 封顶。残见之后、动刀之前的**补览**（全览）救得了后续的刀，救不了已立的案——时序以流序为准。
 
@@ -95,7 +95,7 @@
 |---|---|---|
 | 取窗认全 | 限窗命中而回程行数 < 窗值 | 全览（卷短于窗，见到底了） |
 | 补览赦免 | 残见之后、动刀之前有全览 | 从全览起清白（已立之案不销） |
-| 自书为览 | 该径此前被本会话成功写过 | 视同有据 |
+| 自书为览 | 该径此前被本会话**无案**成功写过（盲写不生据） | 视同有据 |
 | 豁免在册 | 规整径含材册 exempt 子串 | 见写全免出账，注记每径一记 |
 | 失败见不入账 | isError === true | 全程不入账 |
 | 执行黑盒 | exec 族 | 不判（宁漏勿诬） |
@@ -167,7 +167,7 @@ crawl = min(20, 10 × 碎览径)
 | blind | calls 4、views 2、writes 2、cases 1、score `{total:30, blind:30, crawl:0}`、带「盲」、exit 1、counts `{blindActs:1, crawls:0, partialViews:1, fullViews:1, exempted:0}`——c1 限窗 40、回程恰 40 行（40≥40 窗满未到底）=残见（窗）；c2 动刀=盲动 +30；c3 无窗读 50 行=全览（补览）；c4 动刀清白（补览救了这刀，救不了 c2 那刀）；fragTop [{src/api.js, 1}] |
 | marked | calls 2、views 1、writes 1、cases 1、score `{total:30, blind:30, crawl:0}`、带「盲」、exit 1、counts `{blindActs:1, crawls:0, partialViews:1, fullViews:0, exempted:0}`、markerHits 1——c1 无窗读而卷尾 `[truncated]`（认尾命中）=残见（显残）；c2 动刀=盲动 +30 |
 | crawly | calls 6、views 6、writes 0、cases 1、score `{total:10, blind:0, crawl:10}`、带「全」（10≤14 点名不咬门）、exit 0、counts `{blindActs:0, crawls:1, partialViews:5, fullViews:1, exempted:0}`——logs/a.log 三窗（限窗 20 回程 20、偏窗 offset=10、限窗 5）≥3=碎览 +10；logs/b.log 两窗 <3 不案；docs/c.md 限窗 30 回程 12 行=取窗认全（全览）；fragTop [{logs/a.log,3},{logs/b.log,2}] |
-| mixed | calls 7、views 3、writes 3、cases 1、score `{total:30, blind:30, crawl:0}`、带「盲」、exit 1、counts `{blindActs:1, crawls:0, partialViews:2, fullViews:1, exempted:1}`——c1/c2 对 src/big.js 两窗=残见×2；c3 动刀=盲动 +30（该径无全览无自书；碎览不双罚）；c4 读 src/small.js 10 行无窗=全览；c5 动刀清白；c6/c7 vendor/gen.js（材册 exempt `vendor/`）全免出账、注记每径一记=1；issues=[盲动行, 豁免行] |
+| mixed | calls 7、views 5、writes 2、cases 1、score `{total:30, blind:30, crawl:0}`、带「盲」、exit 1、counts `{blindActs:1, crawls:0, partialViews:4, fullViews:1, exempted:0}`——c1/c2 对 src/big.js 两窗（限 40 回 40、限 60 回 60）=残见×2；c3 动刀=盲动 +30（该径无全览无自书）；c4/c5 对 logs/x.log 两窗（限 20 回 20、tail_limit 10 回 10）=残见×2 <3 不案；c6 读 src/small.js 10 行无窗=全览；c7 动刀清白；windowReads 4；fragTop [{logs/x.log,2},{src/big.js,2}]（同数按径字典序） |
 
 CLI 附加口径（写入 A2 验证）：
 

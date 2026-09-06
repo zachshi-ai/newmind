@@ -1,0 +1,7 @@
+# 审曲流 · 显残夹具(A2:期望 2 调用、views 1、writes 1、cases 1、残值 {total:30,blind:30,crawl:0}、带「盲」、exit 1)
+# c1 读 docs/report.md 无窗参数,content 10 行、卷尾「…[truncated]」(默认形认尾命中)→ 残见(显残);
+# c2 动刀 → 盲动 +30。markerHits 1、windowReads 0——显残通道独立于取窗通道。
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"docs/report.md"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"docs/report.md"},"isError":false,"content":"doc line 1: value = 0\ndoc line 2: value = 1\ndoc line 3: value = 2\ndoc line 4: value = 3\ndoc line 5: value = 4\ndoc line 6: value = 5\ndoc line 7: value = 6\ndoc line 8: value = 7\ndoc line 9: value = 8\n…[truncated]","at":101}
+{"type":"tool_call","id":"c2","name":"edit","args":{"path":"docs/report.md","content":"fixdoc line 1: value = 0\nfixdoc line 2: value = 1\nfixdoc line 3: value = 2"},"at":102}
+{"type":"tool_result","id":"c2","name":"edit","args":{"path":"docs/report.md","content":"fixdoc line 1: value = 0\nfixdoc line 2: value = 1\nfixdoc line 3: value = 2"},"isError":false,"at":103}
