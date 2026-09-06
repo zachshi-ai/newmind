@@ -134,7 +134,7 @@ xiangxiao --help | --version
 | c2 | write `src/utils.py` | 第 2 行行尾 `# type: ignore`（m05）→ 缄笔第 3 案 |
 | c3 | bash `git commit --no-verify -m "wip: auth"` | 成功（b01）→ 避检 1 案 |
 
-期望：1 会话、3 调用、写 3、cases 4、壅值 `{total:90, silence:60, bypass:30, skip:0}`（silence=min(60,30×3)、bypass=min(60,30×1)、total=min(100,90)）、带「毁」、exit 1；counts `{mutedDirectives:3, bypassFlags:1, skippedTests:0, keptDirectives:0, justified:0, exempted:0}`。
+期望：1 会话、3 调用、写 2、cases 4、壅值 `{total:90, silence:60, bypass:30, skip:0}`（silence=min(60,30×3)、bypass=min(60,30×1)、total=min(100,90)）、带「毁」、exit 1；counts `{mutedDirectives:3, bypassFlags:1, skippedTests:0, keptDirectives:0, justified:0, exempted:0}`。
 
 ### skippy-stream（中带夹具：略测两案）
 

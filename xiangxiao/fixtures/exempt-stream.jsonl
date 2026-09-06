@@ -1,0 +1,7 @@
+# 乡校流 · 豁免夹具（验收 A2：带 --mute WPS-4119 期望 2 调用、写 2、cases 1、壅值 {total:30, silence:30}、带「毁」、exit 1、豁免 1；
+# 不带 --mute 则 cases 2、total 60）
+# c1 行内含豁免词 WPS-4119 → 豁免注记（不占先见位）；c2 无豁免词 → 缄笔案。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/billing.js","content":"export function charge(cents: any) {\n  // @ts-ignore WPS-4119 上游 SDK 类型缺陷，待 v2 修复\n  return gateway.charge(cents)\n}\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/billing.js","content":"export function charge(cents: any) {\n  // @ts-ignore WPS-4119 上游 SDK 类型缺陷，待 v2 修复\n  return gateway.charge(cents)\n}\n"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/report.js","content":"// @ts-ignore 临时\nexport const pivot = 1\n"},"at":102}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/report.js","content":"// @ts-ignore 临时\nexport const pivot = 1\n"},"isError":false,"at":103}
