@@ -1,0 +1,17 @@
+# 审曲流 · 碎览夹具(A2:期望 6 调用、views 6、writes 0、cases 1、残值 {total:10,blind:0,crawl:10}、带「全」10≤14 点名不咬门、exit 0)
+# c1-c3 对 logs/a.log 三窗(限窗20回20/偏窗offset=10/限窗5回5)→ 残见×3 ≥碎览阈3 = 碎览 +10;
+# c4-c5 对 logs/b.log 两窗(限窗20回20/tail_limit=10回10)→ 2<3 不案;
+# c6 读 docs/c.md limit=30 回程 12 行(12<30)→ 取窗认全=全览。
+# counts {blindActs:0, crawls:1, partialViews:5, fullViews:1, exempted:0};fragTop [{logs/a.log,3},{logs/b.log,2}]。
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"logs/a.log","limit":20},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"logs/a.log","limit":20},"isError":false,"content":"a line 1: value = 0\na line 2: value = 1\na line 3: value = 2\na line 4: value = 3\na line 5: value = 4\na line 6: value = 5\na line 7: value = 6\na line 8: value = 7\na line 9: value = 8\na line 10: value = 9\na line 11: value = 10\na line 12: value = 11\na line 13: value = 12\na line 14: value = 13\na line 15: value = 14\na line 16: value = 15\na line 17: value = 16\na line 18: value = 17\na line 19: value = 18\na line 20: value = 19","at":101}
+{"type":"tool_call","id":"c2","name":"read","args":{"path":"logs/a.log","offset":10},"at":102}
+{"type":"tool_result","id":"c2","name":"read","args":{"path":"logs/a.log","offset":10},"isError":false,"content":"a2 line 1: value = 0\na2 line 2: value = 1\na2 line 3: value = 2\na2 line 4: value = 3\na2 line 5: value = 4\na2 line 6: value = 5\na2 line 7: value = 6\na2 line 8: value = 7\na2 line 9: value = 8\na2 line 10: value = 9\na2 line 11: value = 10","at":103}
+{"type":"tool_call","id":"c3","name":"read","args":{"path":"logs/a.log","limit":5},"at":104}
+{"type":"tool_result","id":"c3","name":"read","args":{"path":"logs/a.log","limit":5},"isError":false,"content":"a3 line 1: value = 0\na3 line 2: value = 1\na3 line 3: value = 2\na3 line 4: value = 3\na3 line 5: value = 4","at":105}
+{"type":"tool_call","id":"c4","name":"read","args":{"path":"logs/b.log","limit":20},"at":106}
+{"type":"tool_result","id":"c4","name":"read","args":{"path":"logs/b.log","limit":20},"isError":false,"content":"b line 1: value = 0\nb line 2: value = 1\nb line 3: value = 2\nb line 4: value = 3\nb line 5: value = 4\nb line 6: value = 5\nb line 7: value = 6\nb line 8: value = 7\nb line 9: value = 8\nb line 10: value = 9\nb line 11: value = 10\nb line 12: value = 11\nb line 13: value = 12\nb line 14: value = 13\nb line 15: value = 14\nb line 16: value = 15\nb line 17: value = 16\nb line 18: value = 17\nb line 19: value = 18\nb line 20: value = 19","at":107}
+{"type":"tool_call","id":"c5","name":"read","args":{"path":"logs/b.log","tail_limit":10},"at":108}
+{"type":"tool_result","id":"c5","name":"read","args":{"path":"logs/b.log","tail_limit":10},"isError":false,"content":"b2 line 1: value = 0\nb2 line 2: value = 1\nb2 line 3: value = 2\nb2 line 4: value = 3\nb2 line 5: value = 4\nb2 line 6: value = 5\nb2 line 7: value = 6\nb2 line 8: value = 7\nb2 line 9: value = 8\nb2 line 10: value = 9","at":109}
+{"type":"tool_call","id":"c6","name":"read","args":{"path":"docs/c.md","limit":30},"at":110}
+{"type":"tool_result","id":"c6","name":"read","args":{"path":"docs/c.md","limit":30},"isError":false,"content":"c line 1: value = 0\nc line 2: value = 1\nc line 3: value = 2\nc line 4: value = 3\nc line 5: value = 4\nc line 6: value = 5\nc line 7: value = 6\nc line 8: value = 7\nc line 9: value = 8\nc line 10: value = 9\nc line 11: value = 10\nc line 12: value = 11","at":111}

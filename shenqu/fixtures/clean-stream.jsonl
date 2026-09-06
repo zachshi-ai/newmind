@@ -1,0 +1,12 @@
+# 审曲流 · 清白夹具(A2:期望 4 调用、views 2、writes 2、cases 0、残值 {total:0,blind:0,crawl:0}、带「全」、exit 0)
+# c1 读 src/util.js 无窗参数,content 30 行无残记 → 全览;c2 读 src/conf.yml limit=100 而回程 3 行
+#   —— 取窗认全(卷短于窗,见到底了)=全览(windowReads 1);c3 全览在先之写清白;
+# c4 新径之写无见闻无自书,不归本层静默。fragTop []。
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"src/util.js"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"src/util.js"},"isError":false,"content":"util line 1: value = 0\nutil line 2: value = 1\nutil line 3: value = 2\nutil line 4: value = 3\nutil line 5: value = 4\nutil line 6: value = 5\nutil line 7: value = 6\nutil line 8: value = 7\nutil line 9: value = 8\nutil line 10: value = 9\nutil line 11: value = 10\nutil line 12: value = 11\nutil line 13: value = 12\nutil line 14: value = 13\nutil line 15: value = 14\nutil line 16: value = 15\nutil line 17: value = 16\nutil line 18: value = 17\nutil line 19: value = 18\nutil line 20: value = 19\nutil line 21: value = 20\nutil line 22: value = 21\nutil line 23: value = 22\nutil line 24: value = 23\nutil line 25: value = 24\nutil line 26: value = 25\nutil line 27: value = 26\nutil line 28: value = 27\nutil line 29: value = 28\nutil line 30: value = 29","at":101}
+{"type":"tool_call","id":"c2","name":"read","args":{"path":"src/conf.yml","limit":100},"at":102}
+{"type":"tool_result","id":"c2","name":"read","args":{"path":"src/conf.yml","limit":100},"isError":false,"content":"conf line 1: value = 0\nconf line 2: value = 1\nconf line 3: value = 2","at":103}
+{"type":"tool_call","id":"c3","name":"edit","args":{"path":"src/util.js","content":"edit line 1: value = 0\nedit line 2: value = 1\nedit line 3: value = 2\nedit line 4: value = 3\nedit line 5: value = 4"},"at":104}
+{"type":"tool_result","id":"c3","name":"edit","args":{"path":"src/util.js","content":"edit line 1: value = 0\nedit line 2: value = 1\nedit line 3: value = 2\nedit line 4: value = 3\nedit line 5: value = 4"},"isError":false,"at":105}
+{"type":"tool_call","id":"c4","name":"write","args":{"path":"src/new.js","content":"new line 1: value = 0\nnew line 2: value = 1"},"at":106}
+{"type":"tool_result","id":"c4","name":"write","args":{"path":"src/new.js","content":"new line 1: value = 0\nnew line 2: value = 1"},"isError":false,"at":107}

@@ -1,0 +1,37 @@
+{
+  "name": "shenqu-dsh",
+  "version": "0.1.0",
+  "description": "审曲 Shenqu — DeepSeek Harness 的读据成色层：残见两通道（取窗/显残）逐案登记、盲动/碎览定罪、残值（全/昧/盲）门禁、材牌块供给。零 LLM 调用的审材式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/shenqu.js",
+  "bin": {
+    "shenqu": "src/bin/shenqu.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "evidence-completeness",
+    "truncation-awareness",
+    "context-limits",
+    "agent-reliability",
+    "ci-integrity"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
