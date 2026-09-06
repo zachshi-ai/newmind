@@ -1,0 +1,37 @@
+{
+  "name": "yuanyu-dsh",
+  "version": "0.1.0",
+  "description": "渊鱼 Yuanyu — DeepSeek Harness 的入目之禁层：装载通道（observe 径秘形 ∪ exec 窥词法）逐案登记、白形/本职/涉视判定序、转运加重（密值逐字重现即案）、渊值（澄/浊/渍）门禁、鉴牌块供给。零 LLM 调用的察渊式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/yuanyu.js",
+  "bin": {
+    "yuanyu": "src/bin/yuanyu.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "secret-hygiene",
+    "context-hygiene",
+    "transcript-compliance",
+    "gaze-discipline",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
