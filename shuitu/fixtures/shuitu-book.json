@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "install": ["apt-get"],
+  "config": [],
+  "reside": ["crontab"]
+}

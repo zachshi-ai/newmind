@@ -1,0 +1,11 @@
+# 水土流 · 净境夹具(A2:期望 4 调用、案 0、改动 0、异值 {total:0}、带「淮」、exit 0)
+# c1 改 src/util.js(非改径形);c2 npm test(npm 无 install 动词);c3 npm install lodash(node 族无 scope 词——项目域天然白);
+# c4 pip install requests(无 scope 词——白)。  —— 四笔全部沉默:任务内的本分不该上账。
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/util.js","content":"export function add(a, b) { return a + b }\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/util.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"npm test"},"at":110}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"npm test"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm install lodash"},"at":120}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm install lodash"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"bash","args":{"command":"pip install requests"},"at":130}
+{"type":"tool_result","id":"c4","name":"bash","args":{"command":"pip install requests"},"isError":false,"at":131}

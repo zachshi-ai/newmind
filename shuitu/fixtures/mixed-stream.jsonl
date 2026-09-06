@@ -1,0 +1,24 @@
+# 水土流 · 混合夹具(A2:期望 9 调用、案 5、改动 5、异值 {total:60, reside:30, inst:15, conf:15}、带「枳」、exit 1)
+# c1 npm install -g nodemon(装案);c2 git config --global core.pager less(改案);
+# c3 nohup npm run dev &(驻案 驻:nohup:npm——npm 无 install 动词不立装案);c4 pkill -f dev(kill 族全域凭据→nohup 案复);
+# c5 git config --global --unset core.pager(同 key→复);c6 echo 追加重定向 >> ~/.zshrc(重定向目标命中改径形→改案,遗);
+# c7 crontab -l(纯列白);c8 brew services start redis(驻案,遗);c9 改 docs/guide.md(非径形)。
+#   —— 复 2、驻遗 30 + 装遗 15 + 改遗 15 = 60 枳。
+{"type":"tool_call","id":"c1","name":"bash","args":{"command":"npm install -g nodemon"},"at":100}
+{"type":"tool_result","id":"c1","name":"bash","args":{"command":"npm install -g nodemon"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"git config --global core.pager less"},"at":110}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"git config --global core.pager less"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"nohup npm run dev &"},"at":120}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"nohup npm run dev &"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"bash","args":{"command":"pkill -f dev"},"at":130}
+{"type":"tool_result","id":"c4","name":"bash","args":{"command":"pkill -f dev"},"isError":false,"at":131}
+{"type":"tool_call","id":"c5","name":"bash","args":{"command":"git config --global --unset core.pager"},"at":140}
+{"type":"tool_result","id":"c5","name":"bash","args":{"command":"git config --global --unset core.pager"},"isError":false,"at":141}
+{"type":"tool_call","id":"c6","name":"bash","args":{"command":"echo 'export PATH=$PATH:~/bin' >> ~/.zshrc"},"at":150}
+{"type":"tool_result","id":"c6","name":"bash","args":{"command":"echo 'export PATH=$PATH:~/bin' >> ~/.zshrc"},"isError":false,"at":151}
+{"type":"tool_call","id":"c7","name":"bash","args":{"command":"crontab -l"},"at":160}
+{"type":"tool_result","id":"c7","name":"bash","args":{"command":"crontab -l"},"isError":false,"at":161}
+{"type":"tool_call","id":"c8","name":"bash","args":{"command":"brew services start redis"},"at":170}
+{"type":"tool_result","id":"c8","name":"bash","args":{"command":"brew services start redis"},"isError":false,"at":171}
+{"type":"tool_call","id":"c9","name":"write","args":{"path":"docs/guide.md","content":"# guide\n"},"at":180}
+{"type":"tool_result","id":"c9","name":"write","args":{"path":"docs/guide.md"},"isError":false,"at":181}

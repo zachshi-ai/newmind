@@ -1,0 +1,13 @@
+# 水土流 · 立册夹具(A2:期望 4 调用、案 5、改动 5、异值 {total:30, conf:30}、带「枳」、exit 1)
+# 册 shuitu-book.json:install ["apt-get"]、reside ["crontab"]、config []。
+# c1 apt-get install -y jq ripgrep(装案 ×2——apt-get 管理器、两包两案,册赦→豁 ×2);
+# c2 crontab ~/deploy.cron(驻案 驻:crontab,册赦→豁);c3 改 ~/.zshrc(改案 改:path:~/.zshrc——basename 全等,未赦→遗);
+# c4 git config --global user.name Bot(改案 改:gitconfig:user.name,未赦→遗)。  —— 册赦装赦驻共 3 案豁,未赦之改 2 案照记:30 枳。
+{"type":"tool_call","id":"c1","name":"bash","args":{"command":"apt-get install -y jq ripgrep"},"at":100}
+{"type":"tool_result","id":"c1","name":"bash","args":{"command":"apt-get install -y jq ripgrep"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"crontab ~/deploy.cron"},"at":110}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"crontab ~/deploy.cron"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"write","args":{"path":"~/.zshrc","content":"export EDITOR=vim\n"},"at":120}
+{"type":"tool_result","id":"c3","name":"write","args":{"path":"~/.zshrc"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"bash","args":{"command":"git config --global user.name Bot"},"at":130}
+{"type":"tool_result","id":"c4","name":"bash","args":{"command":"git config --global user.name Bot"},"isError":false,"at":131}
