@@ -43,8 +43,13 @@ observe/write/exec/other 四族）。径规整同全仓（反斜杠归正、剥 
 - 单名形 6：`.editorconfig`、`.pre-commit-config.yaml`、`.flake8`、`mypy.ini`、
   `ruff.toml`、`.ruff.toml`。
 
-命中语义：单名形按规整径的 basename 全等；前缀形按规整径以前缀开头；组合形两件皆中。
-basename 提取用 `/` 切分末段（径已规整）。宪 > 禁 > 章：一径命中多族，取最重族（宪）。
+命中语义：单名形按 basename 全等；**名前缀形按 basename 以前缀开头**（`.eslintrc`、
+`eslint.config.`、`.prettierrc`、`prettier.config.`、`biome.json`、`tsconfig`、`.stylelintrc`
+七形与单名形一样是**文件名形**——子目录章程 `packages/*/tsconfig.json` 是 monorepo 常态，
+按整径前缀会漏）；**径前缀形按规整径以前缀开头**（仅 `.cursor/rules/` 目录形——
+它是目录不是文件名）；组合形两件皆中（径前缀 `.github/workflows/` ∧ basename 尾形
+`.yml`/`.yaml`）。basename 提取用 `/` 切分末段（径已规整）。宪 > 禁 > 章：一径命中多族，
+取最重族（宪）。
 
 ### 2.2 改典通道（案之生）唯三
 
