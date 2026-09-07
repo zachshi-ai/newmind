@@ -1,0 +1,3 @@
+# 平准流 · wudi（期望 1 调用、counts 全 0、准值 0、带「平」、exit 0＋注记籍无底本——递案无底本不判）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"package.json","content":"{\"name\":\"app\",\"dependencies\":{\"z\":\"^2.0.0\"}}"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"package.json"},"isError":false,"at":101}

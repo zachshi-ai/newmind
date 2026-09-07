@@ -1,0 +1,6 @@
+# 平准流 · clean（期望 2 调用、counts 全 0、准值 0、带「平」、exit 0）
+# 读 package.json 供旧本（精确 1.2.3）→ 写 package.json 精确→精确递进（1.2.4）——正当维护，净籍。
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"package.json"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"package.json"},"isError":false,"at":101,"content":"{\"name\":\"app\",\"version\":\"1.0.0\",\"dependencies\":{\"a\":\"1.2.3\"}}"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"package.json","content":"{\"name\":\"app\",\"version\":\"1.0.0\",\"dependencies\":{\"a\":\"1.2.4\"}}"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"package.json"},"isError":false,"at":111}

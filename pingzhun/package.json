@@ -1,0 +1,37 @@
+{
+  "name": "pingzhun-dsh",
+  "version": "0.1.0",
+  "description": "平准 Pingzhun — DeepSeek Harness 的命脉籍面治理：依赖清单与锁文件默认籍形 22 开箱在岗、末文对旧本判四案（增附/去锁/越源/钩入）、命籍纳籍授权、准值（平/偏/倾）分带门禁、准牌块供给。零 LLM 调用的平准式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/pingzhun.js",
+  "bin": {
+    "pingzhun": "src/bin/pingzhun.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "dependency-manifest-audit",
+    "supply-chain",
+    "lockfile-drift",
+    "agent-reliability",
+    "install-hook-audit"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

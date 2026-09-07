@@ -1,0 +1,5 @@
+# 平准流 · qusuo（期望 2 调用、去锁 1、准值 10、带「平」、exit 0——单去锁仅点名）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"package.json"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"package.json"},"isError":false,"at":101,"content":"{\"name\":\"app\",\"dependencies\":{\"a\":\"1.2.3\"}}"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"package.json","content":"{\"name\":\"app\",\"dependencies\":{\"a\":\"^1.2.3\"}}"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"package.json"},"isError":false,"at":111}

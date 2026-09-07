@@ -1,0 +1,5 @@
+# 平准流 · zengfu（期望 2 调用、增附 1、准值 15、带「偏」、exit 0——单增附黄牌点名不咬门）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"package.json"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"package.json"},"isError":false,"at":101,"content":"{\"name\":\"app\",\"dependencies\":{\"left-pad\":\"1.3.0\"}}"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"package.json","content":"{\"name\":\"app\",\"dependencies\":{\"left-pad\":\"1.3.0\",\"lodash\":\"^4.17.21\"}}"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"package.json"},"isError":false,"at":111}
