@@ -1,0 +1,5 @@
+# 约法流 · xuyue（期望 2 调用：读 legacy/util.js、写削 legacyFnB——带约册（allow legacy/*）时开门免账 counts 全 0 exit 0；无册对照哑削 1 名 30 背 exit 1）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"legacy/util.js"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"legacy/util.js"},"isError":false,"at":101,"content":"export function legacyFnA() {}\nexport function legacyFnB() {}\n"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"legacy/util.js","content":"export function legacyFnA() {}\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"legacy/util.js"},"isError":false,"at":111}

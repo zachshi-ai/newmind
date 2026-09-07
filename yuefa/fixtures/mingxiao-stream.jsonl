@@ -1,0 +1,5 @@
+# 约法流 · mingxiao（期望 2 调用、明削 1 名（formatDate 与 @deprecated 同行）、削值 0、带「坚」、exit 0）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"src/config.js"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"src/config.js"},"isError":false,"at":101,"content":"export function parseConfig() {}\nexport function formatDate() {}\nexport const VERSION = \"1\"\n"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/config.js","content":"export function parseConfig() {}\nexport const VERSION = \"1\"\n// @deprecated formatDate: removed, use calendar module\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/config.js"},"isError":false,"at":111}

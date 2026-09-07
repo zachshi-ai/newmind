@@ -1,0 +1,37 @@
+{
+  "name": "yuefa-dsh",
+  "version": "0.1.0",
+  "description": "约法 Yuefa — DeepSeek Harness 的公面守约治理：读时立约（约据唯读）→ 世据折旧 → 落笔对约，约形词法提取公面、削名即案（哑削 +30/名 单名即红、明削弃词同行 0 分）、许削约册授权、削值（坚/渝/背）分带门禁、约牌块供给。零 LLM 调用的约法式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/yuefa.js",
+  "bin": {
+    "yuefa": "src/bin/yuefa.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "public-surface-audit",
+    "breaking-change-detection",
+    "api-contract-governance",
+    "agent-reliability",
+    "treaty-compliance"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

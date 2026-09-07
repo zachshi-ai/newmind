@@ -1,0 +1,5 @@
+# 约法流 · duoyan（期望 2 调用：读 a.py（面 load_cfg/Parser）、写削 Parser——Python 约形命中、哑削 1 名、削值 30、带「背」、exit 1）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"a.py"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"a.py"},"isError":false,"at":101,"content":"def load_cfg(source):\n    return source\n\n\nclass Parser:\n    pass\n"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"a.py","content":"def load_cfg(source):\n    return source\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"a.py"},"isError":false,"at":111}
