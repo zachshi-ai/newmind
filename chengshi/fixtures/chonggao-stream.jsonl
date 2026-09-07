@@ -1,0 +1,11 @@
+# 成事流 · chonggao（期望 4 调用、初遂 1 · 重决 1、重值 30、带「叠」、exit 1）
+# gh issue create 同串两笔，其间夹两笔 write——youya 之复命在此哑（写间断罪），
+# 成事照记重决：第二次成功落地时无凭消、无再命。
+{"type":"tool_call","id":"g1","name":"write","args":{"path":"src/report.md","content":"# report\n"},"at":101}
+{"type":"tool_result","id":"g1","name":"write","args":{"path":"src/report.md"},"isError":false,"at":102}
+{"type":"tool_call","id":"g2","name":"bash","args":{"command":"gh issue create --title \"Flaky test\" --body \"steps to reproduce\""},"at":111}
+{"type":"tool_result","id":"g2","name":"bash","args":{"command":"gh issue create --title \"Flaky test\" --body \"steps to reproduce\""},"isError":false,"content":"Created issue: https://github.com/acme/app/issues/12","at":112}
+{"type":"tool_call","id":"g3","name":"write","args":{"path":"src/notify.js","content":"notify()\n"},"at":121}
+{"type":"tool_result","id":"g3","name":"write","args":{"path":"src/notify.js"},"isError":false,"at":122}
+{"type":"tool_call","id":"g4","name":"bash","args":{"command":"gh issue create --title \"Flaky test\" --body \"steps to reproduce\""},"at":131}
+{"type":"tool_result","id":"g4","name":"bash","args":{"command":"gh issue create --title \"Flaky test\" --body \"steps to reproduce\""},"isError":false,"content":"Created issue: https://github.com/acme/app/issues/13","at":132}

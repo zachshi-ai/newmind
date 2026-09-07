@@ -1,0 +1,9 @@
+# 成事流 · xiaoju（期望 3 调用、初遂 1 · 已消 1、重值 0、带「谐」、exit 0）
+# gh issue create 初遂（content 带 issues/7 → 成物之柄「7」）→ gh issue close 7
+# （消词 close ∧ 柄 7 = 消据）→ 同串再施 = 已消：补过之施，既往不咎。
+{"type":"tool_call","id":"x1","name":"bash","args":{"command":"gh issue create --title \"Dup ledger\" --body \"b\""},"at":401}
+{"type":"tool_result","id":"x1","name":"bash","args":{"command":"gh issue create --title \"Dup ledger\" --body \"b\""},"isError":false,"content":"see https://github.com/acme/app/issues/7 for details","at":402}
+{"type":"tool_call","id":"x2","name":"bash","args":{"command":"gh issue close 7 --reason completed"},"at":411}
+{"type":"tool_result","id":"x2","name":"bash","args":{"command":"gh issue close 7 --reason completed"},"isError":false,"content":"closed #7","at":412}
+{"type":"tool_call","id":"x3","name":"bash","args":{"command":"gh issue create --title \"Dup ledger\" --body \"b\""},"at":421}
+{"type":"tool_result","id":"x3","name":"bash","args":{"command":"gh issue create --title \"Dup ledger\" --body \"b\""},"isError":false,"content":"Created issue: https://github.com/acme/app/issues/8","at":422}

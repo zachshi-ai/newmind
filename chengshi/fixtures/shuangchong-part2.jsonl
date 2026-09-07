@@ -1,0 +1,4 @@
+{"type":"tool_call","id":"s3","name":"bash","args":{"command":"curl -d '{\"qty\":1}' https://pay.example.com/orders"},"at":221}
+{"type":"tool_result","id":"s3","name":"bash","args":{"command":"curl -d '{\"qty\":1}' https://pay.example.com/orders"},"isError":false,"content":"{\"order\":42}","at":222}
+{"type":"tool_call","id":"s4","name":"bash","args":{"command":"curl -d '{\"qty\":1}' https://pay.example.com/orders"},"at":231}
+{"type":"tool_result","id":"s4","name":"bash","args":{"command":"curl -d '{\"qty\":1}' https://pay.example.com/orders"},"isError":false,"content":"{\"order\":43}","at":232}

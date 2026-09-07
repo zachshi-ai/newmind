@@ -1,0 +1,10 @@
+# 成事流 · shuangchong（期望 4 调用、初遂 2 · 重决 2、重值 60、带「沓」、exit 1）
+# mail 同串两笔（重邮）+ curl -d pay 同串两笔（重单）——两案触顶 cap 60。
+{"type":"tool_call","id":"s1","name":"bash","args":{"command":"mail -s \"disk full\" ops@example.com"},"at":201}
+{"type":"tool_result","id":"s1","name":"bash","args":{"command":"mail -s \"disk full\" ops@example.com"},"isError":false,"content":"sent","at":202}
+{"type":"tool_call","id":"s2","name":"bash","args":{"command":"mail -s \"disk full\" ops@example.com"},"at":211}
+{"type":"tool_result","id":"s2","name":"bash","args":{"command":"mail -s \"disk full\" ops@example.com"},"isError":false,"content":"sent","at":212}
+{"type":"tool_call","id":"s3","name":"bash","args":{"command":"curl -d '{\"qty\":1}' https://pay.example.com/orders"},"at":221}
+{"type":"tool_result","id":"s3","name":"bash","args":{"command":"curl -d '{\"qty\":1}' https://pay.example.com/orders"},"isError":false,"content":"{\"order\":42}","at":222}
+{"type":"tool_call","id":"s4","name":"bash","args":{"command":"curl -d '{\"qty\":1}' https://pay.example.com/orders"},"at":231}
+{"type":"tool_result","id":"s4","name":"bash","args":{"command":"curl -d '{\"qty\":1}' https://pay.example.com/orders"},"isError":false,"content":"{\"order\":43}","at":232}

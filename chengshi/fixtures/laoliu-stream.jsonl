@@ -1,0 +1,7 @@
+# 成事流 · laoliu（老流；期望 2 调用、初遂 1 · 重决 1、重值 30、带「叠」、exit 1）
+# 无 id 旧格式、无 isError 字段——老流按已发生入账（未知不是失败）：
+# gh pr comment 同串两笔，无凭消无再命 → 重决。
+{"type":"tool_call","name":"bash","args":{"command":"gh pr comment 12 --body \"ping\""}}
+{"type":"tool_result","content":"comment added"}
+{"type":"tool_call","name":"bash","args":{"command":"gh pr comment 12 --body \"ping\""}}
+{"type":"tool_result","content":"comment added"}

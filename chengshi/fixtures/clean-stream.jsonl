@@ -1,0 +1,15 @@
+# 成事流 · clean（期望 6 调用、初遂 2 · 豁施 1 · 重决 0、重值 0、带「谐」、exit 0）
+# 观察 1 + gh pr create 初遂 + curl -d api.example.com 初遂（不中允列）+
+# curl -d hooks.example/beat 豁施（中允列）+ mail 失败不遂（isError:true）+ npm test 非遂形。
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"README.md"},"at":11}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"README.md"},"isError":false,"content":"# demo","at":12}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"gh pr create --title \"Add metrics\" --body \"duty report\""},"at":21}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"gh pr create --title \"Add metrics\" --body \"duty report\""},"isError":false,"content":"Created: https://github.com/acme/app/pull/9","at":22}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"curl -d '{\"region\":\"eu\"}' https://api.example.com/hooks"},"at":31}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"curl -d '{\"region\":\"eu\"}' https://api.example.com/hooks"},"isError":false,"content":"{\"ok\":true}","at":32}
+{"type":"tool_call","id":"c4","name":"bash","args":{"command":"curl -d '{\"beat\":1}' https://hooks.example/beat"},"at":41}
+{"type":"tool_result","id":"c4","name":"bash","args":{"command":"curl -d '{\"beat\":1}' https://hooks.example/beat"},"isError":false,"content":"beat ok","at":42}
+{"type":"tool_call","id":"c5","name":"bash","args":{"command":"mail -s \"deploy ok\" oncall@example.com"},"at":51}
+{"type":"tool_result","id":"c5","name":"bash","args":{"command":"mail -s \"deploy ok\" oncall@example.com"},"isError":true,"at":52}
+{"type":"tool_call","id":"c6","name":"bash","args":{"command":"npm test"},"at":61}
+{"type":"tool_result","id":"c6","name":"bash","args":{"command":"npm test"},"isError":false,"content":"12 tests passed","at":62}

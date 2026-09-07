@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "allow": [
+    "curl -d*hooks.example/beat*"
+  ]
+}

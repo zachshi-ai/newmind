@@ -1,0 +1,4 @@
+{"type":"tool_call","id":"s1","name":"bash","args":{"command":"mail -s \"disk full\" ops@example.com"},"at":201}
+{"type":"tool_result","id":"s1","name":"bash","args":{"command":"mail -s \"disk full\" ops@example.com"},"isError":false,"content":"sent","at":202}
+{"type":"tool_call","id":"s2","name":"bash","args":{"command":"mail -s \"disk full\" ops@example.com"},"at":211}
+{"type":"tool_result","id":"s2","name":"bash","args":{"command":"mail -s \"disk full\" ops@example.com"},"isError":false,"content":"sent","at":212}

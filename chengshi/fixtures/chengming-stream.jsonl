@@ -1,0 +1,8 @@
+# 成事流 · chengming（期望 3 调用 + 1 主文、初遂 1 · 承施 1、重值 0、带「谐」、exit 0）
+# gh release create 初遂 → 主渠道再命（命词「再发」，对象词元不相交）→ 同串再施 = 承施：
+# 新命开新决，先命之遂不溯既往；一次再命只开一决。
+{"type":"tool_call","id":"m1","name":"bash","args":{"command":"gh release create v1.2.0 --notes \"weekly rel\""},"at":301}
+{"type":"tool_result","id":"m1","name":"bash","args":{"command":"gh release create v1.2.0 --notes \"weekly rel\""},"isError":false,"content":"Released: https://github.com/acme/app/releases/tag/v1.2.0","at":302}
+{"type":"principal","text":"公告好像没发出去，再发一遍。","at":310}
+{"type":"tool_call","id":"m2","name":"bash","args":{"command":"gh release create v1.2.0 --notes \"weekly rel\""},"at":321}
+{"type":"tool_result","id":"m2","name":"bash","args":{"command":"gh release create v1.2.0 --notes \"weekly rel\""},"isError":false,"content":"Released: https://github.com/acme/app/releases/tag/v1.2.0（已存在）","at":322}

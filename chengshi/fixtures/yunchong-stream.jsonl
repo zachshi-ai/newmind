@@ -1,0 +1,8 @@
+# 成事流 · yunchong（带册；期望 3 调用、豁施 3、重值 0、带「谐」、exit 0）
+# 心跳 curl -d hooks.example/beat 同串三笔——遂册允列明言可再施（轮询心跳类）。
+{"type":"tool_call","id":"y1","name":"bash","args":{"command":"curl -d '{\"beat\":1}' https://hooks.example/beat"},"at":501}
+{"type":"tool_result","id":"y1","name":"bash","args":{"command":"curl -d '{\"beat\":1}' https://hooks.example/beat"},"isError":false,"content":"ok","at":502}
+{"type":"tool_call","id":"y2","name":"bash","args":{"command":"curl -d '{\"beat\":1}' https://hooks.example/beat"},"at":511}
+{"type":"tool_result","id":"y2","name":"bash","args":{"command":"curl -d '{\"beat\":1}' https://hooks.example/beat"},"isError":false,"content":"ok","at":512}
+{"type":"tool_call","id":"y3","name":"bash","args":{"command":"curl -d '{\"beat\":1}' https://hooks.example/beat"},"at":521}
+{"type":"tool_result","id":"y3","name":"bash","args":{"command":"curl -d '{\"beat\":1}' https://hooks.example/beat"},"isError":false,"content":"ok","at":522}

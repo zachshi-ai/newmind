@@ -224,7 +224,9 @@ list 册缺失 exit 2。退出码：0 通过 / 1 门禁失败 / 2 用法与输�
 
 七夹具（clean / chonggao / shuangchong / chengming / xiaoju / yunchong / laoliu）
 + 遂册夹具（chengshi-book.json：allow [`curl -d*hooks.example/beat*`]）。分数、counts、
-分带、退出码全部手算锁死于 04 表。跨项目流实读核验（A3，全零误伤）：zhizhi sample
+分带、退出码全部手算锁死于 04 表（勘误：首笔恒初遂——clean 带册为 chu:3，yunchong
+带册为 chu:1 + huo:2、无册对照 chong:2 → 60 沓，允列豁的是再施不是首施）。跨项目流
+实读核验（A3，全零误伤）：zhizhi sample
 （8 调用，`npm test` 非遂形）、kaocheng mixed（4 调用，重定向与写皆非施）、
 fangchuan yancao（2 调用，唯 write）、erbing mixed（5 调用 1 主文，`terraform apply`
 ×2 收敛类排除、`mail` 失败不遂、`send_invoice` 非遂形基名）、erbing delegated

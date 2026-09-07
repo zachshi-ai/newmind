@@ -1,0 +1,4 @@
+{"type":"tool_call","id":"g3","name":"write","args":{"path":"src/notify.js","content":"notify()\n"},"at":121}
+{"type":"tool_result","id":"g3","name":"write","args":{"path":"src/notify.js"},"isError":false,"at":122}
+{"type":"tool_call","id":"g4","name":"bash","args":{"command":"gh issue create --title \"Flaky test\" --body \"steps to reproduce\""},"at":131}
+{"type":"tool_result","id":"g4","name":"bash","args":{"command":"gh issue create --title \"Flaky test\" --body \"steps to reproduce\""},"isError":false,"content":"Created issue: https://github.com/acme/app/issues/13","at":132}
