@@ -230,7 +230,7 @@ list 册缺失 exit 2。退出码：0 通过 / 1 门禁失败 / 2 用法与输�
 （8 调用，`npm test` 非遂形）、kaocheng mixed（4 调用，重定向与写皆非施）、
 fangchuan yancao（2 调用，唯 write）、erbing mixed（5 调用 1 主文，`terraform apply`
 ×2 收敛类排除、`mail` 失败不遂、`send_invoice` 非遂形基名）、erbing delegated
-（4 调用，`terraform apply`×2 + `npm publish`×2 皆排除类——排除即边界）。
+（5 调用含 1 ask，`terraform apply`×2 + `npm publish`×2 皆排除类——排除即边界）。
 
 ## 12. 既知从宽代价（宁漏方向，逐条登记）
 
