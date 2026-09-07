@@ -1,0 +1,7 @@
+{
+  "rules": [],
+  "bans": ["TODO_FIXME"],
+  "musts": ["npm run lint", "npm run build"],
+  "exempts": [],
+  "noDefaults": false
+}

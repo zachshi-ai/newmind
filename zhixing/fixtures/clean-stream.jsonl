@@ -1,0 +1,11 @@
+# 知行流 · clean（期望 4 调用、装载 1、戒形 1、违知 0、缺行 0、行值 0 带「合」exit 0）
+# git push origin main 不含戒词元 --force 不撞；两条必行词皆查有。
+# 主册 zhixing-book.json：bans [TODO_FIXME]、musts [npm run lint, npm run build]
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"AGENTS.md"},"at":20}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"AGENTS.md"},"isError":false,"content":"贡献须知：禁止 git push --force。提交前必须写测试。","at":20}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"git push origin main"},"at":30}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"git push origin main"},"isError":false,"at":30}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm run lint"},"at":40}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm run lint"},"isError":false,"at":40}
+{"type":"tool_call","id":"c4","name":"bash","args":{"command":"npm run build"},"at":50}
+{"type":"tool_result","id":"c4","name":"bash","args":{"command":"npm run build"},"isError":false,"at":50}

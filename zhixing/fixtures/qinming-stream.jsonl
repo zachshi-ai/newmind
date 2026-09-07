@@ -1,0 +1,11 @@
+# 知行流 · qinming（亲命违知：期望 4 调用、装载 0、违知 1、缺行 0、行值 30 带「悖」exit 1）
+# 主册戒词 TODO_FIXME 直令不问知：write content 撞戒词即违知（无装载记录也立案）。
+# lint/build 两笔成功执行使两条必行词查有——本案只有违知一罪。
+{"type":"tool_call","id":"q1","name":"bash","args":{"command":"npm test"},"at":10}
+{"type":"tool_result","id":"q1","name":"bash","args":{"command":"npm test"},"isError":false,"at":10}
+{"type":"tool_call","id":"q2","name":"bash","args":{"command":"npm run lint"},"at":12}
+{"type":"tool_result","id":"q2","name":"bash","args":{"command":"npm run lint"},"isError":false,"at":12}
+{"type":"tool_call","id":"q3","name":"bash","args":{"command":"npm run build"},"at":14}
+{"type":"tool_result","id":"q3","name":"bash","args":{"command":"npm run build"},"isError":false,"at":14}
+{"type":"tool_call","id":"q4","name":"write","args":{"path":"src/a.js","content":"let x = 1 // TODO_FIXME"},"at":20}
+{"type":"tool_result","id":"q4","name":"write","args":{"path":"src/a.js"},"isError":false,"at":20}

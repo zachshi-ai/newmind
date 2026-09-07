@@ -1,0 +1,7 @@
+{
+  "rules": [],
+  "bans": [],
+  "musts": ["npm run build"],
+  "exempts": [],
+  "noDefaults": false
+}

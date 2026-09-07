@@ -1,0 +1,7 @@
+{
+  "rules": [],
+  "bans": [],
+  "musts": ["npm run lint"],
+  "exempts": ["--force"],
+  "noDefaults": false
+}

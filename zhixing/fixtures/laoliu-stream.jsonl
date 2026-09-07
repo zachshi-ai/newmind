@@ -1,0 +1,6 @@
+# 知行流 · laoliu（老流降级：期望 2 调用、装载 1、降级 1、戒形 0、行值 0 带「合」exit 0）
+# 装载记录无 content 字段（旧流/截断）——化知道诚实降级，流内无文不捏戒，--force 无从撞。
+{"type":"tool_call","id":"l1","name":"read","args":{"path":"AGENTS.md"},"at":10}
+{"type":"tool_result","id":"l1","name":"read","args":{"path":"AGENTS.md"},"isError":false,"at":10}
+{"type":"tool_call","id":"l2","name":"bash","args":{"command":"git push --force origin main"},"at":20}
+{"type":"tool_result","id":"l2","name":"bash","args":{"command":"git push --force origin main"},"isError":false,"at":20}

@@ -1,0 +1,37 @@
+{
+  "name": "zhixing-dsh",
+  "version": "0.1.0",
+  "description": "知行 Zhixing — DeepSeek Harness 的知行断层层：知面（observe 族成功装载的凭据径）取文于流提戒形、行面（exec 段原文/write 规整径/write content）三处对账、违知/缺行/宥/试违/先悖案别、行值（合/亏/悖）分带门禁、合牌块供给。零 LLM 调用的知行式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/zhixing.js",
+  "bin": {
+    "zhixing": "src/bin/zhixing.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "rules-compliance",
+    "knowledge-action-gap",
+    "agent-reliability",
+    "behavior-audit",
+    "context-hygiene"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

@@ -201,7 +201,11 @@ function main() {
     return
   }
 
-  fail(`未知命令: ${command}`)
+  fail(`未知命令: ${command}（--help 查看用法）`)
 }
 
-main()
+try {
+  main()
+} catch (error) {
+  fail(error?.message ?? String(error), 2) // 坏 JSON 行 / 坏册等输入错误 → exit 2
+}
