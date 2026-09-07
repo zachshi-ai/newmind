@@ -1,0 +1,37 @@
+{
+  "name": "huashui-dsh",
+  "version": "0.1.0",
+  "description": "画水 Huashui — DeepSeek Harness 的落笔之鲜治理：同径三序（旧据→变写→陈写）行集差集判覆世/覆己、许复水册授权、陈值（活/滞/腐）分带门禁、水牌块供给。零 LLM 调用的画水式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/huashui.js",
+  "bin": {
+    "huashui": "src/bin/huashui.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "stale-write-audit",
+    "lost-update-detection",
+    "freshness-governance",
+    "agent-reliability",
+    "multi-session-clobber"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

@@ -1,0 +1,13 @@
+# 画水流 · shuangfu（期望 6 调用、覆己 2、陈值 30、带「腐」、exit 1）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"src/x.js"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"src/x.js"},"isError":false,"at":101,"content":"const a = 1\nconst b = 2\nconst c = 3\n"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/x.js","content":"const a = 1\nconst d = 4\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/x.js"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"write","args":{"path":"src/x.js","content":"const a = 1\nconst b = 2\nconst c = 3\nconst e = 5\n"},"at":120}
+{"type":"tool_result","id":"c3","name":"write","args":{"path":"src/x.js"},"isError":false,"at":121}
+{"type":"tool_call","id":"c4","name":"read","args":{"path":"src/y.js"},"at":200}
+{"type":"tool_result","id":"c4","name":"read","args":{"path":"src/y.js"},"isError":false,"at":201,"content":"let x = 1\nlet y = 2\nlet z = 3\n"}
+{"type":"tool_call","id":"c5","name":"write","args":{"path":"src/y.js","content":"let x = 1\nlet w = 4\n"},"at":210}
+{"type":"tool_result","id":"c5","name":"write","args":{"path":"src/y.js"},"isError":false,"at":211}
+{"type":"tool_call","id":"c6","name":"write","args":{"path":"src/y.js","content":"let x = 1\nlet y = 2\nlet z = 3\nlet v = 5\n"},"at":220}
+{"type":"tool_result","id":"c6","name":"write","args":{"path":"src/y.js"},"isError":false,"at":221}

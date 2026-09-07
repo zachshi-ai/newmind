@@ -1,0 +1,9 @@
+# 画水流 · clean（期望 4 调用、覆案 0、陈值 0、带「活」、exit 0——写前重读，见新乃写）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"src/a.js"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"src/a.js"},"isError":false,"at":101,"content":"const a = 1\nconst b = 2\nconst c = 3\n"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/a.js","content":"const a = 1\nconst d = 4\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/a.js"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"read","args":{"path":"src/a.js"},"at":120}
+{"type":"tool_result","id":"c3","name":"read","args":{"path":"src/a.js"},"isError":false,"at":121,"content":"const a = 1\nconst d = 4\n"}
+{"type":"tool_call","id":"c4","name":"write","args":{"path":"src/a.js","content":"const a = 1\nconst d = 4\nconst e = 5\n"},"at":130}
+{"type":"tool_result","id":"c4","name":"write","args":{"path":"src/a.js"},"isError":false,"at":131}
