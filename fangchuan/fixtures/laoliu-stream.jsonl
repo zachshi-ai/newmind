@@ -1,0 +1,6 @@
+# 防川流 · laoliu（末文不改：期望 2 调用、湮案 1、塞值 15、带「淤」、exit 0）
+# 写带 content 之吞形后 edit 族无文之写——末文不改，湮案照计，注记「无文之改 1 笔」。
+{"type":"tool_call","id":"l1","name":"write","args":{"path":"src/a.js","content":"try {\n  load()\n} catch (e) {\n}\n"},"at":101}
+{"type":"tool_result","id":"l1","name":"write","args":{"path":"src/a.js"},"isError":false,"at":102}
+{"type":"tool_call","id":"l2","name":"edit","args":{"path":"src/a.js"},"at":110}
+{"type":"tool_result","id":"l2","name":"edit","args":{"path":"src/a.js"},"isError":false,"at":111}

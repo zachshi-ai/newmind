@@ -1,0 +1,7 @@
+# 防川流 · daozhu（导词+纵列：期望 2 调用、0 案、塞值 0、带「宣」、exit 0）
+# src/h.js 体内导词在场（console.error + throw）——清白；
+# src/best-effort/cleanup.js 的空捕在川册纵列径上——豁免在立案前，不入文账。
+{"type":"tool_call","id":"d1","name":"write","args":{"path":"src/h.js","content":"try {\n  load()\n} catch (e) {\n  console.error(e)\n  throw e\n}\n"},"at":101}
+{"type":"tool_result","id":"d1","name":"write","args":{"path":"src/h.js"},"isError":false,"at":102}
+{"type":"tool_call","id":"d2","name":"write","args":{"path":"src/best-effort/cleanup.js","content":"try {\n  cleanup()\n} catch (e) {\n}\n"},"at":110}
+{"type":"tool_result","id":"d2","name":"write","args":{"path":"src/best-effort/cleanup.js"},"isError":false,"at":111}

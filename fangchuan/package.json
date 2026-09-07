@@ -1,0 +1,37 @@
+{
+  "name": "fangchuan-dsh",
+  "version": "0.1.0",
+  "description": "防川 Fangchuan — DeepSeek Harness 的吞错形治理：湮形 6 形（空捕/空还/空接/单行空捕/多行空捕/空救）默认在岗、文账以末笔带 content 之写为末文、川册纵列授权、塞值（宣/淤/塞）分带门禁、导牌块供给。零 LLM 调用的防川式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/fangchuan.js",
+  "bin": {
+    "fangchuan": "src/bin/fangchuan.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "swallowed-errors",
+    "empty-catch-audit",
+    "error-visibility",
+    "agent-reliability",
+    "code-hygiene"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

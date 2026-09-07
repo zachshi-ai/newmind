@@ -1,0 +1,4 @@
+# 防川流 · shachuan（沙川：期望 1 调用、沙川 1、塞值 0、带「宣」、exit 0）
+# echo 重定向落 src/a.js——文面经命令生成，扫描不得，注记不计分。
+{"type":"tool_call","id":"c1","name":"bash","args":{"command":"echo ok > src/a.js"},"at":101}
+{"type":"tool_result","id":"c1","name":"bash","args":{"command":"echo ok > src/a.js"},"isError":false,"at":102}

@@ -1,0 +1,6 @@
+# 防川流 · jun（已浚：期望 2 调用、湮案 0、已浚 1、塞值 0、带「宣」、exit 0）
+# 先写吞形后改净（体内补 throw）——考其末文，交付的是改净后的状态；历史在已浚注记里可见。
+{"type":"tool_call","id":"j1","name":"write","args":{"path":"src/a.js","content":"try {\n  load()\n} catch (e) {\n}\n"},"at":101}
+{"type":"tool_result","id":"j1","name":"write","args":{"path":"src/a.js"},"isError":false,"at":102}
+{"type":"tool_call","id":"j2","name":"write","args":{"path":"src/a.js","content":"try {\n  load()\n} catch (e) {\n  throw e\n}\n"},"at":110}
+{"type":"tool_result","id":"j2","name":"write","args":{"path":"src/a.js"},"isError":false,"at":111}

@@ -1,0 +1,9 @@
+# 防川流 · clean（带册：期望 3 调用、0 案、塞值 0、带「宣」、exit 0）
+# 读 docs 是观察不入账；src/app.js 的 catch 体内导词在场（console.error + throw）——导不是湮；
+# docs/guide.md 里的示例吞形在文档豁免后缀上，不入文账。
+{"type":"tool_call","id":"h1","name":"read","args":{"path":"docs/guide.md"},"at":101}
+{"type":"tool_result","id":"h1","name":"read","args":{"path":"docs/guide.md"},"isError":false,"at":102}
+{"type":"tool_call","id":"h2","name":"write","args":{"path":"src/app.js","content":"try {\n  load()\n} catch (e) {\n  console.error('load failed', e)\n  throw e\n}\n"},"at":110}
+{"type":"tool_result","id":"h2","name":"write","args":{"path":"src/app.js"},"isError":false,"at":111}
+{"type":"tool_call","id":"h3","name":"write","args":{"path":"docs/guide.md","content":"# 指南\n错误处理切勿写成 `catch (e) { }`。\n"},"at":120}
+{"type":"tool_result","id":"h3","name":"write","args":{"path":"docs/guide.md"},"isError":false,"at":121}

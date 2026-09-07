@@ -1,0 +1,6 @@
+# 防川流 · shuangyan（双湮案：期望 2 调用、湮案 2、塞值 30、带「塞」、exit 1）
+# src/a.js 空捕 + src/b.py 单行空捕（except Exception: pass）——两案即红。
+{"type":"tool_call","id":"s1","name":"write","args":{"path":"src/a.js","content":"try {\n  load()\n} catch (e) {\n}\n"},"at":101}
+{"type":"tool_result","id":"s1","name":"write","args":{"path":"src/a.js"},"isError":false,"at":102}
+{"type":"tool_call","id":"s2","name":"write","args":{"path":"src/b.py","content":"try:\n    load()\nexcept Exception:\n    pass\n"},"at":110}
+{"type":"tool_result","id":"s2","name":"write","args":{"path":"src/b.py"},"isError":false,"at":111}

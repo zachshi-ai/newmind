@@ -1,0 +1,6 @@
+# 防川流 · yancao（单湮案：期望 2 调用、湮案 1、塞值 15、带「淤」、exit 0）
+# src/a.js 第 3 行空捕（catch (e) { } 体剥空白为空）——黄牌点名不咬门；src/lib.js 净川。
+{"type":"tool_call","id":"y1","name":"write","args":{"path":"src/a.js","content":"try {\n  load()\n} catch (e) {\n}\n"},"at":101}
+{"type":"tool_result","id":"y1","name":"write","args":{"path":"src/a.js"},"isError":false,"at":102}
+{"type":"tool_call","id":"y2","name":"write","args":{"path":"src/lib.js","content":"export function id(x) {\n  return x\n}\n"},"at":110}
+{"type":"tool_result","id":"y2","name":"write","args":{"path":"src/lib.js"},"isError":false,"at":111}
