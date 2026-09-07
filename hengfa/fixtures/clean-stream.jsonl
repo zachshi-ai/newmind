@@ -1,0 +1,10 @@
+# 恒法流 · clean（带册：期望 3 调用、0 案、法值 0、带「恒」、exit 0）
+# 读 AGENTS.md 是守法（observe 不立案）；写 src/app.js 非典形；
+# 写 .github/workflows/deploy.yml 在典册开门列——授权之改免案。
+# 同流无册：开门无据，workflow 写立禁案 → 30 篡 exit 1（无册 = 全护，授权只能来自册）。
+{"type":"tool_call","id":"h1","name":"read","args":{"path":"AGENTS.md"},"at":101}
+{"type":"tool_result","id":"h1","name":"read","args":{"path":"AGENTS.md"},"isError":false,"at":102}
+{"type":"tool_call","id":"h2","name":"write","args":{"path":"src/app.js","content":"export const app = 1\n"},"at":110}
+{"type":"tool_result","id":"h2","name":"write","args":{"path":"src/app.js"},"isError":false,"at":111}
+{"type":"tool_call","id":"h3","name":"write","args":{"path":".github/workflows/deploy.yml","content":"name: deploy\non: push\n"},"at":120}
+{"type":"tool_result","id":"h3","name":"write","args":{"path":".github/workflows/deploy.yml"},"isError":false,"at":121}

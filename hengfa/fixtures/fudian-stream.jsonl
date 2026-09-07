@@ -1,0 +1,6 @@
+# 恒法流 · fudian（复典：期望 2 调用、章案 1 已复、法值 0、带「恒」、exit 0）
+# 改了 tsconfig 又 git checkout -- 复原——复典出账，注记留痕。
+{"type":"tool_call","id":"f1","name":"write","args":{"path":"tsconfig.json","content":"{\"strict\": false}\n"},"at":101}
+{"type":"tool_result","id":"f1","name":"write","args":{"path":"tsconfig.json"},"isError":false,"at":102}
+{"type":"tool_call","id":"f2","name":"bash","args":{"command":"git checkout -- tsconfig.json"},"at":110}
+{"type":"tool_result","id":"f2","name":"bash","args":{"command":"git checkout -- tsconfig.json"},"isError":false,"at":111}

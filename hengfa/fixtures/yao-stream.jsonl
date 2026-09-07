@@ -1,0 +1,4 @@
+# 恒法流 · yao（单章案摇带：期望 1 调用、章案 1、法值 15、带「摇」、exit 0）
+# 未开门改 .editorconfig——黄牌点名不咬门（章程之改常在两可，记账留痕为主）。
+{"type":"tool_call","id":"y1","name":"write","args":{"path":".editorconfig","content":"root = true\n"},"at":101}
+{"type":"tool_result","id":"y1","name":"write","args":{"path":".editorconfig"},"isError":false,"at":102}

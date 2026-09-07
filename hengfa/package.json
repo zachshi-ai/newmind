@@ -1,0 +1,37 @@
+{
+  "name": "hengfa-dsh",
+  "version": "0.1.0",
+  "description": "恒法 Hengfa — DeepSeek Harness 的规矩源恒典层：典形三族 25 形（治理文书/CI 流程/检查章程）默认在岗、改典通道唯三（write 族 p: ∪ exec 生产词法 ∪ 灭词表）、典册开门授权（open glob）、复典据 git 词面配对基点时序、法值（宪/禁/章）分带门禁、法牌块供给。零 LLM 调用的恒法式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/hengfa.js",
+  "bin": {
+    "hengfa": "src/bin/hengfa.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "rule-source-integrity",
+    "constitution-guard",
+    "agent-reliability",
+    "ci-tampering-audit",
+    "context-hygiene"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
