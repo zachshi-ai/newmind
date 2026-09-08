@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "retain": [
+    "scripts/*"
+  ],
+  "forms": [],
+  "noDefaults": false
+}

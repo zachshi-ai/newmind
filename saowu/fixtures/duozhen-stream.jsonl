@@ -1,0 +1,3 @@
+# 扫屋流 · duozhen（期望 2 调用、单卷三针三处（debugger；import pdb；console.trace）、垢值 60(cap)、带「垢」、exit 1）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/legacy.js","content":"debugger;\nimport pdb\nconsole.trace(x)\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/legacy.js"},"isError":false,"content":101}

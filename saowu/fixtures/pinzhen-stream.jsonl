@@ -1,0 +1,7 @@
+# 扫屋流 · pinzhen（期望 3 调用、三径各遗针 1 处、垢值 60(cap)、带「垢」、exit 1——积习三针封顶）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/a.js","content":"debugger;\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/a.js"},"isError":false,"content":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"lib/b.rb","content":"binding.pry\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"lib/b.rb"},"isError":false,"content":111}
+{"type":"tool_call","id":"c3","name":"write","args":{"path":"bin/deploy.sh","content":"set -x\n"},"at":120}
+{"type":"tool_result","id":"c3","name":"write","args":{"path":"bin/deploy.sh"},"isError":false,"content":121}

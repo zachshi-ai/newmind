@@ -1,0 +1,3 @@
+# 扫屋流 · liuce（带册：retain scripts/* 豁免 → 受审径 0、exit 0；无册对照：遗针 1 + 遗屑 1、垢值 45、带「垢」、exit 1）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"scripts/dev.sh","content":"set -x\necho \"DEBUG: starting\"\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"scripts/dev.sh"},"isError":false,"content":101}

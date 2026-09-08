@@ -1,0 +1,37 @@
+{
+  "name": "saowu-dsh",
+  "version": "0.1.0",
+  "description": "扫屋 Saowu — DeepSeek Harness 的调试残迹治理：落笔入账（帚账唯写）→ 扫末卷 → 垢案，垢形词法（针形 10 ∪ 屑两路：原语×标记共现 ∪ 探针注释形）、遗针 +30/处 单针即红、遗屑 +15/处 双屑即红、已扫注记净向、留册 retain 授权、垢值（洁/蒙/垢）分带门禁、帚牌块供给。零 LLM 调用的巡扫式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/saowu.js",
+  "bin": {
+    "saowu": "src/bin/saowu.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "debug-artifact-audit",
+    "debugger-detection",
+    "leftover-debug-statements",
+    "code-hygiene",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

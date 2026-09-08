@@ -1,0 +1,5 @@
+# 扫屋流 · yisao（期望 3 调用、先撒 V5a 后扫 V5b → 已扫注记 1、垢值 0、带「洁」、exit 0——取土平之）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/calc.js","content":"function f() {\n  breakpoint()\n}\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/calc.js"},"isError":false,"content":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/calc.js","content":"function f() {\n  return 1\n}\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/calc.js"},"isError":false,"content":111}
