@@ -1,0 +1,5 @@
+# 揖盗流 · shuangsu（期望 2 调用、素拆 2、锁值 30、带「洞」、exit 1）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/a.js","content":"import requests\nresp = requests.get(url, verify=False)\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/a.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/b.js","content":"const https = require(\"https\")\nconst agent = new https.Agent({ rejectUnauthorized: false })\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/b.js"},"isError":false,"at":111}

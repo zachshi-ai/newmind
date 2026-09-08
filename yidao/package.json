@@ -1,0 +1,37 @@
+{
+  "name": "yidao-dsh",
+  "version": "0.1.0",
+  "description": "揖盗 Yidao — DeepSeek Harness 的守门开关治理：默认弱锁形 12（验锁 10 ∪ 网锁 2）开箱在岗、exec 阻账不问 isError 旗、拆锁窗败相归因（遇阻 +30 单案即红/素拆 +15 黄牌）、锁册免拆授权、校场默认豁免、锁值（扃/倚/洞）分带门禁、锁牌块供给。零 LLM 调用的揖盗式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/yidao.js",
+  "bin": {
+    "yidao": "src/bin/yidao.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "security-switch-audit",
+    "tls-verification-bypass",
+    "agent-reliability",
+    "sast-stream-attribution",
+    "workaround-detection"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
