@@ -99,10 +99,10 @@ observe/write/exec/other 四族）。径规整同全仓（反斜杠归正、循�
 
 ## 4. 试验场豁免（立案前）
 
-径含名段即豁免（不入账），名段 10 形：`/tests/`、`/test/`、`/specs/`、
-`/spec/`、`/__tests__/`、`/__mocks__/`、`/fixtures/`、`/debug/`、
-`.test.`、`.spec.`、`.mock.`、`.debug.`。试验场是调试的本份之地——
-讲堂与试验场不是待客的厅堂。
+径含名段即豁免（不入账），名段正则形 10 形：`(?:^|/)tests?/`、`(?:^|/)specs?/`、
+`/__tests__/`、`/__mocks__/`、`/fixtures/`、`/debug/`、`.test.`、`.spec.`、
+`.mock.`、`.debug.`——目录段在径首亦算段（`tests/a.js` 同豁）。试验场是
+调试的本份之地——讲堂与试验场不是待客的厅堂。
 
 ## 5. 留册（retain，声明权全在任务方）
 
