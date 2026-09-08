@@ -1,0 +1,37 @@
+{
+  "name": "jiaotuo-dsh",
+  "version": "0.1.0",
+  "description": "矫托 Jiaotuo — DeepSeek Harness 的伪据虚引治理：默认引形 25（文书型 16 ∪ 泛型 9）开箱在岗、引语三式嵌套取内、诏账先判后录（observe/write 皆生诏本）、托主/阙据/泛引注记不判、词元过半对账（佚据 +15 黄牌/征据清白）、矫引 +30 单案即红、矫值（信/疑/矫）分带门禁、矫牌块供给。零 LLM 调用的矫托式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/jiaotuo.js",
+  "bin": {
+    "jiaotuo": "src/bin/jiaotuo.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "citation-hallucination",
+    "attribution-audit",
+    "fabricated-citation",
+    "agent-reliability",
+    "evidence-grounding"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

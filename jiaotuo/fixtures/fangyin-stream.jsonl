@@ -1,0 +1,5 @@
+# 矫托流 · fangyin（期望 2 调用、佚据 1、矫值 15、带「疑」、exit 0——指名改写式词元过半查无，黄牌不咬门）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"AGENTS.md"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"AGENTS.md"},"isError":false,"at":101,"content":"# 仓库章程\n\n所有提交前必须通过 lint 检查。\n禁止直接推送主分支。\n"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"docs/report.md","content":"# 交付报告\n\nAGENTS.md 规定部署前必须跑性能压测。\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"docs/report.md"},"isError":false,"at":111}

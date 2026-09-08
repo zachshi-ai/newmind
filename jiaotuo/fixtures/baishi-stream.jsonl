@@ -1,0 +1,3 @@
+# 矫托流 · baishi（期望 1 调用、counts 全 0、矫值 0、带「信」、exit 0——isError 写不入账：失败的写没落盘）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/report.md","content":"AGENTS.md 规定『每日清理构建缓存』。\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/report.md"},"isError":true,"at":101}

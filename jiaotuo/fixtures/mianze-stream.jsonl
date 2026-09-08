@@ -1,0 +1,5 @@
+# 矫托流 · mianze（期望 2 调用、带诏册 paths 0、矫值 0、带「信」、exit 0——docs/reports/* 免案；无册对照矫引 1、30「矫」exit 1）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"AGENTS.md"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"AGENTS.md"},"isError":false,"at":101,"content":"# 仓库章程\n\n所有提交前必须通过 lint 检查。\n禁止直接推送主分支。\n"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"docs/reports/audit.md","content":"AGENTS.md 规定『季度轮换全部访问凭据』。\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"docs/reports/audit.md"},"isError":false,"at":111}

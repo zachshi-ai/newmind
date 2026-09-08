@@ -1,0 +1,5 @@
+# 矫托流 · shixu（期望 2 调用、阙据 1、矫值 0、带「信」、exit 0——先伪后录：判时诏账空则阙据注记，后读之文不溯既往）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/plan.md","content":"AGENTS.md 规定『每日站会三问』。\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/plan.md"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"read","args":{"path":"AGENTS.md"},"at":110}
+{"type":"tool_result","id":"c2","name":"read","args":{"path":"AGENTS.md"},"isError":false,"at":111,"content":"# 仓库章程\n\n所有提交前必须通过 lint 检查。\n禁止直接推送主分支。\n"}
