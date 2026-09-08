@@ -1,0 +1,37 @@
+{
+  "name": "shihu-dsh",
+  "version": "0.1.0",
+  "description": "市虎 Shihu — DeepSeek Harness 的状态陈报治理：状面唯写（交接径的带文之写入账）→ 状形词法（勾选/状词/里程碑）→ 状键对自流作工面对账：虚功 +30/条单条即红、掠据（引用署名）0 分、无键诚实注记、状册豁免授权、虎值（真/疑/虎）分带门禁、状牌块供给。零 LLM 调用的市虎式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/shihu.js",
+  "bin": {
+    "shihu": "src/bin/shihu.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "handoff-audit",
+    "status-claim-verification",
+    "multi-agent-relay",
+    "agent-reliability",
+    "claim-evidence-governance"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

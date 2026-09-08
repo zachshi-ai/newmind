@@ -1,0 +1,9 @@
+# 市虎流 · clean（期望 4 调用、受审状面 1、counts 全 0、虎值 0、带「真」、exit 0——两条声明状键均命中自流作工面）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"src/a.js"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"src/a.js"},"isError":false,"at":101,"content":"function main() {}\n"}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/a.js","content":"function main() {\n  return 0;\n}\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/a.js"},"isError":false,"at":111}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"npm test"},"at":120}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"npm test"},"isError":false,"at":121,"content":"3 passing\n"}
+{"type":"tool_call","id":"c4","name":"write","args":{"path":"HANDOFF.md","content":"# HANDOFF\n\n- [x] 修复 src/a.js 空指针\n- [x] npm test 全绿\n\n## Next\n- [ ] 待办：清理 docs\n"},"at":130}
+{"type":"tool_result","id":"c4","name":"write","args":{"path":"HANDOFF.md"},"isError":false,"at":131}
