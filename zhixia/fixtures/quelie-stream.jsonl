@@ -1,0 +1,3 @@
+# 指瑕流 · quelie（期望 1 调用、阙列 1、瑕值 0、净、exit 0——言而无列注记）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/report.md","content":"本次共 3 个遗留问题。\n部署已完成，文档已更新。\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/report.md"},"isError":false,"at":101}

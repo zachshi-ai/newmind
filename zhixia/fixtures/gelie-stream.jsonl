@@ -1,0 +1,3 @@
+# 指瑕流 · gelie（期望 1 调用、全 0、净、exit 0——言后 heading gap 1 认块，言二实二）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/plan.md","content":"共 2 项：\n\n## 清单\n\n- 甲\n- 乙\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/plan.md"},"isError":false,"at":101}

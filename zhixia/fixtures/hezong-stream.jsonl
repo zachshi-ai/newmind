@@ -1,0 +1,3 @@
+# 指瑕流 · hezong（期望 1 调用、全 0、净、exit 0——合计 90 与和相敷）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/budget.md","content":"## 支出表\n\n| 项目 | 金额 |\n|---|---|\n| 服务器 | 40 |\n| 带宽 | 30 |\n| 人力 | 20 |\n| 合计 | 90 |\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/budget.md"},"isError":false,"at":101}

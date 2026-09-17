@@ -1,0 +1,3 @@
+# 指瑕流 · xiaochang（期望 1 调用、paths 0、全 0、净、exit 0——试场名段豁免，无册）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"tests/fixtures/handoff.md","content":"交接：本次共 4 项：\n- 甲\n- 乙\n- 丙\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"tests/fixtures/handoff.md"},"isError":false,"at":101}

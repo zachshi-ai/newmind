@@ -1,0 +1,38 @@
+{
+  "name": "zhixia-dsh",
+  "version": "0.1.0",
+  "description": "指瑕 Zhixia — DeepSeek Harness 的文书自洽治理：数言（方向词 12 × 量词 30 ∪ 英文方向形/冒号形）开箱在岗、列块/表块块窗 gap≤2、表账单合计行×纯整数列、日序 ISO 对起>止、乖列/乖总 +30 单案即红、倒期 +15 黄牌、阙列/已磨注记不判、以末稿为准（先瑕后磨 0 分）、瑕值（净/瑕/疵）分带门禁、瑕牌块供给。零 LLM 调用的指瑕式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/zhixia.js",
+  "bin": {
+    "zhixia": "src/bin/zhixia.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "document-consistency",
+    "self-consistency",
+    "count-hallucination",
+    "numeric-consistency",
+    "table-audit",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

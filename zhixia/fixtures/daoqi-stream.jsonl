@@ -1,0 +1,3 @@
+# 指瑕流 · daoqi（期望 1 调用、倒期 1、瑕值 15、带「瑕」、exit 0——单倒期黄牌不咬门）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/schedule.md","content":"## 排期\n\n开发窗口：2026-09-10 至 2026-09-05。\n评审窗口：2026-09-01 到 2026-09-09。\n联调窗口：2026-09-20 至 2026-09-25。\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/schedule.md"},"isError":false,"at":101}
