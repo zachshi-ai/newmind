@@ -1,0 +1,3 @@
+# 察传流 · mianze（带册 excuse 免审：paths 0、全 0、exit 0）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/reports/weekly.md","content":"# 周报\n\n配置集中在 src/config.js，使用 CommonJS 导出。\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/reports/weekly.md"},"isError":false,"at":101}

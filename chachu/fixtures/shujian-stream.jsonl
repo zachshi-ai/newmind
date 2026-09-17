@@ -1,0 +1,5 @@
+# 察传流 · shujian（期望 2 调用、全 0、受审稿 2、带「彰」、exit 0——书见：先写过再断言）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"src/config.js","content":"const a = 1\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"src/config.js"},"isError":false,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"docs/report.md","content":"# 迁移报告\n\n配置集中在 src/config.js，使用 CommonJS 导出。\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"docs/report.md"},"isError":false,"at":111}

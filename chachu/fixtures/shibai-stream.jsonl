@@ -1,0 +1,5 @@
+# 察传流 · shibai（期望 2 调用、幻言 1、30、带「诞」、exit 1——失败之见不是见：404 之后照断言）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"src/config.js"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"src/config.js"},"isError":true,"at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"docs/report.md","content":"# 迁移报告\n\n配置集中在 src/config.js，使用 CommonJS 导出。\n"},"at":110}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"docs/report.md"},"isError":false,"at":111}

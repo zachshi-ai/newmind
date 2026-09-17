@@ -1,0 +1,37 @@
+{
+  "name": "chachu-dsh",
+  "version": "0.1.0",
+  "description": "察传 Chachu — DeepSeek Harness 的无见立言治理：得言形（中文 30 ∪ 英文 23）开箱在岗、指物三档（径指物/自指/目录指物 18）、网卫 URL 跨度排除、模态门（中文 24 ∪ 英文 11）行级跳过、见据三通道（目见/书见/验见）先于本笔为据、基径在册明言、幻言 +30 单案即红、疑言 +15 黄牌、迟证/虚指注记、幻值（彰/疑/诞）分带门禁、证牌块供给。零 LLM 调用的察传式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/chachu.js",
+  "bin": {
+    "chachu": "src/bin/chachu.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "claim-grounding",
+    "hallucination-audit",
+    "provenance",
+    "faithfulness",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

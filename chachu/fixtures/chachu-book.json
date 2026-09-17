@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "excuse": ["docs/reports/*"],
+  "grounds": ["src/config.js"]
+}

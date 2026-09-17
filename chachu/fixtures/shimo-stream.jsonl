@@ -1,0 +1,3 @@
+# 察传流 · shimo（期望 1 调用、模态门整行跳过、全 0、带「彰」、exit 0——将然未然不判）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/plan.md","content":"# 迁移计划\n\n下一步将把配置迁移到 src/config.js。\n使用前应当先读 src/config.js。\nTODO: 校验 tests/e2e 覆盖。\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/plan.md"},"isError":false,"at":101}

@@ -1,0 +1,3 @@
+# 察传流 · wangwei（期望 1 调用、虚指注记 1、0 分、带「彰」、exit 0——网卫：URL 跨度内不作指物）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/report.md","content":"# 参考资料\n\n安装说明见 https://example.com/guide/src/config.js 使用文档。\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/report.md"},"isError":false,"at":101}
