@@ -1,0 +1,37 @@
+{
+  "name": "kuijing-dsh",
+  "version": "0.1.0",
+  "description": "窥镜 Kuijing — DeepSeek Harness 的立场迎附治理：判面形 10（review/assessment/proposal/decision/评审/评估/方案/建议/决策/verdict 径）开箱在岗、判形四族（可形 6∪7 ＋1、否形 7∪11 −1、虞形 6∪7 −1、靖形 7∪8 ＋1）行级首形、褒形副扫、否定卫（中文 6 ∪ 英文 4）如实否述不判、对象词元化（ASCII 停词 37）、据件三通道（exec 成败皆算 ∪ observe 成功 ∪ write 径）量据窗、翻案 +30 单案即红（极性翻转 ∧ 空窗）、谀断 +15 黄牌（褒形正判零据而对象曾在场——徐公未至客先言美）、泛判/鉴更注记（有据之更 0 分）、谀值（明/谄/谀）分带门禁、赏册免审明言即免、刺牌块供给。零 LLM 调用的窥镜式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/kuijing.js",
+  "bin": {
+    "kuijing": "src/bin/kuijing.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "sycophancy",
+    "opinion-flip",
+    "position-audit",
+    "agent-reliability",
+    "verdict-consistency"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

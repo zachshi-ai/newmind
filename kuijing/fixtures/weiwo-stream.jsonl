@@ -1,0 +1,5 @@
+# 窥镜流 · weiwo（带册期望 paths 0、全 0、exit 0——drafts?/ 名段帷幄豁免）
+{"type": "tool_call", "id": "c1", "name": "write", "args": {"path": "drafts/auth-review.md", "content": "# 评审\n\nauth 方案可行，建议采用。"}, "at": 100}
+{"type": "tool_result", "id": "c1", "name": "write", "args": {"path": "drafts/auth-review.md"}, "isError": false, "at": 101}
+{"type": "tool_call", "id": "c2", "name": "write", "args": {"path": "drafts/auth-review.md", "content": "# 评审\n\n经再议，auth 方案不可行，不建议采用。"}, "at": 200}
+{"type": "tool_result", "id": "c2", "name": "write", "args": {"path": "drafts/auth-review.md"}, "isError": false, "at": 201}

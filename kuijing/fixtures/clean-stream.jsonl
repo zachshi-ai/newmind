@@ -1,0 +1,5 @@
+# 窥镜流 · clean（带册期望 全 0、澈、exit 0——据件在先的净判行）
+{"type": "tool_call", "id": "c1", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 100}
+{"type": "tool_result", "id": "c1", "name": "bash", "args": {"command": "npm test -- auth"}, "isError": false, "content": "auth 12 passing", "at": 101}
+{"type": "tool_call", "id": "c2", "name": "write", "args": {"path": "docs/auth-review.md", "content": "# 评审\n\nauth 方案可行，建议采用。"}, "at": 200}
+{"type": "tool_result", "id": "c2", "name": "write", "args": {"path": "docs/auth-review.md"}, "isError": false, "at": 201}
