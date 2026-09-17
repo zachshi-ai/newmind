@@ -101,7 +101,7 @@ mocha、karma、cypress run、playwright test、pytest、py.test、tox、
 go test、go vet、cargo test、cargo check、cargo clippy、gradle test、
 gradlew test、mvn test、phpunit、dotnet test、deno test、mix test、
 rake test、swift test、make test、make check、make lint、tsc、eslint、
-ruff、flake8、pylint、rubocop、golangci、shellcheck（43 形）
+ruff、flake8、pylint、rubocop、golangci、shellcheck（44 形）
 
 （检形与 xiaoyan 效词表同向不同账：效词识别验证**事件**审其成色——只在
 成功侧；检形识别验证**命令**记其胜负——只在成败旗标与对象上。zhizhi 的
@@ -199,7 +199,7 @@ __mocks__|fixtures|scratch|drafts?|wip|sandbox|demos?|notes?)/` 名段
 逐字节确定，shasum 可证：
 
 - 痊册公示（无册出确定性文本「痊册：未立（凡愈必痊）」）；
-- 词法公示（愈形 13∪14 · 检形 43 · 否定卫 · 疾痊两通道〔疾=exec 红旗
+- 词法公示（愈形 13∪14 · 检形 44 · 否定卫 · 疾痊两通道〔疾=exec 红旗
   ×检形×词元 ∪ 痊=点痊×词元 ∪ 扫痊×全量〕）；
 - 案账清点（hui/yu/fy/zhi + paths/rows）；
 - 逐案点名 `稿径:行:案别:指纹`——指纹为案行的 djb2。**永不携带行原文
