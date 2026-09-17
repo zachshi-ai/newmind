@@ -1,0 +1,5 @@
+# 自照流 · mijing（期望 2 调用、镜凭 1、0、带「明」、exit 0——基线对照在先：stash 照出红，成败皆算）
+{"type":"tool_call","id":"c1","name":"bash","args":{"command":"git stash && npm test -- test_login"},"at":100}
+{"type":"tool_result","id":"c1","name":"bash","args":{"command":"git stash && npm test -- test_login"},"isError":true,"content":"FAIL test_login (baseline red before change)","at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"docs/retro-report.md","content":"# 交付纪要\n\ntest_login 是历史遗留问题，与本次无关。\n"},"at":200}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"docs/retro-report.md"},"isError":false,"at":201}

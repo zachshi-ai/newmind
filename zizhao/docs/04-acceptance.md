@@ -70,14 +70,14 @@
 
 | # | 验收项 | 标准（先于实现确定） | 验证方式 | 结果 |
 |---|--------|----------------------|----------|------|
-| A1 | 核心判定语义 | 流解析（`#` 注释、坏行报行号、id 配对回填、孤儿 result 建档、无 id result 并入紧邻 call、非 tool_call/result 事件忽略）；对象键与工具族同全仓；径规整；**责账收全流、判言只判责面之写**（write 族 p: ∧ `isError !== true` ∧ content 非空字符串 ∧ 规整径小写化命中责面形 10；isError===true 不入稿账、null 按已发生；责面外之稿不审不记）；**责面形 10**（report/summary/retro/postmortem/handoff/复盘/报告/总结/纪要/交接，册 shapes 增形、noDefaults 可关）；**弃责形**（中文 10 子串 ∪ 英文 15 词界，行级一行只取首形〔行内最先出现者，同位取长者〕）；**否定卫**（中文 5 形前紧邻 0–3 字符 ∪ 英文 3 形前紧邻词，命中整行不判）；**对象词元**（遮蔽全部命中形与否定词后 ASCII 切词，停词 26、纯数字、短词剔，路径形保留；CJK 不入对账；词元空 → 泛弃注记）；**红账**（先于本笔 isError===true exec ∧ 命令原文或输出命中对象词元）；**镜凭**（先于本笔 exec 成败皆算 ∧ 命令原文命中镜形〔git stash/git checkout/git switch/baseline/基线/对照〕∧ 命令或输出命中对象词元）清白；**思短**（后于本笔成功 exec ∧ 命令或输出命中对象词元）注记；**判定序锁死**（立案前豁免〔照册 allow ∪ 练场 13 名段〕→ 责面门 → 逐行〔弃责形 → 否定卫 → 对象词元 → 镜凭 / 思短 / 红账在场 → 护短 / 红账查无 → 虚弃〕；行=案、一行一形一案）；**末稿立撤**（同径新稿落地旧案全撤）；照值 hu=min(60,30×hd)、total=min(100)；分带 明 0–14 / 暗 15–29 / 盲 ≥30（暗带 v1 恒空）；门默认 30——单护短即红；judge 幂等——core 用例 ≥ 30 且全绿，断言恰好该分值与案名行号 | `npm test`（core 部分） | ✅ 36 用例全绿（core：流解析 1 + 对象与径规整 1 + 责面形 1 + 弃责形中文 1 + 弃责形英文 1 + 首形一行一案 1 + 否定卫中文 1 + 否定卫英文 1 + 对象词元遮蔽 1 + 停词与路径词元 1 + 红账 1 + 红账输出侧命中 1 + 镜凭成败皆算 1 + 镜凭时序 1 + 思短 1 + 思短优先于护短 1 + 虚弃 1 + 泛弃 1 + 判定序与排序 1 + 行案独立 1 + 末稿立撤 1 + 责面门 1 + 练场 1 + 照册 1 + 败写 1 + 老流 null 1 + 照值门禁 1 + 合审序 1 + 掩码 1 + 夹具全量·一 1 + 夹具全量·二 1 + 夹具全量·三 1 + 跨项目互认 1 + 门禁翻转 1 + 册 shapes 增形与 noDefaults 1 + judge 幂等 1——断言恰好该分值与案名行号） |
+| A1 | 核心判定语义 | 流解析（`#` 注释、坏行报行号、id 配对回填、孤儿 result 建档、无 id result 并入紧邻 call、非 tool_call/result 事件忽略）；对象键与工具族同全仓；径规整；**责账收全流、判言只判责面之写**（write 族 p: ∧ `isError !== true` ∧ content 非空字符串 ∧ 规整径小写化命中责面形 10；isError===true 不入稿账、null 按已发生；责面外之稿不审不记）；**责面形 10**（report/summary/retro/postmortem/handoff/复盘/报告/总结/纪要/交接，册 shapes 增形、noDefaults 可关）；**弃责形**（中文 10 子串 ∪ 英文 15 词界，行级一行只取首形〔行内最先出现者，同位取长者〕）；**否定卫**（中文 5 形前紧邻 0–3 字符 ∪ 英文 3 形前紧邻词，命中整行不判）；**对象词元**（遮蔽全部命中形与否定词后 ASCII 切词，停词 26、纯数字、短词剔，路径形保留；CJK 不入对账；词元空 → 泛弃注记）；**红账**（先于本笔 isError===true exec ∧ 命令原文或输出命中对象词元）；**镜凭**（先于本笔 exec 成败皆算 ∧ 命令原文命中镜形〔git stash/git checkout/git switch/baseline/基线/对照〕∧ 命令或输出命中对象词元）清白；**思短**（后于本笔成功 exec ∧ 命令或输出命中对象词元）注记；**判定序锁死**（立案前豁免〔照册 allow ∪ 练场 13 名段〕→ 责面门 → 逐行〔弃责形 → 否定卫 → 对象词元 → 镜凭 / 思短 / 红账在场 → 护短 / 红账查无 → 虚弃〕；行=案、一行一形一案）；**末稿立撤**（同径新稿落地旧案全撤）；照值 hu=min(60,30×hd)、total=min(100)；分带 明 0–14 / 暗 15–29 / 盲 ≥30（暗带 v1 恒空）；门默认 30——单护短即红；judge 幂等——core 用例 ≥ 30 且全绿，断言恰好该分值与案名行号 | `npm test`（core 部分） | ✅ 37 用例全绿（core：流解析 1 + 对象与径规整 1 + 责面形 1 + 弃责形中文 1 + 弃责形英文 1 + 首形一行一案 1 + 否定卫中文 1 + 否定卫英文 1 + 对象词元遮蔽 1 + 停词与路径词元 1 + 红账 1 + 红账输出侧命中 1 + 镜凭成败皆算 1 + 镜凭时序 1 + 思短 1 + 思短优先于护短 1 + 虚弃 1 + 泛弃 1 + 判定序与排序 1 + 行案独立 1 + 末稿立撤 1 + 责面门 1 + 练场 1 + 照册 1 + 败写 1 + 老流 null 1 + 照值门禁 1 + 合审序 1 + 掩码 1 + 夹具全量·一 1 + 夹具全量·二 1 + 夹具全量·三 1 + 跨项目互认 1 + 门禁翻转 1 + 册 shapes 增形与 noDefaults 1 + judge 幂等 1 + 照册册操作与 glob 1——断言恰好该分值与案名行号） |
 | A2 | 夹具分数（先于实现手算定死） | 册夹具 `zizhao-book.json`：allow [`reports/internal/*`]。`clean-stream`：1 调用、counts 全 0、照值 0、明、exit 0；`huoduan-stream`：护短 1（hd=1）、30、盲、exit 1；`mijing-stream`：镜凭 1（mp=1）、0、明、exit 0；`sigeng-stream`：思短 1（sg=1）、0、明、exit 0；`xuqi-stream`：虚弃 1（xq=1）、0、明、exit 0；`fanqi-stream`：泛弃 1（fq=1）、0、明、exit 0；`foujue-stream`：否定卫、counts 全 0、明、exit 0；`suiyangdi-stream`：3 调用 → 护短 2、60、盲、exit 1；`yushiji-stream`：沉默不审、counts 全 0、明、exit 0；`yanwu-stream`：练场豁免、paths 0、全 0、exit 0；`zhaoce-stream` 带册：paths 0、全 0、exit 0；zhaoce 无册对照：护短 1、30、盲、exit 1；`yingwen-stream`：护短 1、30、盲、exit 1；`mogai-stream`：3 调用 → counts 全 0、paths 1、exit 0；`baixie-stream`：败写不入稿账、全 0、paths 0、exit 0；`zhenmian-stream`：责面门、paths 0、counts 全 0、exit 0；合审 `hezhao-a + hezhao-b`：2 调用 2 会话 → 护短 1、30、exit 1；合审 `hejing-a + hejing-b`：镜凭跨会话、mp=1、0、exit 0；附加口径：`huoduan + --gate 40` → 30 过门 exit 0；`huoduan + --gate 20` → 30 红 exit 1 | core 断言 + CLI 复现 | ✅ 二十条复现命令退出码逐字吻合（0/1/0/0/0/0/0/1/0/0/0/1/1/0/0/0/1/0 + gate 40 过 0、gate 20 红 1）；分数与 counts 由 CLI 输出与 core 断言逐字段核对（clean 全 0 明 / huoduan 护短 30 盲 / mijing 镜凭 mp=1 / sigeng 思短 sg=1 / xuqi 虚弃 xq=1 / fanqi 泛弃 fq=1 / foujue 否定卫全 0 / suiyangdi 双护短 60 / yushiji 沉默全 0 / yanwu 练场 paths 0 / zhaoce 带册 0 无册红 / yingwen 英文 30 红 / mogai 新稿立撤 paths 1 / baishi 败写 paths 0 / zhenmian 责面门 paths 0 / hezhao 红账跨会话 / hejing 镜凭跨会话） |
 | A3 | 跨项目互认（外部夹具已实读核对：七流 write 稿要么不命中责面形〔zhizhi patch.js、huashui a.js〕，要么受审但稿内无弃责形〔kaocheng report.md 空白稿、jiaotuo report.md 诏本稿、suliu postmortem.md 归因稿〕——counts 全 0；jiaotuo 诏本稿「提交前必须全部测试通过」含「不在范围/超出范围」零命中，suliu 归因稿恰证归因形与弃责形零交集正交共审） | zhizhi 的 `fixtures/sample-stream.jsonl`：calls 8、counts 全 0、明、exit 0；kaocheng 的 `fixtures/mixed-stream.jsonl`：calls 4、counts 全 0；dingfen 的 `fixtures/fenced-stream.jsonl`：calls 6、counts 全 0；erbing 的 `fixtures/mixed-stream.jsonl` 与 `fixtures/delegated-stream.jsonl`：各 calls 5、counts 全 0；huashui 的 `fixtures/fuji-stream.jsonl`：calls 3、counts 全 0；jiaotuo 的 `fixtures/weizhao-stream.jsonl`：calls 2、counts 全 0（同格式流跨项目可审、互不误伤） | CLI 测试 | ✅ 七流零误伤（zhizhi sample 8 调用 / kaocheng mixed 4 调用 / dingfen fenced 6 调用 / erbing mixed 5 与 delegated 5 调用 / huashui fuji 3 调用 / jiaotuo weizhao 2 调用——counts 全 0、全明带 exit 0；core 与 CLI 双路核验） |
-| A4 | CLI 语义 | `audit` 多流合审 + `--file` + `--gate` + `--json`；坏 JSON 行 / 流缺失 / 未知旗标 / 缺值 → exit 2；`register --path` 缺 --path → exit 2、重复登记去重、册缺失自动建册；`revoke` 无此径 → exit 2；`list` 册缺失 → exit 2；`block` 无册出确定性文本（照册公示是供给不是门禁）；`gate --value` 按门判 0/1（29 过 / 30 红 / --gate 50 时 45 过）；`--version`/`--help` 正常——CLI 用例 ≥ 16 | CLI 测试 | ✅ 17 用例全绿（A2 复现逐条断言 + 坏行报行号/缺流/未知旗标/--gate 缺值 exit 2 + register 缺 --path exit 2、自动建册去重、register 后 audit 免案生效 + revoke 无此径 exit 2 + list 缺册 exit 2 + block 无册确定性文本与增免案改变 + block shasum 双跑一致 + gate 29/30/--gate 50×45 + gate 缺值 exit 2 + --version/--help + 跨项目七流 CLI 复验） |
+| A4 | CLI 语义 | `audit` 多流合审 + `--file` + `--gate` + `--json`；坏 JSON 行 / 流缺失 / 未知旗标 / 缺值 → exit 2；`register --path` 缺 --path → exit 2、重复登记去重、册缺失自动建册；`revoke` 无此径 → exit 2；`list` 册缺失 → exit 2；`block` 无册出确定性文本（照册公示是供给不是门禁）；`gate --value` 按门判 0/1（29 过 / 30 红 / --gate 50 时 45 过）；`--version`/`--help` 正常——CLI 用例 ≥ 16 | CLI 测试 | ✅ 16 用例全绿（A2 复现四组逐条断言 + 坏行报行号/缺流/未知旗标/--gate 缺值 exit 2 + register 缺 --path exit 2、自动建册去重、register 后 audit 免案生效 + revoke 无此径 exit 2 + list 缺册 exit 2 + block 无册确定性文本与增免案改变 + block shasum 双跑一致 + gate 29/30/--gate 50×45 + gate 缺值 exit 2 + --version/--help + 跨项目七流 CLI 复验） |
 | A5 | 照牌块逐字节确定 | 同一照册两次 `zizhao block` shasum 相同；增一免案后文本改变；无册输出确定性文本（`照册：未立（凡弃必凭）`）；块中不含行原文与对象词元原文（只载 责径:行:案别:指纹——djb2 指纹与笔序，对象词元是行内内容切片不进块） | CLI shasum 复现 | ✅ 逐字节一致（同册两次 block shasum 全等；增免案 reports/internal/* 后文本改变；无册块逐字含「照册：未立（凡弃必凭）」；行原文与对象词元原文不进照牌见 core 掩码用例与集成断言） |
 | A6 | 真实管道上的观察式插件（零拦截） | 在 **npm 官方包** `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 构成的真实工具管道上挂载自照插件：失败探针也无条件到达工具本体（结构性零拦截）；净稿探针 → 0 过门；单护短探针 → 30 盲门红；镜凭探针 → 0 过门；思短探针 → 0 过门；否定卫探针 → 0 过门；泛弃探针 → 0；练场探针 → 0；照册免案探针 → 0；失败 write 探针不入稿账；`exportStream()` 导出流离线 `audit` 重放账实一致；gate 翻转 + 照牌块两次渲染逐字节相同且不含行原文与对象词元原文——集成用例 ≥ 10 | 集成测试 | ✅ 14 用例全绿（真实管道挂载 npm 官方 @deepseek-ai/cordis@4.0.2 + @deepseek-ai/dsh-tools@0.0.1-rc.1：失败探针无条件到达工具本体、净稿 0 明、单护短 30 盲红、镜凭 0、思短 0、否定卫 0、泛弃 0、练场 0、照册免案 0、失败写不入稿账、exportStream 重放账实一致 30、照牌两次渲染逐字节相同且不含行原文与对象词元原文、gate 20 翻转 + report/ledger 口径、新稿立撤 0 过门） |
-| A7 | 模型无关 | 核心 + 插件零 LLM 调用、零提示词注入、零网络、零子进程、零文件系统探测；插件源码无 pre-execute 监听器（结构性零拦截）；源码注释不携带相邻各层的机制词（独立性的结构性自证，ban 表累加至 suliu 全部机制词） | grep（下附命令，应无输出） | ✅ 三组 grep 均无输出（grep3 覆盖 380+ 词含 suliu 全部机制词；机制词 18 词对全仓 ban 表双向子串零撞）；实现期注释防撞修正两笔（「实证」注释、「证册」注释——改措辞清零）；机制词 18——自照/责面/责面形/责稿/弃责/弃责形/护短/思短/泛弃/虚弃/红账/镜凭/镜形/照册/照值/照牌/练场/暗带（暗带为分带名随照值公示）——见实测记录 |
-| A8 | 测试总量 | 全部用例 ≥ 65 且全绿（core + cli + 集成） | `npm test` | ✅ 67 tests, 67 pass（core 36 + cli 17 + 集成 14，0 跳过） |
+| A7 | 模型无关 | 核心 + 插件零 LLM 调用、零提示词注入、零网络、零子进程、零文件系统探测；插件源码无 pre-execute 监听器（结构性零拦截）；源码注释不携带相邻各层的机制词（独立性的结构性自证，ban 表累加至 suliu 全部机制词） | grep（下附命令，应无输出） | ✅ 三组 grep 均无输出（grep3 覆盖 380+ 词含 suliu 全部机制词；机制词 18 词对全仓 ban 表双向子串零撞）；实现期注释防撞修正一笔（「陈报」plugin 注释——grep3 定位改措辞「宣言」清零）；机制词 18——自照/责面/责面形/责稿/弃责/弃责形/护短/思短/泛弃/虚弃/红账/镜凭/镜形/照册/照值/照牌/练场/暗带（暗带为分带名随照值公示）——见实测记录 |
+| A8 | 测试总量 | 全部用例 ≥ 65 且全绿（core + cli + 集成） | `npm test` | ✅ 67 tests, 67 pass（core 37 + cli 16 + 集成 14，0 跳过） |
 | A9 | 文档 | 选书映射（01）、场景价值与伪需求自检（02）、设计语义锁死（03）、本验收表（04）、SKILL.md、README 快速开始齐备；根 README 项目索引与方向登记更新 | 人工 + 链接 | ✅（本行即 A9 验证；根 README #42 行见交付提交） |
 
 ## 复现命令
@@ -127,7 +127,7 @@ grep -rnE "讳形|空绿|史词|实录|翻红窗|虚器|废尺|绳墨|器册|险
 
 ## 实测记录（2026-09-18，本机复跑真实输出）
 
-- `npm test`：**67 tests, 67 pass, 0 fail, 0 skipped**（core 36 + cli 17 + 集成 14；
+- `npm test`：**67 tests, 67 pass, 0 fail, 0 skipped**（core 37 + cli 16 + 集成 14；
   集成挂载 npm 官方 `@deepseek-ai/cordis@4.0.2` + `@deepseek-ai/dsh-tools@0.0.1-rc.1`
   真实管道）。
 - A2 二十条复现命令退出码逐字吻合：clean 0/明 · huoduan 30/盲/红 · mijing 镜凭 mp=1 ·
@@ -142,21 +142,24 @@ grep -rnE "讳形|空绿|史词|实录|翻红窗|虚器|废尺|绳墨|器册|险
 - A5 照牌块：无册确定性文本逐字吻合；同册两次输出 shasum 相同；增免案后文本改变。
 - A7 三组 grep（模型无关 / 无 pre-execute / 机制词防撞）均无输出。
 - 实现期缺陷与测试缺陷如实记（标准未动，全部按 docs/03 改实现或改测试笔误）：
-  ①「判定序与排序」core 用例初稿稿径用 docs/a.md——不命中责面形 10，本就该不审不记；
-  按 03 §2 责面门改测试稿径（retro-report.md）；
-  ②「照值门禁」双护短用例初稿同径两行同稿——行案独立各 30 恰是设计之义（60 封顶），
-  手算无误；首稿误写 90 封顶——按 03 §9 min(60,30×hd) 改测试；
-  ③zhaoce 夹具初稿 exec 命令「npm run check:summary」不含对象词元 summary_check、输出
-  content「FAIL summary_check」命中——红账通道含输出侧命中恰是设计之义，手算漏核输出
-  侧，属夹具命令表述缺陷非手算数字错（期望护短 1、30、exit 1 不变）——保留（手算底稿
-  已明注「红账命中出自输出 content」）；
-  ④foujue 否定卫初稿只核中文卫——英文卫「no known issues」用例补充按 03 §5 英文紧邻
-  词实现（no/not/never 词界）；
-  ⑤CLI 测试两笔断言笔误（huoduan 弃责行号 :1 → :3——夹具 content 含标题行弃责在第 3
-  行；gate 带名 45 对门 50 是「盲」带）——皆改测试；
-  ⑥镜形词法定标文档 §7 初稿「成败皆算」未同步 §13 从宽清单——文档内部补记（03 与实现
-  一致，判词不变）。
-- A2 手算勘误：无（夹具定义即手算对象；上面 ③ 是夹具命令表述缺陷——期望数字未变）。
+  ①「对象键与工具族」core 用例初稿断言 familyOf('web_search') 为 other——observe 子串
+  表含 search，本就 observe（同全仓同规）；改测试断言 fetch_url 为 other；
+  ②首形提取初稿按「表序」断言 pre-existing——行内 flaky 在前，03 §4 勘误为「行内最先
+  出现者，同位取长者」（定标勘误 commit dc57bd5 先于交付落盘）；改测试断言 flaky；
+  ③否定卫初稿窗口 0–2 字符装不下三字否定词「不存在」——03 §5 勘误为 0–3 字符（同上
+  勘误 commit）；改实现窗口；
+  ④yingwen 手算底稿对象词元误列 flaky——flaky 亦为命中形，按 03 §5「遮蔽全部命中形」
+  随遮蔽出局（同上勘误 commit；红账仍命中 login.test.js，期望护短 1、30、exit 1 不变）；
+  ⑤「判定序与排序」core 用例初稿无红案错置护短——按 03 §8 判定序补红账三笔重构造
+  测试；
+  ⑥「合审序」core 用例初稿 b 流带 at 50 被 at 归并序换位（红落稿后）——按 03 §2 参序
+  拼接分支删 at 重构造测试；
+  ⑦集成 5 镜凭探针基线命令 test_login 与英文弃责行对象词元 login.test.js 不相交——
+  改探针命令对齐对象词元（src/auth/login.test.js）；
+  ⑧插件头注释「陈报」撞 shihu 机制词 ban 表——grep3 定位改措辞「宣言」清零；
+  ⑨「责皆有凭 ×0 稿」等 issues 空档行与 suliu「因皆有验」同构一次到位，无返工。
+- A2 手算勘误：yingwen 一处（首形与对象词元，见 ②④——定标勘误 commit dc57bd5 先于
+  交付落盘，期望案数、分值与退出码未变）；其余十九夹具逐字吻合。
 - 机制词防撞：机制词 18 词（自照/责面/责面形/责稿/弃责/弃责形/护短/思短/泛弃/虚弃/
   红账/镜凭/镜形/照册/照值/照牌/练场/暗带）对全仓 ban 表双向子串零撞；避开「证牌」
   （chachu 占）取「照牌」、「演域」（suliu 占）取「练场」、「迟验/迟证」取「思短」、

@@ -1,0 +1,5 @@
+# 自照流 · xuqi（期望 2 调用、虚弃 1、0、带「明」、exit 0——弃责之红不在场，宁纵不诬）
+{"type":"tool_call","id":"c1","name":"bash","args":{"command":"ls docs"},"at":100}
+{"type":"tool_result","id":"c1","name":"bash","args":{"command":"ls docs"},"isError":false,"content":"retro-report.md","at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"docs/retro-report.md","content":"# 交付纪要\n\nauth 模块是 pre-existing。\n"},"at":200}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"docs/retro-report.md"},"isError":false,"at":201}

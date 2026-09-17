@@ -1,0 +1,37 @@
+{
+  "name": "zizhao-dsh",
+  "version": "0.1.0",
+  "description": "自照 Zizhao — DeepSeek Harness 的失败弃责治理：责面形 10（交付文书径）开箱在岗、弃责形（中文 10 ∪ 英文 15）行级判定、否定卫（如实否述不入罪）、对象词元（整行遮蔽切词、ASCII 路对账）、红账（先于本笔的失败 exec × 对象词元）、镜凭（基线对照 stash/checkout/基线/对照，成败皆算）、思短（弃后自更）、护短 +30 单案即红、泛弃/虚弃注记、照值（明/暗/盲）分带门禁、照牌块供给。零 LLM 调用的自照式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/zizhao.js",
+  "bin": {
+    "zizhao": "src/bin/zizhao.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "pre-existing-claim",
+    "accountability",
+    "blame-shifting-audit",
+    "agent-reliability",
+    "baseline-verification"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
