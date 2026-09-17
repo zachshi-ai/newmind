@@ -1,0 +1,3 @@
+# 溯流流 · zhenmian（期望 paths 0、counts 全 0、澈、exit 0——诊面门：README 无诊面形不审不记）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"README.md","content":"# Demo\n\nThe root cause is a stale cache entry.\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"README.md"},"isError":false,"at":101}

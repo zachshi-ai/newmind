@@ -1,0 +1,5 @@
+# 溯流流 · shibai（期望 2 调用、臆断 1、30、带「臆」、exit 1——失败之见不是见：404 之读不生勘验）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"src/cache.json"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"src/cache.json"},"isError":true,"content":"ENOENT: no such file","at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"docs/postmortem.md","content":"# 故障排查\n\n根因是缓存过期导致的数据不一致。\n"},"at":200}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"docs/postmortem.md"},"isError":false,"at":201}

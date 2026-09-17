@@ -1,0 +1,9 @@
+# 溯流流 · shuangdao（期望 4 调用、望断 1、15、带「望」、exit 0——重演 2 笔 ✓ ∧ 勘验 ✓ 同望只一案从重不叠）
+{"type":"tool_call","id":"c1","name":"bash","args":{"command":"curl http://api/cache/items"},"at":100}
+{"type":"tool_result","id":"c1","name":"bash","args":{"command":"curl http://api/cache/items"},"isError":true,"content":"Error: cache timeout after 30s","at":101}
+{"type":"tool_call","id":"c2","name":"bash","args":{"command":"curl http://api/cache/items"},"at":120}
+{"type":"tool_result","id":"c2","name":"bash","args":{"command":"curl http://api/cache/items"},"isError":true,"content":"Error: cache timeout after 30s","at":121}
+{"type":"tool_call","id":"c3","name":"read","args":{"path":"logs/app.log"},"at":200}
+{"type":"tool_result","id":"c3","name":"read","args":{"path":"logs/app.log"},"isError":false,"content":"cache miss storm detected","at":201}
+{"type":"tool_call","id":"c4","name":"write","args":{"path":"docs/postmortem.md","content":"# Postmortem\n\nThe root cause is a stale cache entry.\n"},"at":300}
+{"type":"tool_result","id":"c4","name":"write","args":{"path":"docs/postmortem.md"},"isError":false,"at":301}

@@ -1,0 +1,5 @@
+# 溯流流 · kanyan（期望 2 调用、望断 1、15、带「望」、exit 0——勘验在先：看过现场≠验过因果，黄牌不咬门）
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"logs/app.log"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"logs/app.log"},"isError":false,"content":"10:02:11 缓存超限，驱逐频繁，命中率跌至 31%\n10:02:14 请求超时堆积","at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"docs/postmortem.md","content":"# 故障排查\n\n根因是缓存过期导致的数据不一致。\n"},"at":200}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"docs/postmortem.md"},"isError":false,"at":201}

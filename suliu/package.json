@@ -1,0 +1,37 @@
+{
+  "name": "suliu-dsh",
+  "version": "0.1.0",
+  "description": "溯流 Suliu — DeepSeek Harness 的因果臆断治理：诊面形 14（诊断类文书径）开箱在岗、归因形（中文 12 ∪ 英文 9）行级判定、因面词元化（ASCII 停词 26 ∪ CJK 段内 bigram）、推词门（中文 12 ∪ 英文 12）疑而后言不入罪、验因三通道（拔验/重演/勘验）先于本笔为据、臆断 +30 单案即红、望断 +15 黄牌（看过≠验过）、显疑/迟验/泛因注记、臆值（澈/望/臆）分带门禁、溯牌块供给。零 LLM 调用的溯流式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/suliu.js",
+  "bin": {
+    "suliu": "src/bin/suliu.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "root-cause-audit",
+    "causal-verification",
+    "hallucinated-diagnosis",
+    "postmortem-quality",
+    "agent-reliability"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

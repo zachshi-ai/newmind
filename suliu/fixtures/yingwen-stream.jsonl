@@ -1,0 +1,3 @@
+# 溯流流 · yingwen（期望 1 调用、臆断 1、30、带「臆」、exit 1——英文归因形 root cause + 因面词元 race/condition/connection/pool 全无验）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"docs/postmortem.md","content":"# Postmortem\n\nThe root cause is a race condition in the connection pool.\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"docs/postmortem.md"},"isError":false,"at":101}

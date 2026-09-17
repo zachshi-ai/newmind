@@ -1,0 +1,9 @@
+# 溯流流 · bayan（期望 4 调用、全 0、带「澈」、exit 0——拔验成对在先：动过因（write src/cache.js）且其后验过果（exec 含 cache））
+{"type":"tool_call","id":"c1","name":"read","args":{"path":"config.json"},"at":100}
+{"type":"tool_result","id":"c1","name":"read","args":{"path":"config.json"},"isError":false,"content":"{\"cache_ttl\": 60}","at":101}
+{"type":"tool_call","id":"c2","name":"write","args":{"path":"src/cache.js","content":"// 修复 cache 过期判定：TTL 从 60 放宽到 300\nexport const TTL = 300\n"},"at":200}
+{"type":"tool_result","id":"c2","name":"write","args":{"path":"src/cache.js"},"isError":false,"at":201}
+{"type":"tool_call","id":"c3","name":"bash","args":{"command":"node src/cache.js --verify"},"at":300}
+{"type":"tool_result","id":"c3","name":"bash","args":{"command":"node src/cache.js --verify"},"isError":false,"content":"verify ok","at":301}
+{"type":"tool_call","id":"c4","name":"write","args":{"path":"docs/postmortem.md","content":"# Postmortem\n\nThe root cause is a stale cache entry.\n"},"at":400}
+{"type":"tool_result","id":"c4","name":"write","args":{"path":"docs/postmortem.md"},"isError":false,"at":401}

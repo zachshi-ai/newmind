@@ -1,0 +1,5 @@
+# 溯流合审 · hechi-b（b 流：拔验在后，at 200-300 → 迟验注记）
+{"type":"tool_call","id":"b1","name":"write","args":{"path":"src/cache.js","content":"// fix cache expiry\n"},"at":200}
+{"type":"tool_result","id":"b1","name":"write","args":{"path":"src/cache.js"},"isError":false,"at":201}
+{"type":"tool_call","id":"b2","name":"bash","args":{"command":"node src/cache.js --verify"},"at":300}
+{"type":"tool_result","id":"b2","name":"bash","args":{"command":"node src/cache.js --verify"},"isError":false,"content":"verify ok","at":301}

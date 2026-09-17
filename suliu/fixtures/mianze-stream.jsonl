@@ -1,0 +1,3 @@
+# 溯流流 · mianze（带册期望 paths 0、全 0、澈、exit 0——臆册免审 reports/internal/*；无册对照臆断 1、30、红）
+{"type":"tool_call","id":"c1","name":"write","args":{"path":"reports/internal/root-cause-analysis.md","content":"# RCA — Queue\n\nRoot cause is queue backpressure.\n"},"at":100}
+{"type":"tool_result","id":"c1","name":"write","args":{"path":"reports/internal/root-cause-analysis.md"},"isError":false,"at":101}
