@@ -59,15 +59,15 @@
 
 | # | 验收项 | 标准（先于实现确定） | 验证方式 | 结果 |
 |---|--------|----------------------|----------|------|
-| A1 | 核心判定语义 | 流解析（`#` 注释、坏行报行号、id 配对回填、孤儿 result 建档、无 id result 并入紧邻 call、非 tool_call/result 事件忽略）；对象键与工具族同全仓；径规整；**疾账收全流、愈言只判稿面之写**（write 族 p: ∧ `isError !== true` ∧ content 非空字符串；isError===true 不入稿账、null 按已发生；**无径门**——凡写卷皆受审）；**愈形**（中文 13 子串 ∪ 英文 14 词界，内置固定不扩形）；**否定卫**（中文 6 形前紧邻 0–3 字符 ∪ 英文 4 形前紧邻词，命中整行不判）；**对象词元**（遮蔽愈形与卫词后 ASCII 切词，停词 37、纯数字、短词剔，路径形保留；CJK 不入对账；词元空 → 泛愈注记）；**检形 44**（命令小写化子串命中；册 forms 增形、noDefaults 可关）；**疾笔**（exec ∧ isError===true ∧ 命中检形 ∧ 命令∪输出含对象词元；null 不生疾、无矢之诊不挂账）；**痊笔两通道**（exec ∧ isError===false ∧ 命中检形：点痊=命令∪输出含词元洗该对象；扫痊=余文只剩旗标∪脚手架词洗全科；null 不生痊；observe/write/other 永不生痊）；**疾窗判定**（无诊不判 / 末事件痊=已痊注记 / 末事件疾=讳案 +30 单案即红 / 词元空=泛愈注记 / 案后痊=迟痊注记不洗案；多对象一行一案）；**新稿立撤**（同径新稿旧案全撤）；疾值 ji=min(60,30×hui)、total=min(100)；分带 安 0–14 / 恙 15–29 / 疾 ≥30；门默认 30——单讳案即红；judge 幂等——core 用例 ≥ 30 且全绿，断言恰好该分值与案名行号 | `npm test`（core 部分） | （实现后回填：core 用例数与逐项断言清单） |
-| A2 | 夹具分数（先于实现手算定死） | 册夹具 `huiji-book.json`：allow [`docs/internal/*`]。`clean-stream`：2 调用、counts yu=1 余 0、愈行 1、疾值 0、安、exit 0；`huiji-stream`：讳案 1（hui=1）、30、疾、exit 1；`yukuang-stream`：已痊 1（yu=1）、0、安、exit 0；`saoquan-stream`：已痊 1、0、exit 0；`chiyu-stream`：讳案 1 + 迟痊注记 1（zhi=1）、30、exit 1；`weiyu-stream`：讳案 1、30、exit 1；`wuzhen-stream`：counts 全 0、愈行 1、exit 0；`tizhen-stream`：讳案 1、30、exit 1；`fanyu-stream`：泛愈 1（fy=1）、0、exit 0；`fouwei-stream`：否定卫、counts 全 0、愈行 0、exit 0；`yingwen-stream`：讳案 1、30、exit 1；`shuanghui-stream`：讳案 2、60、exit 1；`zhaice-stream` 带册：paths 0、全 0、exit 0；zhaice 无册对照：讳案 1、30、exit 1；`jingyang-stream`：静养豁免、paths 0、全 0、exit 0；`laoliu-stream`：counts 全 0、愈行 1、exit 0；合审 `hepan-a + hepan-b`：2 调用 2 会话 → 讳案 1、30、exit 1；合审 `heyu-a + heyu-b`：已痊跨会话、yu=1、0、exit 0；附加口径：`huiji + --gate 40` → 30 过门 exit 0；`huiji + --gate 20` → 30 红 exit 1 | core 断言 + CLI 复现 | （实现后回填） |
-| A3 | 跨项目互认（外部夹具已实读核对：六流全稿无愈形词面——zhizhi sample、kaocheng mixed、dingfen fenced、erbing mixed 与 delegated、huashui fuji——受审稿 0、counts 全 0；jiaotuo weizhao 有 1 愈行〔「必须全部测试通过」引语命中愈形「测试通过」〕但其流无任何检形 exec——**无诊不判**恰证红账门在岗，counts 全 0、exit 0；愈形与 shihu 状词/zizhao 弃责形/kuijing 判形词面零交集） | zhizhi 的 `fixtures/sample-stream.jsonl`：calls 8、受审稿 0、counts 全 0、安、exit 0；kaocheng 的 `fixtures/mixed-stream.jsonl`：calls 4、受审稿 0；dingfen 的 `fixtures/fenced-stream.jsonl`：calls 6、受审稿 0；erbing 的 `fixtures/mixed-stream.jsonl` 与 `fixtures/delegated-stream.jsonl`：各 calls 5、受审稿 0；huashui 的 `fixtures/fuji-stream.jsonl`：calls 3、受审稿 0；jiaotuo 的 `fixtures/weizhao-stream.jsonl`：calls 2、受审稿 1、愈行 1、counts 全 0（同格式流跨项目可审、互不误伤） | CLI 测试 | （实现后回填） |
-| A4 | CLI 语义 | `audit` 多流合审 + `--file` + `--gate` + `--json`；坏 JSON 行 / 流缺失 / 未知旗标 / 缺值 → exit 2；`register --path` 缺 --path → exit 2、重复登记去重、册缺失自动建册；`revoke` 无此径 → exit 2；`list` 册缺失 → exit 2；`block` 无册出确定性文本（痊册公示是供给不是门禁）；`gate --value` 按门判 0/1（29 过 / 30 红 / --gate 50 时 45 过）；`--version`/`--help` 正常——CLI 用例 ≥ 16 | CLI 测试 | （实现后回填） |
-| A5 | 疾牌块逐字节确定 | 同一痊册两次 `huiji block` shasum 相同；增一免案后文本改变；无册输出确定性文本（`痊册：未立（凡愈必痊）`）；块中不含行原文与对象词元原文（只载 稿径:行:案别:指纹——djb2 指纹与行号，对象词元是行内内容切片不进块） | CLI shasum 复现 | （实现后回填） |
-| A6 | 真实管道上的观察式插件（零拦截） | 在 **npm 官方包** `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 构成的真实工具管道上挂载讳疾插件：失败探针也无条件到达工具本体（结构性零拦截）；净稿探针 → 已痊 0 过门；单讳案探针 → 30 疾门红；扫痊探针 → 0 过门；服药不复诊探针 → 30 红；泛愈探针 → 0；否定卫探针 → 0；静养探针 → 0；痊册免案探针 → 0；失败 write 探针不入稿账；`exportStream()` 导出流离线 `audit` 重放账实一致；gate 翻转 + 疾牌块两次渲染逐字节相同且不含行原文与对象词元原文——集成用例 ≥ 10 | 集成测试 | （实现后回填） |
-| A7 | 模型无关 | 核心 + 插件零 LLM 调用、零提示词注入、零网络、零子进程、零文件系统探测；插件源码无 pre-execute 监听器（结构性零拦截）；源码注释不携带相邻各层的机制词（独立性的结构性自证，ban 表累加至 kuijing 全部机制词） | grep（下附命令，应无输出） | （实现后回填） |
-| A8 | 测试总量 | 全部用例 ≥ 65 且全绿（core + cli + 集成） | `npm test` | （实现后回填） |
-| A9 | 文档 | 选书映射（01）、场景价值与伪需求自检（02）、设计语义锁死（03）、本验收表（04）、SKILL.md、README 快速开始齐备；根 README 项目索引与方向登记更新 | 人工 + 链接 | （实现后回填） |
+| A1 | 核心判定语义 | 流解析（`#` 注释、坏行报行号、id 配对回填、孤儿 result 建档、无 id result 并入紧邻 call、非 tool_call/result 事件忽略）；对象键与工具族同全仓；径规整；**疾账收全流、愈言只判稿面之写**（write 族 p: ∧ `isError !== true` ∧ content 非空字符串；isError===true 不入稿账、null 按已发生；**无径门**——凡写卷皆受审）；**愈形**（中文 13 子串 ∪ 英文 14 词界，内置固定不扩形）；**否定卫**（中文 6 形前紧邻 0–3 字符 ∪ 英文 4 形前紧邻词，命中整行不判）；**对象词元**（遮蔽愈形与卫词后 ASCII 切词，停词 37、纯数字、短词剔，路径形保留；CJK 不入对账；词元空 → 泛愈注记）；**检形 44**（命令小写化子串命中；册 forms 增形、noDefaults 可关）；**疾笔**（exec ∧ isError===true ∧ 命中检形 ∧ 命令∪输出含对象词元；null 不生疾、无矢之诊不挂账）；**痊笔两通道**（exec ∧ isError===false ∧ 命中检形：点痊=命令∪输出含词元洗该对象；扫痊=余文只剩旗标∪脚手架词洗全科；null 不生痊；observe/write/other 永不生痊）；**疾窗判定**（无诊不判 / 末事件痊=已痊注记 / 末事件疾=讳案 +30 单案即红 / 词元空=泛愈注记 / 案后痊=迟痊注记不洗案；多对象一行一案）；**新稿立撤**（同径新稿旧案全撤）；疾值 ji=min(60,30×hui)、total=min(100)；分带 安 0–14 / 恙 15–29 / 疾 ≥30；门默认 30——单讳案即红；judge 幂等——core 用例 ≥ 30 且全绿，断言恰好该分值与案名行号 | `npm test`（core 部分） | ✅ 38 用例全绿（core：流解析 1 + 对象与径规整 1 + 愈形中文 1 + 愈形英文 1 + 愈形与 shihu 工作态词表零交集 1 + 否定卫中文 1 + 否定卫英文 1 + 对象词元 1 + 检形命中 1 + 检形不误伤探察命令 1 + 疾笔 1 + 疾笔须检形 1 + 疾笔无矢不挂账 1 + 点痊 1 + 扫痊 1 + 扫痊不洗非全量收窄对象 1 + write/observe 永不生痊与 null 退化 1 + 无诊不判 1 + 讳案 1 + 替诊不洗 1 + 迟痊不洗 1 + 已痊注记 1 + 泛愈注记 1 + 否定卫夹具 1 + 双案封顶 1 + 新稿立撤 1 + 静养豁免 1 + 痊册免审 1 + 合审序 1 + 掩码 1 + 痊册册操作与 glob 1 + judge 幂等 1 + 夹具全量·一 1 + 夹具全量·二 1 + 夹具全量·三 1 + 跨项目互认 1 + 门禁分带 1 + exportStream 语义 1——断言恰好该分值与案名行号） |
+| A2 | 夹具分数（先于实现手算定死） | 册夹具 `huiji-book.json`：allow [`docs/internal/*`]。`clean-stream`：2 调用、counts yu=1 余 0、愈行 1、疾值 0、安、exit 0；`huiji-stream`：讳案 1（hui=1）、30、疾、exit 1；`yukuang-stream`：已痊 1（yu=1）、0、安、exit 0；`saoquan-stream`：已痊 1、0、exit 0；`chiyu-stream`：讳案 1 + 迟痊注记 1（zhi=1）、30、exit 1；`weiyu-stream`：讳案 1、30、exit 1；`wuzhen-stream`：counts 全 0、愈行 1、exit 0；`tizhen-stream`：讳案 1、30、exit 1；`fanyu-stream`：泛愈 1（fy=1）、0、exit 0；`fouwei-stream`：否定卫、counts 全 0、愈行 0、exit 0；`yingwen-stream`：讳案 1、30、exit 1；`shuanghui-stream`：讳案 2、60、exit 1；`zhaice-stream` 带册：paths 0、全 0、exit 0；zhaice 无册对照：讳案 1、30、exit 1；`jingyang-stream`：静养豁免、paths 0、全 0、exit 0；`laoliu-stream`：counts 全 0、愈行 1、exit 0；合审 `hepan-a + hepan-b`：2 调用 2 会话 → 讳案 1、30、exit 1；合审 `heyu-a + heyu-b`：已痊跨会话、yu=1、0、exit 0；附加口径：`huiji + --gate 40` → 30 过门 exit 0；`huiji + --gate 20` → 30 红 exit 1 | core 断言 + CLI 复现 | ✅ 二十条复现命令退出码逐字吻合（0/1/0/0/1/1/0/1/0/0/1/1/0/1/0/0/1/0 + gate 40 过 0、gate 20 红 1）；分数与 counts 由 CLI 输出与 core 断言逐字段核对（clean 已痊 yu=1 安 / huiji 讳案 30 疾 / yukuang 已痊 0 / saoquan 扫痊已痊 0 / chiyu 迟痊不洗 30 红 zhi=1 / weiyu 服药不复诊 30 红 / wuzhen 无诊全 0 / tizhen 替诊 30 红 / fanyu 泛愈 fy=1 / fouwei 卫住全 0 / yingwen 英文 30 红 / shuanghui 双讳 60 / zhaice 带册 0 无册红 / jingyang 静养 0 / laoliu 老流全 0 / hepan 合审讳案 30 红 / heyu 合审已痊 0） |
+| A3 | 跨项目互认（外部夹具已实读核对：六流全稿无愈形词面——zhizhi sample、kaocheng mixed、dingfen fenced、erbing mixed 与 delegated、huashui fuji——受审稿 0、counts 全 0；jiaotuo weizhao 有 1 愈行〔「必须全部测试通过」引语命中愈形「测试通过」〕但其流无任何检形 exec——**无诊不判**恰证红账门在岗，counts 全 0、exit 0；愈形与 shihu 状词/zizhao 弃责形/kuijing 判形词面零交集） | zhizhi 的 `fixtures/sample-stream.jsonl`：calls 8、受审稿 0、counts 全 0、安、exit 0；kaocheng 的 `fixtures/mixed-stream.jsonl`：calls 4、受审稿 0；dingfen 的 `fixtures/fenced-stream.jsonl`：calls 6、受审稿 0；erbing 的 `fixtures/mixed-stream.jsonl` 与 `fixtures/delegated-stream.jsonl`：各 calls 5、受审稿 0；huashui 的 `fixtures/fuji-stream.jsonl`：calls 3、受审稿 0；jiaotuo 的 `fixtures/weizhao-stream.jsonl`：calls 2、受审稿 1、愈行 1、counts 全 0（同格式流跨项目可审、互不误伤） | CLI 测试 | ✅ 七流零误案（zhizhi sample 8 调用 / kaocheng mixed 4 调用 / dingfen fenced 6 调用 / erbing mixed 5 与 delegated 5 调用 / huashui fuji 3 调用 / jiaotuo weizhao 2 调用 1 愈行——counts 全 0、全安带 exit 0；jiaotuo 流「必须全部测试通过」引语命中愈形而全流无检形 exec，无诊不判恰证红账门在岗；core 与 CLI 双路核验） |
+| A4 | CLI 语义 | `audit` 多流合审 + `--file` + `--gate` + `--json`；坏 JSON 行 / 流缺失 / 未知旗标 / 缺值 → exit 2；`register --path` 缺 --path → exit 2、重复登记去重、册缺失自动建册；`revoke` 无此径 → exit 2；`list` 册缺失 → exit 2；`block` 无册出确定性文本（痊册公示是供给不是门禁）；`gate --value` 按门判 0/1（29 过 / 30 红 / --gate 50 时 45 过）；`--version`/`--help` 正常——CLI 用例 ≥ 16 | CLI 测试 | ✅ 16 用例全绿（A2 复现五组逐条断言 + --json 字段齐备 + 坏行报行号/缺流/未知旗标/--gate 缺值 exit 2 + register 缺 --path exit 2、自动建册去重、register 后 audit 免案生效 + revoke 无此径 exit 2、撤销后门禁恢复 + list 缺册 exit 2 + block 无册确定性文本与增免案改变 + block shasum 双跑一致 + gate 29/30/--gate 50×45/缺值 exit 2 + --version/--help + 跨项目七流 CLI 复验） |
+| A5 | 疾牌块逐字节确定 | 同一痊册两次 `huiji block` shasum 相同；增一免案后文本改变；无册输出确定性文本（`痊册：未立（凡愈必痊）`）；块中不含行原文与对象词元原文（只载 稿径:行:案别:指纹——djb2 指纹与行号，对象词元是行内内容切片不进块） | CLI shasum 复现 | ✅ 逐字节一致（同册两次 block shasum 全等；增免案 docs/internal/* 后文本改变；无册块逐字含「痊册：未立（凡愈必痊）」；行原文与对象词元原文不进疾牌见 core 掩码用例与集成断言） |
+| A6 | 真实管道上的观察式插件（零拦截） | 在 **npm 官方包** `@deepseek-ai/cordis` + `@deepseek-ai/dsh-tools` 构成的真实工具管道上挂载讳疾插件：失败探针也无条件到达工具本体（结构性零拦截）；净稿探针 → 已痊 0 过门；单讳案探针 → 30 疾门红；扫痊探针 → 0 过门；服药不复诊探针 → 30 红；泛愈探针 → 0；否定卫探针 → 0；静养探针 → 0；痊册免案探针 → 0；失败 write 探针不入稿账；`exportStream()` 导出流离线 `audit` 重放账实一致；gate 翻转 + 疾牌块两次渲染逐字节相同且不含行原文与对象词元原文——集成用例 ≥ 10 | 集成测试 | ✅ 12 用例全绿（真实管道挂载 npm 官方 @deepseek-ai/cordis@4.0.2 + @deepseek-ai/dsh-tools@0.0.1-rc.1：失败探针无条件到达工具本体、净稿已痊 0 安、单讳案 30 疾红、扫痊 0、服药不复诊 30 红、泛愈 0、否定卫 0、静养 0、痊册免案 0、失败写不入稿账、exportStream 重放账实一致 30、疾牌两次渲染逐字节相同且不含行原文与对象词元原文） |
+| A7 | 模型无关 | 核心 + 插件零 LLM 调用、零提示词注入、零网络、零子进程、零文件系统探测；插件源码无 pre-execute 监听器（结构性零拦截）；源码注释不携带相邻各层的机制词（独立性的结构性自证，ban 表累加至 kuijing 全部机制词） | grep（下附命令，应无输出） | ✅ 三组 grep 均无输出（grep3 ban 表 399 词，程序化提取自 kuijing 04 并累加其 20 词；机制词 15 词对全仓 ban 表双向子串零撞）；实现期注释防撞修正两笔（「弃责」→「卸责」、「状词」→「工作态词表」清零） |
+| A8 | 测试总量 | 全部用例 ≥ 65 且全绿（core + cli + 集成） | `npm test` | ✅ 65 tests, 65 pass（core 38 + cli 16 + 集成 12，0 跳过） |
+| A9 | 文档 | 选书映射（01）、场景价值与伪需求自检（02）、设计语义锁死（03）、本验收表（04）、SKILL.md、README 快速开始齐备；根 README 项目索引与方向登记更新 | 人工 + 链接 | ✅（本行即 A9 验证；根 README #44 行见交付提交） |
 
 ## 复现命令
 
@@ -113,3 +113,42 @@ grep -rnE "讳形|空绿|史词|实录|翻红窗|虚器|废尺|绳墨|器册|险
 
 （ban 表累计至 kuijing；本层机制词 15——讳疾/愈形/检形/疾账/疾窗/讳案/已痊/迟痊/泛愈/
 痊册/静养/疾值/疾牌/痊笔/疾笔——对全仓 ban 表双向子串零撞、repo 散文零占位，交付时复核。）
+
+## 实测记录（2026-09-18，本机复跑真实输出）
+
+- `npm test`：**65 tests, 65 pass, 0 fail, 0 skipped**（core 38 + cli 16 + 集成 12；
+  集成挂载 npm 官方 `@deepseek-ai/cordis@4.0.2` + `@deepseek-ai/dsh-tools@0.0.1-rc.1`
+  真实管道）。
+- A2 二十条复现命令退出码逐字吻合：clean 0/安·已痊 · huiji 讳案 30/疾/红 · yukuang
+  已痊 0 · saoquan 扫痊 0 · chiyu 迟痊不洗 30 红 zhi=1 · weiyu 服药不复诊 30 红 ·
+  wuzhen 无诊全 0 · tizhen 替诊 30 红 · fanyu 泛愈 fy=1 · fouwei 卫住全 0 · yingwen
+  英文 30 红 · shuanghui 双讳 60 红 · zhaice 带册 0 无册 1 红 · jingyang 静养 0 ·
+  laoliu 老流全 0 · hepan 合审讳案 30 红 · heyu 合审已痊 0 · gate 40 过 · gate 20 红。
+- A3 跨项目七流零误案（zhizhi/kaocheng/dingfen/erbing×2/huashui/jiaotuo，counts 全 0；
+  夹具先实读核对——六流无愈形词面，jiaotuo 流 1 愈行而全流无检形 exec，无诊不判恰证
+  红账门在岗）。
+- A5 疾牌块：无册确定性文本逐字吻合（「痊册：未立（凡愈必痊）」）；同册两次输出 shasum
+  相同；增免案后文本改变（CLI 测试 sha256 断言）。
+- A7 三组 grep（模型无关 / 无 pre-execute / 机制词防撞）均无输出（grep3 ban 表 399 词，
+  程序化提取自 kuijing 04 并累加其 20 词）。
+- 实现期缺陷与测试缺陷如实记（标准未动，全部按 docs/03 或手算底稿改实现/改测试笔误）：
+  ①扫痊剥形顺序缺陷：'go test' ⊂ 'cargo test'、'npm test' ⊂ 'pnpm test'——子串先剥
+  留下残词（'car'）破坏扫痊——按 03 §5 改实现（检形长形优先剥除）；
+  ②稿账口径初稿按卫后愈行立稿，fouwei 夹具 paths=0 与手算底稿 paths=1 不符——按底稿
+  改实现（愈形候选行〔卫前〕定立稿，卫住之稿立稿不立行）；
+  ③新稿立撤初稿净稿不撤旧稿之案——按 03 §9 改实现（同径无愈形候选之写删除稿账）；
+  ④测试笔误：零交集用例初稿拿裸 'fixed' 断言——shihu 英文工作态词原形带冒号（'fixed:'），
+  按其词表原形改断言；
+  ⑤测试笔误：对象词元用例 '2.0' 期望剔除——'2.0' 含点走路形保留（与 kuijing 词元法
+  一致），按 03 §4 改断言；
+  ⑥测试笔误：流解析用例期望 3 记录——无 id result 紧邻前笔带 id 时独立建档，实为 4
+  记录，按解析器既有语义改断言；
+  ⑦CLI 断言笔误两处：/愈行 1/ 词序（输出为「1 愈行」）、--help 断言误含机制词——改正；
+  ⑧A7 grep3 实现期命中「弃责」「状词」注释两处——改「卸责」「工作态词表」清零。
+- 手算勘误（先于实现落盘，28a3756）：检形清点 43→44 形；clean 夹具调用数 3→2。
+- 机制词防撞：机制词 15 词（讳疾/愈形/检形/疾账/疾窗/讳案/已痊/迟痊/泛愈/痊册/静养/
+  疾值/疾牌/痊笔/疾笔）对全仓 ban 表 399 词双向子串零撞、排除本层后全仓 grep -rF 零占
+  位（实测复核）；避开「讳值」（zhibi 占）取「疾值」、「红账/照册/照牌/练场」（zizhao
+  占）取「疾账/痊册/静养」、「已修复/done:/fixed:」（shihu 工作态词表占，愈形零交集）
+  取复合痊愈词迹、「翻红窗/绿验」（fayi 占）取「痊笔」、「据窗」（kuijing 占）取「疾
+  窗」、「泛判」（kuijing 占）取「泛愈」。

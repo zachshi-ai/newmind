@@ -1,0 +1,7 @@
+# 讳疾流 · saoquan（期望 已痊 yu=1、0、安、exit 0——全量复验扫痊：裸红→裸绿→宣愈）
+{"type": "tool_call", "id": "c1", "name": "bash", "args": {"command": "npm test"}, "at": 100}
+{"type": "tool_result", "id": "c1", "name": "bash", "args": {"command": "npm test"}, "isError": true, "content": "FAIL src/auth.spec.js", "at": 101}
+{"type": "tool_call", "id": "c2", "name": "bash", "args": {"command": "npm test"}, "at": 200}
+{"type": "tool_result", "id": "c2", "name": "bash", "args": {"command": "npm test"}, "isError": false, "content": "12 passing", "at": 201}
+{"type": "tool_call", "id": "c3", "name": "write", "args": {"path": "docs/report.md", "content": "# 报告\n\nauth 全绿。"}, "at": 300}
+{"type": "tool_result", "id": "c3", "name": "write", "args": {"path": "docs/report.md"}, "isError": false, "at": 301}

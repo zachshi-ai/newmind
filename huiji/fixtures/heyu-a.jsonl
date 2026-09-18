@@ -1,0 +1,5 @@
+# 讳疾流 · 合审已痊 · heyu-a（a 流红 at100 + 绿 at200——跨会话已痊）
+{"type": "tool_call", "id": "a1", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 100}
+{"type": "tool_result", "id": "a1", "name": "bash", "args": {"command": "npm test -- auth"}, "isError": true, "content": "FAIL auth 2 failing", "at": 101}
+{"type": "tool_call", "id": "a2", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 200}
+{"type": "tool_result", "id": "a2", "name": "bash", "args": {"command": "npm test -- auth"}, "isError": false, "content": "auth 12 passing", "at": 201}

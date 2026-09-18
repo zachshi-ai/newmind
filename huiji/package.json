@@ -1,0 +1,36 @@
+{
+  "name": "huiji-dsh",
+  "version": "0.1.0",
+  "description": "讳疾 Huiji — DeepSeek Harness 的红上宣绿治理层：疾账（exec 成败×检形×对象词元）/ 未决窗判定 / 疾牌块供给 / 疾值门禁。零 LLM 调用的观察式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/huiji.js",
+  "bin": {
+    "huiji": "src/bin/huiji.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "false-success-claims",
+    "verification-ledger",
+    "unresolved-failures",
+    "agent-honesty"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}
