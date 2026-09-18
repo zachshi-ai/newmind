@@ -1,0 +1,38 @@
+{
+  "name": "anlan-dsh",
+  "version": "0.1.0",
+  "description": "安澜 Anlan — DeepSeek Harness 的响应性施治治理层：波账（诊形 exec 红绿逐对象排序列）/ 搅笔（交替间 write 搅迹）/ 叠三搅二荡案 / 风浪注记（环境之波非人祸）/ 荡值门禁。零 LLM 调用的观察式插件 + 零依赖 CLI。",
+  "type": "module",
+  "main": "src/plugin/anlan.js",
+  "bin": {
+    "anlan": "src/bin/anlan.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-agents",
+    "agent-governance",
+    "fix-churn",
+    "whack-a-mole",
+    "tampering",
+    "flaky-detection",
+    "verification-series",
+    "deming-funnel"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-system-prompt": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.0.1-rc.1"
+  }
+}

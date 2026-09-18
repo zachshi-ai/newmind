@@ -1,0 +1,9 @@
+# 安澜流 · guance（期望 zhen=1/ni=1、0、exit 0——看见失败输出不算自己的诊，observe 不入账）
+{"type": "tool_call", "id": "c1", "name": "read", "args": {"path": "logs/test.log"}, "at": 100}
+{"type": "tool_result", "id": "c1", "name": "read", "args": {"path": "logs/test.log"}, "at": 101, "isError": false, "content": "test log: FAIL auth 2 failing"}
+{"type": "tool_call", "id": "c2", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 200}
+{"type": "tool_result", "id": "c2", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 201, "isError": true, "content": "FAIL auth 2 failing"}
+{"type": "tool_call", "id": "c3", "name": "read", "args": {"path": "logs/test.log"}, "at": 300}
+{"type": "tool_result", "id": "c3", "name": "read", "args": {"path": "logs/test.log"}, "at": 301, "isError": false, "content": "still: FAIL auth"}
+{"type": "tool_call", "id": "c4", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 400}
+{"type": "tool_result", "id": "c4", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 401, "isError": false, "content": "auth 12 passing"}

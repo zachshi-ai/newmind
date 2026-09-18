@@ -1,0 +1,9 @@
+# 安澜流 · fenglang（期望 风浪1、0、平、exit 0——零搅之交替：环境之波非人祸）
+{"type": "tool_call", "id": "c1", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 100}
+{"type": "tool_result", "id": "c1", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 101, "isError": true, "content": "FAIL auth 2 failing"}
+{"type": "tool_call", "id": "c2", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 200}
+{"type": "tool_result", "id": "c2", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 201, "isError": false, "content": "auth 12 passing"}
+{"type": "tool_call", "id": "c3", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 300}
+{"type": "tool_result", "id": "c3", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 301, "isError": true, "content": "FAIL auth 2 failing"}
+{"type": "tool_call", "id": "c4", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 400}
+{"type": "tool_result", "id": "c4", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 401, "isError": false, "content": "auth 12 passing"}

@@ -1,0 +1,7 @@
+# 安澜流 · clean（期望 静默、0、平、exit 0——守准：单轮修复收敛，漏斗规则一）
+{"type": "tool_call", "id": "c1", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 100}
+{"type": "tool_result", "id": "c1", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 101, "isError": true, "content": "FAIL auth 2 failing"}
+{"type": "tool_call", "id": "c2", "name": "write", "args": {"path": "src/auth.js", "content": "fix: guard null user\n"}, "at": 150}
+{"type": "tool_result", "id": "c2", "name": "write", "args": {"path": "src/auth.js"}, "at": 151, "isError": false}
+{"type": "tool_call", "id": "c3", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 200}
+{"type": "tool_result", "id": "c3", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 201, "isError": false, "content": "auth 12 passing"}

@@ -1,0 +1,13 @@
+# 安澜流 · jiaocha（期望 全 0 案、exit 0——交错而行搅笔各归各对象，序列各归各对象）
+{"type": "tool_call", "id": "c1", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 100}
+{"type": "tool_result", "id": "c1", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 101, "isError": true, "content": "FAIL auth"}
+{"type": "tool_call", "id": "c2", "name": "write", "args": {"path": "src/auth.js", "content": "fix: guard null user\n"}, "at": 150}
+{"type": "tool_result", "id": "c2", "name": "write", "args": {"path": "src/auth.js"}, "at": 151, "isError": false}
+{"type": "tool_call", "id": "c3", "name": "bash", "args": {"command": "npm test -- cache"}, "at": 200}
+{"type": "tool_result", "id": "c3", "name": "bash", "args": {"command": "npm test -- cache"}, "at": 201, "isError": true, "content": "FAIL cache"}
+{"type": "tool_call", "id": "c4", "name": "write", "args": {"path": "src/cache.js", "content": "fix cache\n"}, "at": 250}
+{"type": "tool_result", "id": "c4", "name": "write", "args": {"path": "src/cache.js"}, "at": 251, "isError": false}
+{"type": "tool_call", "id": "c5", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 300}
+{"type": "tool_result", "id": "c5", "name": "bash", "args": {"command": "npm test -- auth"}, "at": 301, "isError": false, "content": "auth passing"}
+{"type": "tool_call", "id": "c6", "name": "bash", "args": {"command": "npm test -- cache"}, "at": 400}
+{"type": "tool_result", "id": "c6", "name": "bash", "args": {"command": "npm test -- cache"}, "at": 401, "isError": false, "content": "cache passing"}
