@@ -24,10 +24,10 @@
   30、exit 1；cache 静默不并案（对象独立）；
 - `shuangdang`（双荡案）：auth〔逆,顺,逆,顺〕搅 2 + cache〔逆,顺,逆,顺〕搅 2 →
   **荡案 2**、min(60,60)=60、荡、exit 1；
-- `quanliang`（全科笔镜）：全量红「npm test」输出「FAIL auth」at100（逆挂 auth——输出
-  词元）→ 搅 → 全量绿输出「12 passing」at200（全科顺：auth 在场记顺）→ 搅 → 全量红输出
-  「FAIL auth」→ 搅 → 全量绿 → auth〔逆,顺,逆,顺〕叠 3 搅窗 3 → **荡案 1**、30、exit 1
-  （全量形点笔与全科笔交替成荡）；
+- `quanliang`（全科笔镜）：点红「npm test -- auth」at100（auth 注册挂逆）→ 搅 → 全量绿
+  「npm test」输出「12 passing」at200（全科顺：auth 在场记顺）→ 搅 → 全量红输出「FAIL
+  auth」at300（全科逆：输出词元命中已注册 auth——挂逆）→ 搅 → 全量绿 → auth〔逆,顺,逆,
+  顺〕叠 3 搅窗 3 → **荡案 1**、30、exit 1（点笔注册、全科顺逆两通道交替成荡）；
 - `laoliu`（老流诚实退化）：`npm test -- auth` ×4 无 isError 旗（红绿交错全 null）→ 不
   记状态笔 → write ×1（isError null 按已发生，搅 auth——但 auth 从未注册）→ counts
   全 0（jiao=0：注册表空无处挂）、平、exit 0（成败未知不诬波）；
@@ -50,7 +50,7 @@
 - `jiaocha`（交错不串账）：auth 红→搅→绿 + cache 红→搅→绿 交错而行 → auth 叠 1、cache
   叠 1，搅笔各归各对象 → **静默**：zhen=2/ni=2/jiao=2、全 0 案、exit 0；
 - 合审 `hepan`（a 流：红→搅→绿→搅→红〔叠 2 止〕；b 流：绿 at400）→ at 排序跨会话归并 →
-  auth〔逆,顺,逆,顺〕叠 3 搅窗 2 → **荡案 1**、30、exit 1（2 调用 2 会话）；
+  auth〔逆,顺,逆,顺〕叠 3 搅窗 2 → **荡案 1**、30、exit 1（6 调用 2 会话）；
 - 附加口径：`anlang + --gate 40` → 30 过门 exit 0；`anlang + --gate 20` → 30 红 exit 1
   （荡带翻转）。
 
